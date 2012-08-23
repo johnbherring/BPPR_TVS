@@ -1,0 +1,4149 @@
+<!DOCTYPE HTML PUBLIC "-//WC3//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Well2600:Run Configuration</title>
+
+<script language="JavaScript">
+<!--
+function popup(url)
+{
+  popuphelp = window.open(url, "help", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=300,height=350"); 
+}
+//-->
+</SCRIPT>
+    <script language="javaScript" src="scripts/MicroEFMMenus.js"></script>
+    <script language="javascript" >
+<!--
+
+
+
+
+<!--
+
+		var RI
+               
+		function PageInit ()
+		 {
+
+            if (!DetectIE5())
+                window.alert ("The browser must support Active-X Controls. Please use Internet Explorer 5.0 or above");
+            else
+            {
+            	RI = document.cookie.substring(document.cookie.length - 1) - 1;
+            	 //alert("Cookie Run ID: " + RI);
+            	if (RI < 0)
+            		RI = 0;
+            	 //alert("Cookie Run ID: " + RI);
+            	
+				RunNum.selectedIndex = RI;
+            	//alert("Cookie Run ID1: " + RI);
+				SetRun(RunNum.options[RunNum.selectedIndex].value);
+				//alert("Cookie Run ID2: " + RI);
+				ActivateControls();
+				 
+            }
+        }
+        
+        function ConfigMonitor()
+        {
+        	if (SigView69.ValueText == "0")
+        	{
+      //  		window.location.href = "RC_OV.htm";
+        	}
+       
+	   
+	    }
+        
+		function ActivateControls()
+        {
+	//alert("Activating Controls");
+	SigView1.Execute();
+	SigView2.Execute();
+	SigView3.Execute();
+	SigView4.Execute();
+    SigView5.Execute();
+	SigView6.Execute();
+	SigView7.Execute();
+	SigView8.Execute(); 
+	SigView9.Execute(); 
+	SigView10.Execute();
+	SigView11.Execute();
+	SigView12.Execute();
+	SigView13.Execute();
+	SigView14.Execute();
+    SigView15.Execute();
+	SigView16.Execute();
+	SigView17.Execute();
+	SigView18.Execute(); 
+	SigView19.Execute(); 
+	SigView20.Execute(); 
+	SigView21.Execute();
+	SigView22.Execute();
+	SigView23.Execute();
+	SigView24.Execute();
+    SigView25.Execute();
+	SigView26.Execute();
+	SigView27.Execute();
+	SigView28.Execute(); 
+	SigView29.Execute(); 
+	SigView30.Execute();
+	SigView31.Execute(); 
+	SigView32.Execute(); 	
+	SigView33.Execute(); 
+	SigView34.Execute(); 	
+	SigView35.Execute(); 
+	SigView36.Execute(); 	
+	SigView37.Execute(); 
+	SigView38.Execute();
+	SigView39.Execute();
+	SigView40.Execute(); 
+	SigView41.Execute(); 
+	SigView42.Execute(); 
+	SigView43.Execute(); 
+	SigView44.Execute(); 
+	SigView45.Execute(); 
+	SigView46.Execute(); 
+	SigView47.Execute(); 
+	SigView48.Execute(); 
+	SigView49.Execute(); 
+	SigView50.Execute(); 
+	SigView51.Execute(); 
+	SigView52.Execute(); 
+	SigView53.Execute();
+	SigView54.Execute(); 
+	SigView55.Execute(); 
+	SigView56.Execute(); 
+	SigView57.Execute(); 
+	SigView58.Execute(); 
+	SigView59.Execute(); 
+	SigView60.Execute();
+	SigView61.Execute();  
+		}
+
+        function SetRun(RunNumber)
+        {
+        	//alert("New Run " + RunNumber);
+        	SigView1.SignalName = "Run"+RunNumber+".Meter_Type";
+        	SigView2.SignalName = "Run"+RunNumber+".Meter_ID";
+        	SigView3.SignalName = "Run"+RunNumber+".Orif_Diam";
+            SigView4.SignalName = "Run"+RunNumber+".Pipe_Diam";
+			SigView5.SignalName = "Run"+RunNumber+".DP_IN";
+        	SigView6.SignalName = "Run"+RunNumber+".PF_IN";
+			SigView7.SignalName = "Run"+RunNumber+".TF_IN";
+			SigView8.SignalName = "Run"+RunNumber+".METHANE_USED";
+			SigView9.SignalName = "Run"+RunNumber+".NITROGEN_USED";
+			SigView10.SignalName = "Run"+RunNumber+".CO2_USED";
+			SigView11.SignalName = "Run"+RunNumber+".ETHANE_USED";
+        	SigView12.SignalName = "Run"+RunNumber+".PROPANE_USED";
+        	SigView13.SignalName = "Run"+RunNumber+".H2O_USED";
+            SigView14.SignalName = "Run"+RunNumber+".H2S_USED";
+			SigView15.SignalName = "Run"+RunNumber+".HYDROGEN_USED";
+        	SigView16.SignalName = "Run"+RunNumber+".CO_USED";
+			SigView17.SignalName = "Run"+RunNumber+".OXYGEN_USED";
+			SigView18.SignalName = "Run"+RunNumber+".IBUTANE_USED";
+			SigView19.SignalName = "Run"+RunNumber+".NBUTANE_USED";
+			SigView20.SignalName = "Run"+RunNumber+".IPENTANE_USED";
+			SigView21.SignalName = "Run"+RunNumber+".NPENTANE_USED";
+			SigView22.SignalName = "Run"+RunNumber+".NHEXANE_USED";
+        	SigView23.SignalName = "Run"+RunNumber+".NHEPTANE_USED";
+        	SigView24.SignalName = "Run"+RunNumber+".NOCTANE_USED";
+            SigView25.SignalName = "Run"+RunNumber+".NDECANE_USED";
+			SigView26.SignalName = "Run"+RunNumber+".HELIUM_USED";
+        	SigView27.SignalName = "Run"+RunNumber+".ARGON_USED";
+			SigView28.SignalName = "Run"+RunNumber+".BTU_USED";
+			SigView29.SignalName = "Run"+RunNumber+".SPGRAV_USED";		
+        	SigView30.SignalName = "Run"+RunNumber+".FPV_IN";
+			SigView31.SignalName = "Run"+RunNumber+".ZB_IN";
+			SigView32.SignalName = "Run"+RunNumber+".ZF_IN";		
+			SigView33.SignalName = "Run"+RunNumber+".NNONANE_USED";				
+			SigView34.SignalName = "Run"+RunNumber+".COMPTOTAL";	
+			SigView35.SignalName = "Run"+RunNumber+".Flow_mscf_Day";	
+			SigView36.SignalName = "Run"+RunNumber+".Flow_Tot_CDay";
+			SigView37.SignalName = "Run"+RunNumber+".Flow_Tot_PDay_Grss";
+			SigView38.SignalName = "Run"+RunNumber+".WATERCDAY";
+			SigView39.SignalName = "Run"+RunNumber+".WATERPDAY";
+			SigView40.SignalName = "Run"+RunNumber+".COUNTS";
+			SigView41.SignalName = "Run"+RunNumber+".WATERKFACTOR";
+			SigView42.SignalName = "Run"+RunNumber+".TURBINEFACTOR";
+			SigView43.SignalName = "Run"+RunNumber+".SELECTWATERHSC";
+			SigView44.SignalName = "Run"+RunNumber+".SETWATERZEROCDAY";
+			SigView45.SignalName = "Run"+RunNumber+".SETWATERPDAY";
+			SigView46.SignalName = "Run"+RunNumber+".ZeroCday";
+			SigView47.SignalName = "Run"+RunNumber+".ResetCday";
+			SigView48.SignalName = "Run"+RunNumber+".WaterRate";
+			SigView49.SignalName = "Run"+RunNumber+".SetWaterNow";
+			SigView50.SignalName = "Run"+RunNumber+".WaterRateInterval";	
+			SigView51.SignalName = "Run"+RunNumber+".LiftMeterNumb";
+			SigView52.SignalName = "Run"+RunNumber+".WaterTotal";	
+			SigView53.SignalName = "Run"+RunNumber+".SetHSCReset";
+			SigView54.SignalName = "Run"+RunNumber+".SetWaterZeroAccum";		
+			SigView55.SignalName = "@GV.Well"+RunNumber+"Name"
+			SigView56.SignalName = "Run"+RunNumber+".VcnBeta";
+			SigView57.SignalName = "Run"+RunNumber+".VcnCF";
+			SigView58.SignalName = "Run"+RunNumber+".VcnK";
+			SigView59.SignalName = "Run"+RunNumber+".VcnMU";
+			SigView60.SignalName = "Run"+RunNumber+".VcnCorr";
+			SigView61.SignalName = "Run"+RunNumber+".DpCutOff";
+			ActivateControls();
+        }
+
+        function NewRun(NewRunNumber)
+        {
+        	document.cookie = "RunID=" + NewRunNumber;
+            //alert("RunID: " + NewRunNumber);
+	//    	window.location.href = "RC_SC.htm";
+        }	
+        // -->
+//-->
+</script>
+    <link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+<!--
+#Layer1 {
+	position:absolute;
+	left:38px;
+	top:100px;
+	width:200px;
+	height:21px;
+	z-index:2;
+}
+#Layer2 {
+	position:absolute;
+	left:408px;
+	top:86px;
+	width:200px;
+	height:22px;
+	z-index:2;
+}
+#Layer3 {
+	position:absolute;
+	left:335px;
+	top:97px;
+	width:275px;
+	height:23px;
+	z-index:2;
+}
+#Layer4 {
+	position:absolute;
+	left:38px;
+	top:137px;
+	width:200px;
+	height:48px;
+	z-index:3;
+}
+#Layer5 {
+	position:absolute;
+	left:283px;
+	top:91px;
+	width:84px;
+	height:27px;
+	z-index:4;
+}
+#Layer6 {
+	position:absolute;
+	left:337px;
+	top:131px;
+	width:275px;
+	height:210px;
+	z-index:4;
+}
+#Layer7 {
+	position:absolute;
+	left:39px;
+	top:203px;
+	width:272px;
+	height:256px;
+	z-index:5;
+}
+#Layer8 {
+	position:absolute;
+	left:338px;
+	top:363px;
+	width:275px;
+	height:216px;
+	z-index:6;
+}
+#Layer9 {
+	position:absolute;
+	left:13px;
+	top:1238px;
+	width:365px;
+	height:80px;
+	z-index:1;
+	background-color: #0000FF;
+}
+#Layer14 {
+	position:absolute;
+	left:376px;
+	top:575px;
+	width:300px;
+	height:304px;
+	z-index:11;
+}
+#Layer15 {
+	position:absolute;
+	left:40px;
+	top:222px;
+	width:300px;
+	height:78px;
+	z-index:12;
+}
+#Layer20 {
+	position:absolute;
+	left:39px;
+	top:350px;
+	width:300px;
+	height:83px;
+	z-index:13;
+}
+.style1 {font-size: xx-small}
+-->
+    </style>
+</html>
+</html><head>
+
+
+<body class="main" onLoad="P7_initPM(1,0,1,-20,10);PageInit(); setInterval('DetectNode()', 500);"><!-- #BeginLibraryItem "/Well2600MenuLibray.lbi" --><style type="text/css">
+<!--
+
+-->
+</style>
+<script type="text/javascript" src="p7pm/p7popmenu.js"></script>
+<style type="text/css" media="screen">
+<!--
+@import url("p7pm/p7pmh0.css");
+#Layer1001 {
+	position:absolute;
+	left:4px;
+	top:113px;
+	width:794px;
+	height:96px;
+	z-index:10001;
+	background-color: 366602;
+}
+
+-->
+</style>
+<style type="text/css">
+<!--
+#Layer1000 {
+	position:absolute;
+	left:8px;
+	top:8px;
+	width:768px;
+	height:52px;
+	z-index:0;
+}
+-->
+</style>
+<script type="text/javascript" src="p7pm/p7popmenu.js"></script>
+<style type="text/css" media="screen">
+<!--
+@import url("p7pm/p7pmh0.css");
+#Layer1002 {
+	position:absolute;
+	left:12px;
+	top:139px;
+	width:794px;
+	height:87px;
+	z-index:10001;
+	background-color: 366602;
+}
+#Layer1003 {
+	position:absolute;
+	left:163px;
+	top:58px;
+	width:62px;
+	height:105px;
+	z-index:10002;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+#Layer1000 {
+	position:absolute;
+	left:8px;
+	top:8px;
+	width:768px;
+	height:52px;
+	z-index:0;
+}
+-->
+</style>
+<script type="text/javascript" src="p7pm/p7popmenu.js"></script>
+<style type="text/css" media="screen">
+<!--
+@import url("p7pm/p7pmh0.css");
+#Layer1 {
+	position:absolute;
+	left:12px;
+	top:139px;
+	width:794px;
+	height:87px;
+	z-index:10001;
+	background-color: 366602;
+}
+#Layer2 {
+	position:absolute;
+	left:163px;
+	top:58px;
+	width:62px;
+	height:105px;
+	z-index:10002;
+}
+-->
+</style>
+</head>
+<body  onload=PageInit(); setInterval('DetectNode()', 500);" class="main">
+ <!-- #EndLibraryItem --><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td colspan="7"><p class="title">Configuration for Run #
+        <select 
+onchange = "SetRun(this.options[this.selectedIndex].value);" name="RunNum" style="font-size: 14pt; font-weight: bold">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+		  <option value="10">10</option>
+        </select>
+        <br>
+    </p>    </td>
+  </tr>
+  <tr>
+    <td>Meter Type </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView1" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="16777215">
+      <param name="BorderColor" value="0">
+      <param name="BorderVisible" value="0">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="0">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Meter_Type">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="0">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td width="4%" bordercolor="#000000">&nbsp;</td>
+    <td>Meter Number </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView2" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="16777215">
+      <param name="BorderColor" value="0">
+      <param name="BorderVisible" value="0">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="0">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Meter_ID">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="0">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>WellID</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView55" width="200" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="16777215">
+      <param name="BorderColor" value="0">
+      <param name="BorderVisible" value="0">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="0">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.Well1Name">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="0">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><strong>Orifice</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td><strong>Inputs</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Orifice Dia (or VCone OD) </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView3" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Orif_Diam">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Differential Pressure</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView5" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.DP_IN">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Tube Dia (or VCone ID) </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView4" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Meter_ID">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>DP Cut Off </td>
+    <td>61</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView61" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.DPCutoff">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="1">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Static Pressure </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView6" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.PF_IN">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>V-Cone</strong></td>
+    <td width="4%">&nbsp;</td>
+    <td width="17%">&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Temperature</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView7" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.TF_IN">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Beta</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView56" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.VcnBeta">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="1">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td colspan="3"><strong>From AGA 8 Detail </strong></td>
+  </tr>
+  <tr>
+    <td>Cf</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView57" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.VcnCF">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="1">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>FPV</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView30" width="80" height="20">
+        <param name="_cx" value="4101">
+        <param name="_cy" value="529">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="8421504">
+        <param name="BorderVisible" value="1">
+        <param name="BorderWidth" value="1">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Run1.FPV_IN">
+        <param name="Format" value="0">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="4">
+        <param name="Width" value="10">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="15">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="42495">
+        <param name="CriticalColor" value="255">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value>
+        <param name="BtnMode" value="6">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value="AGA8 Detail">
+        <param name="BtnToggleOFFtoONText" value="LIVE">
+        <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+        <param name="BtnForceValue" value="1">
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>K</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView58" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.VcnK">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="1">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Zb</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView31" width="80" height="20">
+        <param name="_cx" value="4101">
+        <param name="_cy" value="529">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="8421504">
+        <param name="BorderVisible" value="1">
+        <param name="BorderWidth" value="1">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Run1.ZB_IN">
+        <param name="Format" value="0">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="4">
+        <param name="Width" value="10">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="15">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="42495">
+        <param name="CriticalColor" value="255">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value>
+        <param name="BtnMode" value="6">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value="AGA8 Detail">
+        <param name="BtnToggleOFFtoONText" value="LIVE">
+        <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+        <param name="BtnForceValue" value="1">
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Mu </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView59" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.VcnMU">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="1">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Z Flowing</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView32" width="80" height="20">
+        <param name="_cx" value="4101">
+        <param name="_cy" value="529">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="8421504">
+        <param name="BorderVisible" value="1">
+        <param name="BorderWidth" value="1">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Run1.ZF_IN">
+        <param name="Format" value="0">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="4">
+        <param name="Width" value="10">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="15">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="42495">
+        <param name="CriticalColor" value="255">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value>
+        <param name="BtnMode" value="6">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value="AGA8 Detail">
+        <param name="BtnToggleOFFtoONText" value="LIVE">
+        <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+        <param name="BtnForceValue" value="1">
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Correction</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView60" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.VcnCorr">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="1">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="20%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="17%">&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td><strong>Flow / Volume </strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td width="27%">Flow Rate Daily </td>
+    <td width="4%">&nbsp;</td>
+    <td width="24%"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView35" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Flow_Mscf_Day">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Volume CDay </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView36" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Flow_TOT_Day">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_TOT_Day" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Volume PDay </td>
+    <td>&nbsp;</td>
+    <td><p>
+      <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView37" width="80" height="20">
+        <param name="_cx" value="4101">
+        <param name="_cy" value="529">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="8421504">
+        <param name="BorderVisible" value="1">
+        <param name="BorderWidth" value="1">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Run1.Flow_Tot_Pday_Grss">
+        <param name="Format" value="0">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="2">
+        <param name="Width" value="10">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="15">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="42495">
+        <param name="CriticalColor" value="255">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value>
+        <param name="BtnMode" value="6">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value="AGA8 Detail">
+        <param name="BtnToggleOFFtoONText" value="LIVE">
+        <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+        <param name="BtnForceValue" value="1">
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+        <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+      </object>
+      <span class="style1">Restore Gross</span></p>    </td>
+  </tr>
+  <tr>
+    <td>Lift Meter Number </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView51" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="LiftMeterNumb">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="4">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Volume Set Cday </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView46" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.ZeroCday">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object>
+    <span class="style1">Restore Gross</span></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Volume Reset Cday </td>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView47" width="171" height="20">
+          <param name="_cx" value="4101">
+          <param name="_cy" value="529">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="8421504">
+          <param name="BorderVisible" value="1">
+          <param name="BorderWidth" value="1">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Run1.ResetCDay">
+          <param name="Format" value="7">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="2">
+          <param name="Width" value="10">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="15">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="42495">
+          <param name="CriticalColor" value="255">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value>
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value="AGA8 Detail">
+          <param name="BtnToggleOFFtoONText" value="Push to Zero CDay">
+          <param name="BtnToggleONtoOFFText" value="Setting Zero">
+          <param name="BtnForceValue" value="1">
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+          <embed src="4101" width="104" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+        </object>
+      </div></td>
+  </tr>
+  <tr>
+    <td><strong>Water Production</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>HSC Selected </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView43" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.SELECTWATERHSC">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="8">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Water CDay </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView38" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.WATERCDAY">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Water Set Cday </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView44" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.SETWATERZEROCDAY">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Water Pday </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView39" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.WATERPDAY">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Water Set Pday </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView45" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.SETWATERPDAY">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Water Total</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView52" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.WATERTOTAL">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Water Set Total </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView54" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.SetWaterZeroAccum">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Water Rate</td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView48" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.WATERRATE">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>K Factor (Divider Card) </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView41" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.WATERKFACTOR">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Water Rate Calc Now </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView49" width="171" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.SetWaterNow">
+      <param name="Format" value="7">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="0">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="Push to Calc Water Rate">
+      <param name="BtnToggleOFFtoONText" value="Push to Calc Water Rate">
+      <param name="BtnToggleONtoOFFText" value="Calculating">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="171" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>Turbine Factor </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView42" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.TURBINEFACTOR">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><p>&nbsp;</p>    </td>
+  </tr>
+  <tr>
+    <td>Water Rate Interval </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView50" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.WaterRateInterval">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Water Counts Raw </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView40" width="80" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Counts">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="AGA8 Detail">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bordercolor="#000000">&nbsp;</td>
+    <td>Reset Water Accum </td>
+    <td>&nbsp;</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView53" width="171" height="20">
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.SetHSCReset">
+      <param name="Format" value="7">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="10">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value>
+      <param name="BtnMode" value="0">
+      <param name="BtnFunction" value="2">
+      <param name="BtnSteadyText" value="Push to Reset Water">
+      <param name="BtnToggleOFFtoONText" value="Push to Reset Water">
+      <param name="BtnToggleONtoOFFText" value="Reset Active">
+      <param name="BtnForceValue" value="1">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="171" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.Flow_Tot_CDay" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="0" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+</table>
+<br>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td width="51%" valign="top"><table width="80%" border="0" cellspacing="0" cellpadding="1">
+      <tr>
+        <td><strong>Gas Composition </strong></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Methane</td>
+        <td>&nbsp;</td>
+        <td><strong>CH4</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView8" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.METHANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Nitrogen</td>
+        <td>&nbsp;</td>
+        <td><strong>N2</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView9" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NITROGEN_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Carbon Dioxide </td>
+        <td>&nbsp;</td>
+        <td><strong>CO2</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView10" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.CO2_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Ethane</td>
+        <td>&nbsp;</td>
+        <td><span class="main"><strong>C2</strong></span></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView11" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.ETHANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Propane</td>
+        <td>&nbsp;</td>
+        <td><span class="main"><strong>C3</strong></span></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView12" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.PROPANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Water</td>
+        <td>&nbsp;</td>
+        <td><strong>H2O</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView13" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.H2O_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Hydrogen Sulfide </td>
+        <td>&nbsp;</td>
+        <td><strong>H2S</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView14" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.H2S_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Hydrogen</td>
+        <td>&nbsp;</td>
+        <td><strong>H</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView15" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.HYDROGEN_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+            <embed src="4101" width="10" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.HYDROGEN_USED" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" horizontal="1" vertical="1" collectalarms="0" refreshrate="2" precision="4" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="value" btnmode="6" btnfunction="2" btnsteadytext="AGA8 Detail" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="1" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Carbon Monoxide </td>
+        <td>&nbsp;</td>
+        <td><strong>CO</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView16" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.CO_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Oxygen</td>
+        <td>&nbsp;</td>
+        <td><strong>O2</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView17" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.OXYGEN_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+
+    </table></td>
+    <td width="49%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="30%">&nbsp;</td>
+        <td width="7%">&nbsp;</td>
+        <td width="14%">&nbsp;</td>
+        <td width="49%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Iso Butane </td>
+        <td>&nbsp;</td>
+        <td><span class="main"><strong>IC4</strong></span></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView18" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.IBUTANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Butane </td>
+        <td>&nbsp;</td>
+        <td><span class="main"><strong>NC4</strong></span></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView19" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NBUTANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Iso Pentane </td>
+        <td>&nbsp;</td>
+        <td bordercolor="#0000FF" class="main"><div align="left"><strong>IC5</strong></div></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView20" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.IPENTANE_USE">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Pentane </td>
+        <td>&nbsp;</td>
+        <td><strong>NC5</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView21" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NPENTANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Hexane </td>
+        <td>&nbsp;</td>
+        <td><strong>C6</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView22" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NHEXANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Heptane </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView23" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NHEPTANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Octane </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView24" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NOCTANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Nonane </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView33" width="80" height="20">
+          <param name="_cx" value="4101">
+          <param name="_cy" value="529">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="8421504">
+          <param name="BorderVisible" value="1">
+          <param name="BorderWidth" value="1">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Run1.NNONANE_USED">
+          <param name="Format" value="0">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="4">
+          <param name="Width" value="10">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="15">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="42495">
+          <param name="CriticalColor" value="255">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value>
+          <param name="BtnMode" value="6">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value="AGA8 Detail">
+          <param name="BtnToggleOFFtoONText" value="LIVE">
+          <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+          <param name="BtnForceValue" value="1">
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>N Decane </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView25" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.NDECANE_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Helium</td>
+        <td>&nbsp;</td>
+        <td><strong>He</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView26" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.HELIUM_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Argon</td>
+        <td>&nbsp;</td>
+        <td><strong>Ar</strong></td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView27" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.ARGON_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Percent</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView34" width="80" height="20">
+          <param name="_cx" value="4101">
+          <param name="_cy" value="529">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="8421504">
+          <param name="BorderVisible" value="1">
+          <param name="BorderWidth" value="1">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Run1.COMPTOTAL">
+          <param name="Format" value="0">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="4">
+          <param name="Width" value="10">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="15">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="42495">
+          <param name="CriticalColor" value="255">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value>
+          <param name="BtnMode" value="6">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value="AGA8 Detail">
+          <param name="BtnToggleOFFtoONText" value="LIVE">
+          <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+          <param name="BtnForceValue" value="1">
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td colspan="4">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>BTU</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView28" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.BTU_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>Specific Gravity</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView29" width="80" height="20">
+            <param name="_cx" value="4101">
+            <param name="_cy" value="529">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="8421504">
+            <param name="BorderVisible" value="1">
+            <param name="BorderWidth" value="1">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Run1.SPGRAV_USED">
+            <param name="Format" value="0">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="4">
+            <param name="Width" value="10">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="42495">
+            <param name="CriticalColor" value="255">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value>
+            <param name="BtnMode" value="6">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value="AGA8 Detail">
+            <param name="BtnToggleOFFtoONText" value="LIVE">
+            <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+            <param name="BtnForceValue" value="1">
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+        </object></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+
+    </table></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+</html>

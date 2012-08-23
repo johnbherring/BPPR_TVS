@@ -1,0 +1,6 @@
+*<strong>Rack</strong>;width=50,Rack to CSR Command (1);width=225,Last Return Code;width=300
+1,$Rack.Req_Cmd;format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/CSRCommand.ini;BackColor=000000;ForeColor=16777215,$Rack.Req_Rtn_Status;format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/CSRReturnStatus.ini;BackColor=000000;ForeColor=16777215
+
+*File Type,File Name;width=100,Last Update;width=200,Time Til Update,SCADA Flags, State;width=50, Set/Reset;width=50;
+Default,$Rack.Default_File_Name,$Rack.DCF_TimeStamp,<div align="Center"><strong>NA</strong></div>,Lost Configuration,$Rack.Lost_Config_Flag;Format=2;x=20;y=20;OnBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Alarm.BMP;OffBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Off.BMP,$Rack.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+User,$Rack.User_File_Name,$Rack.UCF_TimeStamp,$Rack.UCF_UpdateDelay;Precision=1,Change Configuration,$Rack.Config_CHG;Format=2;x=20;y=20;OnBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Black.BMP;OffBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Off.BMP,$Rack.Config_CHG;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;

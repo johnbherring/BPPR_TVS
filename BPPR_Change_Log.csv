@@ -1,0 +1,9 @@
+*Log Point;width=100,Description;width=75,Log Point;width=100,Description;width=75,Log Point;width=100,Description;width=75
+<p align="left"><strong>AI Zero</strong></p>,$AI.Zero_Desc,<p align="left"><strong>DIO DIO</strong></p>,$DIO.DIO_Desc;
+<p align="left"><strong>AI Span</strong></p>,$AI.Span_Desc,<p align="left"><strong>DIO Invert</strong>,$DIO.Inv_Desc;
+<p align="left"><strong>AI Units</strong></p>,$AI.Units_Desc,<p align="left"><strong>DIO Pair</strong></p>,$DIO.Pair_Desc;
+<p align="left"><strong>AI Status</strong></p>,$AI.Status_Desc,<p align="left"><strong>DIO Status</strong></p>,$DIO.Status_Desc,<p align="left"><strong>HSC Status</strong></p>,$HSC.Status_Desc;
+<p align="left"><strong>AI Desc</strong></p>,$AI.Desc_Desc,<p align="left"><strong>DIO Desc</strong></p>,$DIO.Desc_Desc,<p align="left"><strong>HSC Desc</strong></p>,$HSC.Desc_Desc;
+
+*Last Log;width=800
+$IO.Last_Log;Horizontal=1;BackColor=000000;ForeColor=16777215

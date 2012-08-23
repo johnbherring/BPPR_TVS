@@ -1,0 +1,798 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" TYPE="text/css" HREF="KW_Styles.css">
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>CHANGE_DETECT</TITLE>
+	</HEAD>
+    
+<BODY BGCOLOR="#ffffff" TEXT="#000000">
+
+
+<H1><A NAME="storage"></A>FILE_CATALOG</H1>
+
+<H2>Description</H2>
+
+<P> This User Defined function block creates populates a file catalog structure 
+    where all application processes refer to detect the existence of files.
+</P>
+
+<H2>Parameters</H2>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iicycles</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, Optional 0 allowed</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This is the number of executions before the files are cataloged into the 
+        Structure ioStrctFileCatalog</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiFileDateListNumb</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, Optional (See Below)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This variable defines the list in which the file catalog Data Element is written,&nbsp; 
+        to use this function the iiFileDateList Numb and iiFileNameListNumb must be set and the 
+        two variables iiFileDateListLnght and iiFileNameListLnght must match (Lists must 
+        be of equal lenght) Returns NO Error Code However</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiFileNameListNumb </b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, Optional (See iiFileDateList Numb Above)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+    <P>This is the List number into which the File Catalog is written for PDD display 
+        (See Also iiFileDateListNumb Above)</P>
+
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiFileDateListLngth</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, Optional (See iiFileDateList Numb Above)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This should be the value of the List Return Code for the iiFileDateListNumb</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiFileNameListLngth</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, Optional (See iiFileDateList Numb Above)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<BR>
+
+	<P>This should be the value of the List Return Code for the iiFileNameListNumb</P>
+
+    <BR>
+
+<P>&nbsp;</P>
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioStrctFileCatalog</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">N/A, Required</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">StructFileCatalog</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE><BR>
+
+<P>&nbsp;</P>
+	<p>
+		This is a Structure Containing the Structures File Struct and FileStruct Info as 
+        defined below</p>
+	<pre style="margin-left: 80px">&nbsp;</pre>
+    <pre style="margin-left: 80px"><code> 
+TYPE
+	Config_SaveRestore_Struct	:
+	STRUCT
+		    Request_Command         :   INT;			(* See ioiReq_Cmd Below *)
+		    strFlash_Recipe_Array   :   STRING;		(* See ioarrFlash_Recipe_Array Below *)
+		    Number_of_Rows          :   INT;			(* Number of Rows in ((Flash_Recipe_Array ?? *)
+		    strUser_File_Name       :   STRING;		(* Name of User Config File See <b>istrUser_File_Name</b> Above *)
+		    strDefault_File_Name    :   STRING;		(* Name of Default Config File See <b>istrDefault_File_Name</b> Above *)
+		    Return_Status           :   INT;			(* Return Code from File Save Restore See <b>oiReq_Rtn_Status</b> Above *)
+		    CSR_FB_Enab             :   BOOL;		(* Enable Set by the File Save Restore Indicating that it is ready to receive commands *)
+		    Proc_Order              :   INT;			(* Order to be Processed Returned by File Save Restore FB *)         
+	    END_STRUCT;
+END_TYPE
+
+TYPE
+	CSR_Cmd_Array : ARRAY [1..48] OF Config_SaveRestore_Struct;
+END_TYPE
+
+(*  The size of the CSR_Cmd_Array is determined by the total number of program POUs that 
+	may be making requests to the Config Save/Restore Program POU.  Currently, this is
+	set to 48.  This size may be adjusted, depending on the actual number of Program POUs 
+	instantiated. *)
+</code></pre>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioarrFlash_Recipe_Array</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">Array_Flash_Recipe_Array</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+<P>This is the Flash Recipe Array variable, which is an array of structures defined as follows (continuing our example 
+		from above):</P>
+
+<PRE style="margin-left: 80px"><code>
+TYPE
+	Flash_Recipe_Struct	:
+	STRUCT
+		DataType		:	INT;
+		REALValue		:	REAL;
+		STRINGValue 	:	STRING;
+		UDINTValue 	:	UDINT;
+	END_STRUCT;
+END_TYPE
+
+TYPE
+	Flash_Recipe_Array : ARRAY [1..500] OF Flash_Recipe_Struct; 
+	(* The array is dimensioned 1 to 500, which should accommodate most applications *)
+END_TYPE
+
+TYPE
+	Array_Flash_Recipe_Array : ARRAY [1..48] OF Flash_Recipe_Array; 
+
+END_TYPE
+
+(*  The size of the Array_Flash_Recipe_Array is determined by the total number of program POUs that 
+	may be making requests to the Config Save/Restore Program POU.  Currently, this is
+	set to 48.  This size may be adjusted, depending on the actual number of Program POUs 
+	instantiated. *)
+
+</code></PRE>
+
+
+	<P> Types as defined by VAR_FETCH FB</P>
+
+		<table cols="7" width="576">
+			<tr valign="top">
+				<td width="8%">
+				</td>
+				<td width="5%">
+					1</td>
+				<td width="17%">
+					BOOL</td>
+				<td width="5%">
+					6</td>
+				<td width="17%">
+					USINT</td>
+				<td width="5%">
+					16</td>
+				<td width="17%">
+					STRING</td>
+			</tr>
+			<tr valign="top">
+				<td width="8%">
+					&nbsp;</td>
+				<td width="5%">
+					2</td>
+				<td width="17%">
+					SINT</td>
+				<td width="5%">
+					7</td>
+				<td width="17%">
+					UINT</td>
+				<td width="5%">
+					17</td>
+				<td width="17%">
+					BYTE</td>
+			</tr>
+			<tr valign="top">
+				<td width="8%">
+					&nbsp;</td>
+				<td width="5%">
+					3</td>
+				<td width="17%">
+					INT</td>
+				<td width="5%">
+					8</td>
+				<td width="17%">
+					UDINT</td>
+				<td width="5%">
+					18</td>
+				<td width="17%">
+					WORD</td>
+			</tr>
+			<tr valign="top">
+				<td width="8%">
+					&nbsp;</td>
+				<td width="5%">
+					4</td>
+				<td width="17%">
+					DINT</td>
+				<td width="5%">
+					10</td>
+				<td width="17%">
+					REAL</td>
+				<td width="5%">
+					19</td>
+				<td width="17%">
+					DWORD</td>
+			</tr>
+		</table>
+
+	<P> This variable should be declared as a VAR_EXTERNAL_PG in the Configuration Save/Restore Program POU, 
+		and all of the calling Program POUs should reference this variable.
+		
+		The row of the Array_Flash_Recipe_Array to be written to and from by an individual Program POU will be 
+		selected by iiCSR_Indx</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioarrHexRpt_Edit_Array</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">N/A</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">HexRptr_Edit_Array</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE><BR>
+
+<P>&nbsp;</P>
+	<p>
+		This is an array of the Hex Repeater Change Log structure.&nbsp; The 
+		Hex Repeater Change Log structure is defined as follows:</p>
+	<pre style="margin-left: 80px"><code> 
+TYPE
+	HexRptr_Edit_Log	:
+	STRUCT
+		EditCode                :   STRING;     (* This is a number unique to each item that can be entered in the change log *)
+		MeterID                 :   STRING;     (* Meter ID - 12 alphanumeric characters *)
+		Desc                    :   STRING;     (* Description - 20 alphanumeric characters *)
+		CurrValue               :   STRING;     (* Current value as a string of 15 characters *)
+		PrevValue               :   STRING;     (* Previous value as a string of 15 characters *)
+		CommandCode             :   USINT;      (* Command Code associated with this change *)
+		RecordNumber            :   USINT;      (* Record number (1 through X) of this change *)
+		FirstIndex              :   INT;        (* This only applies to row 0 of the Hex_Change_Array *)
+	END_STRUCT;
+END_TYPE
+
+TYPE
+	HexRptr_Edit_Array : ARRAY [1..TBD] OF HexRptr_Edit_Log;
+END_TYPE
+
+(*  The size of the HexRptr_Edit_Array is to be determined by the total number of 
+	program POUs multiplied by the total number of potential change log entries 
+	that may be made by any program POU.  *)
+</code></pre>
+
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioiReq_Cmd</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">0 (idle)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE>
+	<P>This parameter is used when the ChangeDetect_FB is used with the&nbsp;Configuration 
+		Save/Restore Program POU.&nbsp; The request command will be set as follows:&nbsp; </P>
+
+<TABLE cols=2 width=646>
+
+<TR VALIGN="top">
+<TD width="80%"><b>Request</b></TD>
+<TD width="20%"><b>Value</b></TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to User and Default configuration files - this command 
+	forces the write of the Current values to both the User and Default configuration file 
+	immediately.  This command is automatically executed if neither the User nor Default Configuration 
+	files are found during a cold start recovery, that is when the oiReq_Rtn_Status = -1.</TD>
+<TD width="20%">8</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="80%">Copy Default configuration file to User configuration file</TD>
+<TD width="20%">7</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Copy User configuration to Default configuration file</TD>
+<TD width="20%">6</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read Default configuration file, write to Current Values (note - 
+	executing this command only writes the Default configuration file to the Current 
+	values.&nbsp; The Current Values are not automatically written the User 
+	configuration file until eithe a ioiReq_Cmd of 2 is made (which forces the write 
+	of Current values) or until a subsequent change is made to one of the current 
+	values, which will set the Change detect flag TRUE, and will then result in the 
+	Current values being written to the User configuration file upon expiration of 
+	the timer.</TD>
+<TD width="20%">5</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read User configuration file, write to Current Values</TD>
+<TD width="20%">4</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to Default configuration file - this command 
+	forces the write of the Current values to the Default configuration file 
+	immediately</TD>
+<TD width="20%">3</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to User configuration file - this command 
+	forces the write of the Current values to the User configuration file 
+	immediately</TD>
+<TD width="20%">2</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Cold Start Recovery - Read User configuration file to Values.&nbsp; 
+	If User configuration is not available, read Default configuration file to 
+	Values.&nbsp; If Default configuration file is not available, return a file not 
+	found status.&nbsp; If the file not found status is TRUE, the ChangeDetect_FB will set the iobLost_DB_Flag.&nbsp; The 
+	iobLost_DB_Flag must be reset by the Host (SAMS, OE, or TechView)</TD>
+<TD width="20%">1</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Idle</TD>
+<TD width="20%">0</TD></TR>
+
+</TABLE>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iobLost_Config_Flag</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">FALSE</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE>
+	<P>This flag is set by the Change Detect function block if after a cold start
+	the oiReq_Rtn_Status is -1 (Cold Start Recovery from both User and Default 
+	configuration files unsuccessful) and the ibHost_Restore parameter is set TRUE.</P>
+
+   	<P>This is an indication to the SCADA host that the configuration must be downloaded
+   	 to the RTU from the SCADA host.  The SCADA host must reset this flag to FALSE after
+   	 successfully downloading the configuration.</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>oiReq_Rtn_Status</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">0 (idle)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE>
+	<P>This parameter is used when the ChangeDetect_FB is used with the&nbsp;Configuration 
+		Save/Restore Program POU.&nbsp; This parameter displays the status returned by 
+		the Configuration Save/Restore Program POU to a request command, per the table 
+		below.&nbsp; This status will maintain the result of the last Returned Status 
+		code, until a new command is issued at the ioiRequest_Command:&nbsp; </P>
+
+<TABLE cols=2 width=646>
+
+<TR VALIGN="top">
+<TD width="80%"><b>Return Status Code</b></TD>
+<TD width="20%"><b>Value</b></TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to both User and Default configuration files pending</TD>
+<TD width="20%">82</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to both User and Default configuration files successful</TD>
+<TD width="20%">81</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="800%">Copy Default configuration file to User configuration file pending</TD>
+<TD width="20%">72</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Copy Default configuration file to User configuration file successful</TD>
+<TD width="20%">71</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Copy User configuration file to Default configuration file pending</TD>
+<TD width="20%">62</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Copy User configuration file to Default configuration file successful</TD>
+<TD width="20%">61</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read Default configuration file and write to Current Values pending</TD>
+<TD width="20%">52</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read Default configuration file and write to Current Values successful</TD>
+<TD width="20%">51</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read User configuration file and write to Current Values pending</TD>
+<TD width="20%">42</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read User configuration file and write to Current Values successful</TD>
+<TD width="20%">41</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to Default configuration file requested and pending</TD>
+<TD width="20%">32</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to Default configuration file requested and successful</TD>
+<TD width="20%">31</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to User configuration file requested and pending</TD>
+<TD width="20%">22</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to User configuration file requested and successful</TD>
+<TD width="20%">21</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Cold Start Recovery from User configuration unsuccessful, Cold 
+	Start Recovery from Default configuration successful</TD>
+<TD width="20%">13</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Cold Start Recovery from User configuration file pending</TD>
+<TD width="20%">12</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Cold Start Recovery from User configuration file successful</TD>
+<TD width="20%">11</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">No Outstanding Requests</TD>
+<TD width="20%">0</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Cold Start Recovery from both User and Default 
+	configuration files unsuccessful</TD>
+<TD width="20%">-1</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to User configuration file requested and unsuccessful</TD>
+<TD width="20%">-2</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to Default configuration file requested and unsuccessful</TD>
+<TD width="20%">-3</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read User configuration file and write to Current Values unsuccessful</TD>
+<TD width="20%">-4</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read User configuration file and write to Current Values unsuccessful</TD>
+<TD width="20%">-5</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Copy User configuration file to Default configuration file unsuccessful</TD>
+<TD width="20%">-6</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Copy Default configuration file to User configuration file unsuccessful</TD>
+<TD width="20%">-7</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to both User and Default configuration files requested and unsuccessful</TD>
+<TD width="20%">-8</TD></TR>
+</TABLE>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>oudStatus</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">UDINT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+	<P>indicates the execution Status of the function block.</P>
+
+	<P>The following are the status codes that can occur.</P>
+
+<TABLE cols=2 width=646>
+
+<TR VALIGN="top">
+<TD width="80%"><b>Status Codes</b></TD>
+<TD width="20%"><b>Value</b></TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Function Block Executed Successfully</TD>
+<TD width="20%">0</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid List</TD>
+<TD width="20%">-1</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid data type</TD>
+<TD width="20%">-4</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Boundary Error.&nbsp; Specified Row or Column number exceeds 
+	configured data array dimensions</TD>
+<TD width="20%">-5</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Element in List not configured</TD>
+<TD width="20%">-7</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Problem with element</TD>
+<TD width="20%">-9</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Bad elements in List</TD>
+<TD width="20%">-10</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid element count</TD>
+<TD width="20%">-11</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid element in List</TD>
+<TD width="20%">-12</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Maximum element in List exceeded</TD>
+<TD width="20%">-15</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid column in array</TD>
+<TD width="20%">-21</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid row in array</TD>
+<TD width="20%">-22</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid User structure</TD>
+<TD width="20%">-24</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Variable not defined in PDD</TD>
+<TD width="20%">-25</TD></TR>
+</TABLE>
+
+<H2>Function Block Operation</H2>
+
+<P>Upon a cold start, this function block executes as follows:</P>
+
+<P style="margin-left: 40px">Checks to see if the file &quot;value of istrBase&quot; + 
+	&quot;_PVER.TXT&quot; exists.&nbsp; This file has two entries:</P>
+	<P style="margin-left: 80px">Previous file name - this is the file name of the 
+		previous program loaded into RAM on this CPU, the last time this function block 
+		executed.&nbsp; This is parsed from the string variable istrCWLoadName.&nbsp; </P>
+	<P style="margin-left: 80px">Previous file checksum - this is the value of the CRC 
+		of the previous program loaded in RAM on this CPU. the last time this function 
+		block executed.&nbsp; This is the value of the idwCWProjectChecksum</P>
+	<P style="margin-left: 40px">If the *_PVER.TXT file does not exist: </P>
+	<P style="margin-left: 80px">The function block 
+		assumes that it is running on this CPU for the first time, and&nbsp; creates 
+		this file, using the current values of the variables istrCWLoadName and&nbsp; 
+		idwCWProjectChecksum.</P>
+	<P style="margin-left: 80px">The program then creates the two files, *_CONFIG.RCF 
+		and *_STRING.RCF.&nbsp; These are text files, where each row of the file 
+		represents the variable name in the iiConfigList and iiStringList, respectively.</P>
+	<P style="margin-left: 80px">The program then creates the two files, *_CONFIG.RCA 
+		and *_STRING.RCA.&nbsp; These are text file, where each row of the file 
+		represents the value of the variable in the iiConfigList and iiStringList, 
+		respectively.&nbsp; *_CONFIG.RCA is created from an array of REALs, so each row 
+		of the file is a number.&nbsp; Boolean variabels appear as 1 for TRUE and 0 for 
+		FALSE.&nbsp; All other variable types (except STRINGs) are converted to REALs 
+		before being written into the *_CONFIG.RCA file.&nbsp; The *_STRING.RCA file is 
+		created from an array of STRINGs.</P>
+	<P style= "margin-left: 80px">The function block then creates the file *_PVER.TXT, 
+		using the current values of the variables istrCWLoadName and&nbsp; 
+		idwCWProjectChecksum.</P>
+	<P style= "margin-left: 80px">The values entered into the 
+		*.RCA files are the values upon the cold start.&nbsp; After the files are 
+		successfully created, the program will monitor the iiConfigList and the 
+		iiStringList for changes.&nbsp; When a change occurs, a timer will be started.&nbsp; 
+		When the timer expires, the *_CONFIG.RCA or *_STRING.RCA files will be updated 
+		accordingly.</P>
+	<P style= "margin-left: 40px">If the *_PVER.TXT file does exist: </P>
+	<P style= "margin-left: 80px">The function 
+		block compares the current Load Name with the previous Load Name, and the 
+		current Program Checksum with the previous Program Checksum.&nbsp; </P>
+	<P style= "margin-left: 80px">If both the Load Name and Program Checksum match: </P>
+	<P style= "margin-left: 120px">The function block will restore the configuration by opening the two files 
+		*_CONFIG.RCA and *_STRING.RCA and writing the contents of these files to ARRAYs.&nbsp; 
+		The ARRAYs will be written to the iiConfigLIst and iiStringList using the 
+		STORAGE function block (ACCOL 3 Library) and the STORAGE_STR (File_POUs_1_3 or 
+		later Library).&nbsp; </P>
+	<P style= "margin-left: 80px">If the Load Name matches, but the Program Checksum 
+		does not match: </P>
+	<P style= "margin-left: 120px">The function block will restore the configuration by 
+		opening two pairs of files - *_CONFIG.RCA and *_CONFIG.RCF and *_STRING.RCA and 
+		*_CONFIG.RCF.&nbsp; The program will loop through both pairs of files, 
+		performing a WRITE_*_BY_SYM operation on each signal in both pairs of LISTs.&nbsp; 
+		If there are any discrepancies (either a variable not in PDD or a datatype 
+		mismatch), the function block will create a file *_ERR.TXT, which will list the 
+		variables and problems.</P>
+	<P style= "margin-left: 120px">The function block will then overwrite the 
+		*_CONFIG.RCF, *_STRING.RCF, *_CONFIG.RCA and *_STRING.RCA files, with variables 
+		and values from the current LISTs, designated at the iiConfigList and 
+		iiStringList.</P>
+	<P style= "margin-left: 120px">The function block will then overwrite the *_PVER.TXT 
+		file, with the current Load Name and Program Checksum.</P>
+	<P style= "margin-left: 80px">If the Load Name does not match:</P>
+	<P style= "margin-left: 120px">The function block 
+		will compare the Load Name to previous Load Names found in the LIST designated 
+		on the iiPverList.&nbsp; </P>
+	<P style= "margin-left: 120px">If there are no matches on this LIST:</P>
+	<P style= "margin-left: 160px">The program 
+		creates the two files, *_CONFIG.RCF and *_STRING.RCF. If these files currently 
+		exist, they will be overwritten.</P>
+	<P style="margin-left: 160px">The program then creates the two files, *_CONFIG.RCA 
+		and *_STRING.RCA.&nbsp; If these files currently exist, they will be 
+		overwritten.</P>
+	<P style="margin-left: 160px">The program then overwrites the file *_PVER.TXT</P>
+	<P style= "margin-left: 120px">If the Load Name does match a Load Name from the 
+		iiPverList: </P>
+	<P style= "margin-left: 160px">The function block will restore the configuration by opening 
+		two pairs of files - *_CONFIG.RCA and *_CONFIG.RCF and *_STRING.RCA and 
+		*_CONFIG.RCF.&nbsp; The program will loop through both pairs of files, 
+		performing a WRITE_*_BY_SYM operation on each signal in both pairs of LISTs.&nbsp; 
+		</P>
+	<P style= "margin-left: 160px">If there are any discrepancies (either a variable not in PDD or a datatype 
+		mismatch): </P>
+	<P style= "margin-left: 200px">The function block will create a file *_ERR.TXT, which will list the 
+		variables and problems.</P>
+	<P style= "margin-left: 160px">The function block will then overwrite the 
+		*_CONFIG.RCF, *_STRING.RCF, *_CONFIG.RCA and *_STRING.RCA files, with variables 
+		and values from the current LISTs, designated at the iiConfigList and 
+		iiStringList.</P>
+	<P style= "margin-left: 120px">The function block will then overwrite the *_PVER.TXT 
+		file, with the current Load Name and Program Checksum.</P>
+	<P style= "margin-left: 40px">If after a cold start, the function block must create 
+		the 
+		*.RCA files: </P>
+	<P style= "margin-left: 80px">The values used are the current values in the load (either initial 
+		values upon running the function block for the first time, or recovered values 
+		after recovering from a previous version of the load).&nbsp; </P>
+	<P style= "margin-left: 40px">After the initialization/recovery cycle, the program will monitor the iiConfigList and the 
+		iiStringList for changes.&nbsp; When a change occurs, a timer will be started.&nbsp; 
+		When the timer expires, the *_CONFIG.RCA or *_STRING.RCA files will be updated 
+		accordingly.</P>
+	<P style= "margin-left: 40px">Because of the delay timer, it is possible that a set 
+		of configuration changes can be made but not processed before a cold start.&nbsp; 
+		The worst case scenario is that the most recently saved configuration is X 
+		seconds out of synch, where X = iiUpdateDelay&nbsp; </P>
+	<P style= "margin-left: 40px">It is possible to force the *_CONFIG.RCA and 
+		*_STRING.RCA files to be created on demand, by setting the iobWriteToFlash 
+		parameter to TRUE.&nbsp; The function block will reset this parameter to FALSE.</P>
+	<P style= "margin-left: 40px">&nbsp;</P>
+
+	<H3>See also:</H3>
+
+<P><A href="storvdcl.htm">Variables declaration</A></P>
+
+<P><A href="storrpst.htm">Representation in ST</A></P>
+
+<P><A href="storrpge.htm">Representation in the graphic editor</A></P>
+
+<P><A href="storstat.htm">Status declaration</A></P>
+
+</BODY>
+</HTML>

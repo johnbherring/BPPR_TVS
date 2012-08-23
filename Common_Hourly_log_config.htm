@@ -1,0 +1,2270 @@
+<!DOCTYPE HTML PUBLIC "-//WC3//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BPPR_IO:Historical:TrendLogConfigure</title>
+
+<script language="JavaScript">
+<!--
+function popup(url)
+{
+  popuphelp = window.open(url, "help", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=300,height=350"); 
+}
+//-->
+</SCRIPT>
+    <script language="javaScript" src="scripts/MicroEFMMenus.js"></script>
+    <script language="javascript" >
+<!--
+
+<!--
+
+		var RI
+               
+		function PageInit ()
+		 {
+
+            if (!DetectIE5())
+                window.alert ("The browser must support Active-X Controls. Please use Internet Explorer 5.0 or above");
+            else
+            {
+            	RI = document.cookie.substring(document.cookie.length - 1) - 1;
+            	 //alert("Cookie Run ID: " + RI);
+            	if (RI = 0)
+            		RI = 1;
+            	 //alert("Cookie Run ID: " + RI);
+            	
+				RunNum.selectedIndex = RI;
+            	//alert("Cookie Run ID1: " + RI);
+				SetRun(RunNum.options[RunNum.selectedIndex].value);
+				//alert("Cookie Run ID2: " + RI);
+				ActivateControls();
+				 
+            }
+        }
+        
+        function ConfigMonitor()
+        {
+        	if (SigView69.ValueText == "0")
+        	{
+      //  		window.location.href = "RC_OV.htm";
+        	}
+       
+	   
+	    }
+        
+		function ActivateControls()
+        {
+	//alert("Activating Controls");
+	SigView1.Execute();
+	SigView2.Execute();
+	SigView3.Execute();
+	SigView4.Execute();
+    SigView5.Execute();
+	SigView6.Execute();
+	SigView7.Execute();
+	SigView8.Execute(); 
+	SigView9.Execute(); 
+	SigView10.Execute();
+	SigView11.Execute();
+	SigView12.Execute();
+	SigView13.Execute();
+	SigView14.Execute();
+	SigView15.Execute();
+	SigView16.Execute();
+	SigView17.Execute();
+	SigView18.Execute();
+	SigView19.Execute();
+	SigView20.Execute();
+	SigView21.Execute();
+	SigView22.Execute();
+	SigView23.Execute();
+	SigView24.Execute();
+	SigView25.Execute();
+	SigView26.Execute();
+	SigView27.Execute();
+	SigView28.Execute();
+	SigView29.Execute();
+	SigView30.Execute();
+	SigView31.Execute();
+
+		}
+        function SetRun(RunNumber)
+        {
+        	//alert("New Run " + RunNumber);
+        	SigView1.SignalName = "Run"+RunNumber+".Flow_Tot_Hr";
+        	SigView2.SignalName = "Run"+RunNumber+".En_Tot_Hr";
+        	SigView3.SignalName = "Run"+RunNumber+".Flow_Mins_Hr";
+            SigView4.SignalName = "Run"+RunNumber+".Dp_In";
+			SigView5.SignalName = "Run"+RunNumber+".Pf_In";
+        	SigView6.SignalName = "Run"+RunNumber+".Tf_In";
+			SigView7.SignalName = "Run"+RunNumber+".AGA3_Ext";
+			SigView8.SignalName = "Run"+RunNumber+".AGA3_CP";
+			SigView9.SignalName = "Run"+RunNumber+".Flow_Rate";
+			SigView10.SignalName = "Run"+RunNumber+".HourlyValue10";
+			SigView11.SignalName = "Run"+RunNumber+".HourlyValue11";
+        	SigView12.SignalName = "Run"+RunNumber+".HourlyValue12";
+			SigView13.SignalName = "Run"+RunNumber+".HourlyValue13";
+			SigView14.SignalName = "Run"+RunNumber+".HourlyValue14";
+			SigView15.SignalName = "Run"+RunNumber+".HourlyValue15";
+			SigView16.SignalName = "Run"+RunNumber+".HourlyValue16";
+			SigView17.SignalName = "Run"+RunNumber+".HourlyValue17";
+			SigView18.SignalName = "Run"+RunNumber+".HourlyValue18";
+			SigView19.SignalName = "Run"+RunNumber+".HourlyValue19";					
+			SigView20.SignalName = "Run"+RunNumber+".HourlyValue20";
+			SigView21.SignalName = "@GV.HourlySelect10";
+			SigView22.SignalName = "@GV.HourlySelect11";
+			SigView23.SignalName = "@GV.HourlySelect12";
+			SigView24.SignalName = "@GV.HourlySelect13";
+			SigView25.SignalName = "@GV.HourlySelect14";
+			SigView26.SignalName = "@GV.HourlySelect15";
+			SigView27.SignalName = "@GV.HourlySelect16";
+			SigView28.SignalName = "@GV.HourlySelect17";
+			SigView29.SignalName = "@GV.HourlySelect18";
+			SigView30.SignalName = "@GV.HourlySelect19";
+			SigView31.SignalName = "@GV.HourlySelect20";
+			
+			ActivateControls();
+        }
+
+        function NewRun(NewRunNumber)
+        {
+        	document.cookie = "RunID=" + NewRunNumber;
+            //alert("RunID: " + NewRunNumber);
+	//    	window.location.href = "RC_SC.htm";
+        }	
+        // -->
+//-->
+</script>
+    <link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+<!--
+#Layer1 {
+	position:absolute;
+	left:38px;
+	top:100px;
+	width:200px;
+	height:21px;
+	z-index:2;
+}
+#Layer2 {
+	position:absolute;
+	left:408px;
+	top:86px;
+	width:200px;
+	height:22px;
+	z-index:2;
+}
+#Layer3 {
+	position:absolute;
+	left:335px;
+	top:97px;
+	width:275px;
+	height:23px;
+	z-index:2;
+}
+#Layer4 {
+	position:absolute;
+	left:38px;
+	top:137px;
+	width:200px;
+	height:48px;
+	z-index:3;
+}
+#Layer5 {
+	position:absolute;
+	left:283px;
+	top:91px;
+	width:84px;
+	height:27px;
+	z-index:4;
+}
+#Layer6 {
+	position:absolute;
+	left:337px;
+	top:131px;
+	width:275px;
+	height:210px;
+	z-index:4;
+}
+#Layer7 {
+	position:absolute;
+	left:39px;
+	top:203px;
+	width:272px;
+	height:256px;
+	z-index:5;
+}
+#Layer8 {
+	position:absolute;
+	left:338px;
+	top:363px;
+	width:275px;
+	height:216px;
+	z-index:6;
+}
+#Layer9 {
+	position:absolute;
+	left:13px;
+	top:1238px;
+	width:365px;
+	height:80px;
+	z-index:1;
+	background-color: #0000FF;
+}
+#Layer14 {
+	position:absolute;
+	left:376px;
+	top:575px;
+	width:300px;
+	height:304px;
+	z-index:11;
+}
+#Layer15 {
+	position:absolute;
+	left:40px;
+	top:222px;
+	width:300px;
+	height:78px;
+	z-index:12;
+}
+#Layer20 {
+	position:absolute;
+	left:39px;
+	top:350px;
+	width:300px;
+	height:83px;
+	z-index:13;
+}
+-->
+    </style>
+</html>
+</html><head>
+
+<body class="main" onLoad="PageInit(); setInterval('DetectNode()', 500);">
+
+<div align="left" class="title2top">Hourly Log Configure </div>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+  <tr>
+    <td colspan="8"><p class="title">Hourly Log#
+        <select 
+onchange = "SetRun(this.options[this.selectedIndex].value);" name="RunNum" style="font-size: 14pt; font-weight: bold">
+          <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+	    </select>
+        <br>
+    </p>    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><div align="left"><strong>Value </strong></div></td>
+    <td>&nbsp;</td>
+    <td><div align="left"><strong>Select Data </strong></div></td>
+  </tr>
+  <tr>
+    <td width="7">&nbsp;</td>
+    <td width="233">Volume</td>
+    <td width="18">1</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView1" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Flow_Tot_Hr">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value="0">
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="0">
+      <param name="CriticalColor" value="white">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value="1234">
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td width="24">&nbsp;</td>
+    <td width="493">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Energy</td>
+    <td>2</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView2" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.En_Tot_Hr">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="white">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="100" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.TrendValue2" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="1" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="white" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>FlowTime</td>
+    <td>3</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView3" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Flow_Mins_Hr">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="200">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>DP</td>
+    <td>4</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView4" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Dp_In"">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>PF</td>
+    <td>5</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView5" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Pf_In">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>TF</td>
+    <td>6</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView6" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Tf_In">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Extension</td>
+    <td>7</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView7" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.AGA3_Ext">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="100" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="Run1.AGA3_Ext" format="0" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="1" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>C Prime </td>
+    <td>8</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView8" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.AGA3_CP">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Flow Rate </td>
+    <td>9</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView9" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.Flow_Rate">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 10 </td>
+    <td>10</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView10" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue10">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>21</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView21" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect10">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 11 </td>
+    <td>11</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView11" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue11">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>22</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView22" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect11">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 12 </td>
+    <td>12</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView12" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue12">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>23</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView23" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV..HourlySelect12">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 13 </td>
+    <td>13</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView13" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue13">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>24</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView24" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect13">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 14 </td>
+    <td>14</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView14" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue14">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>25</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView25" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect14">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 15 </td>
+    <td>15</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView15" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue15">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>26</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView26" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect15">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 16 </td>
+    <td>16</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView16" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue16">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>27</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView27" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect16">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 17 </td>
+    <td>17</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView17" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue17">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>28</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView28" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect17">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 18 </td>
+    <td>18</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView18" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue18">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>29</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView29" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect18">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Houry 19 </td>
+    <td>19</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView19" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue19">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>30</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView30" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect19">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hourly 20 </td>
+    <td>20</td>
+    <td colspan="2"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView20" width="80" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="Run1.HourlyValue20">
+      <param name="Format" value="0">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="1">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\QRI4WP\INI\METERTYPE.INI">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+    </object></td>
+    <td>31</td>
+    <td><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView31" width="250" height="20"
+		  >
+      <param name="_cx" value="4101">
+      <param name="_cy" value="529">
+      <param name="BackColor" value="0">
+      <param name="BorderColor" value="8421504">
+      <param name="BorderVisible" value="1">
+      <param name="BorderWidth" value="1">
+      <param name="FillColor" value="0">
+      <param name="ForeColor" value="16777215">
+      <param name="RTUName" value>
+      <param name="SignalName" value="@GV.HourlySelect20">
+      <param name="Format" value="6">
+      <param name="Direction" value="0">
+      <param name="OnBitmap" value>
+      <param name="OffBitmap" value>
+      <param name="Zero" value="0">
+      <param name="Span" value="0">
+      <param name="LoAlarm" value>
+      <param name="HiAlarm" value=>
+      <param name="LoLoAlarm" value=>
+      <param name="HiHiAlarm" value=>
+      <param name="Horizontal" value="0">
+      <param name="Vertical" value="1">
+      <param name="CollectAlarms" value>
+      <param name="RefreshRate" value="2">
+      <param name="Precision" value="2">
+      <param name="Width" value="100">
+      <param name="Units" value="0">
+      <param name="AlarmsFromRtu" value="0">
+      <param name="Rights" value="15">
+      <param name="AlarmEnableText" value>
+      <param name="AlarmInhibitText" value>
+      <param name="ControlEnableText" value>
+      <param name="ControlInhibitText" value>
+      <param name="ManualEnableText" value>
+      <param name="ManualInhibitText" value>
+      <param name="AlarmColor" value="42495">
+      <param name="CriticalColor" value="255">
+      <param name="ArrayNumber" value="0">
+      <param name="ArrayRow" value="0">
+      <param name="ArrayColumn" value="0">
+      <param name="ArrayIsLogical" value="0">
+      <param name="ExpIndex" value="0">
+      <param name="ValueText" value>
+      <param name="IniFile" value="C:\OPENBSI\Well2600_26\CalculatedList.ini">
+      <param name="BtnMode" value="6">
+      <param name="BtnFunction" value="0">
+      <param name="BtnSteadyText" value="NX-19">
+      <param name="BtnToggleOFFtoONText" value="LIVE">
+      <param name="BtnToggleONtoOFFText" value="MANUAL OVERRIDE">
+      <param name="BtnForceValue" value="0">
+      <param name="JogCtrlVisible" value="0">
+      <param name="JogMode" value="0">
+      <param name="JogValue" value="0">
+      <param name="JogLoLimit" value="0">
+      <param name="JogHiLimit" value="0">
+      <param name="DocURL" value>
+      <embed src="4101" width="250" height="20" _cx="4101" _cy="529" backcolor="0" bordercolor="8421504" bordervisible="1" borderwidth="1" fillcolor="0" forecolor="16777215" rtuname="value" signalname="W1.WellSeqMsgno6" format="6" direction="0" onbitmap="value" offbitmap="value" zero="0" span="0" loalarm="value" hialarm="" loloalarm="" hihialarm="" horizontal="0" vertical="1" collectalarms="value" refreshrate="2" precision="2" units="0" alarmsfromrtu="0" rights="15" alarmenabletext="value" alarminhibittext="value" controlenabletext="value" controlinhibittext="value" manualenabletext="value" manualinhibittext="value" alarmcolor="42495" criticalcolor="255" arraynumber="0" arrayrow="0" arraycolumn="0" arrayislogical="0" expindex="0" valuetext="value" inifile="C:\OPENBSI\QRI4WP\INI\Messages.INI" btnmode="6" btnfunction="0" btnsteadytext="NX-19" btntoggleofftoontext="LIVE" btntoggleontoofftext="MANUAL OVERRIDE" btnforcevalue="0" jogctrlvisible="0" jogmode="0" jogvalue="0" joglolimit="0" joghilimit="0" docurl="value"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<br>
+<p>&nbsp;</p>
+</body>
+
+</html>

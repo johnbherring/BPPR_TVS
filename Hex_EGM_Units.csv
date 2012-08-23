@@ -1,0 +1,10 @@
+*Configuration Flags;width=200,State;width=50,Set/Reset;width=100;
+Change Configuration Flag,$EGM01.Change_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Change_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+Lost Configuration Flag,$EGM01.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+
+*Param;width=50,Description;width=400,Value;width=100;
+1,Static Pressure units (0-PSIG 1-PSIA),$EGM01.SP_Value_Units;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/SP_Value_Units.ini;
+2,Flow rate units (6-SCFD 8-MSCFD 9-MMSCFD),$EGM01.Flow_Value_Units;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Flow_Value_Units.ini;
+3,Volume units (1-SCF 3-MSCF 4-MMSCF),$EGM01.Vol_Value_Units;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Vol_Value_Units.ini;
+4,Volume Correction Factor,$EGM01.Vol_Corr_CFG;Precision=2;
+

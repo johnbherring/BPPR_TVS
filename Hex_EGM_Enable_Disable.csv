@@ -1,0 +1,6 @@
+*Configuration Flags;width=200,State;width=50,Set/Reset;width=100;
+Change Configuration Flag,$EGM01.Change_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Change_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+Lost Configuration Flag,$EGM01.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+
+*Description;width=200,State;width=150,Enable/Disable;width=150;
+EGM Enable / Disable,$EGM01.Meter_Enable_Cfg;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Meter_Enable_Cfg.ini,$EGM01.Meter_Enable_Cfg;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Enable;BtnToggleONtoOFFText=Disable;

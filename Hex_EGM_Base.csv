@@ -1,0 +1,16 @@
+*Configuration Flags;width=200,State;width=50,Set/Reset;width=100;
+Change Configuration Flag,$EGM01.Change_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Change_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+Lost Configuration Flag,$EGM01.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+
+*Param;width=50,Description;width=200,Value;width=100, ;width=100,Param;width=50,Description;width=200,Value;width=100;
+
+1,Temp Input Source,$EGM01.FTEMP_USE_MO;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/FTEMP_USE_MO.ini,,11,Orifice Plate Type,$EGM01.ORIF_MTL_CFG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/ORIF_MTL_CFG.ini;
+2,Manual Temperature,$EGM01.FTEMP_VALUE_MO;Precision=2,,12,Line Size,$EGM01.PIPE_DIAM_CFG;Precision=2;
+3,Specific Gravity Source,$EGM01.SG_USE_MO;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/SG_USE_MO.ini,,13,Temp of Line Meas.,$EGM01.PIPE_RTMP_CFG;Precision=2;
+4,Manual Specific Gravity,$EGM01.SG_VALUE_MO;Precision=2,,14,Line Type,$EGM01.PIPE_MTL_CFG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/PIPE_MTL_CFG.ini;
+5,Temp of SG Meas.,$EGM01.SG_BTMP_CFG;Precision=2,,15,Tap Location,$EGM01.TAP_LOC_CFG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/TAP_LOC_CFG.ini;
+6,Pres of SG Meas.,$EGM01.SG_BPRS_CFG;Precision=2,,16,Atmos. Pressure,$EGM01.ATMOS_PRS_CFG;Precision=2;
+7,Low DP Cutoff,$EGM01.DP_NOFLOW_CFG;Precision=2,,17,Contract Pres Base,$EGM01.FLOW_BPRS_CFG;Precision=2;
+8,FPV Anal. Method,$EGM01.CCALC_SEL_CFG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/CCALC_SEL_CFG.ini,,18,Contract Temp Base,$EGM01.FLOW_BTMP_CFG;Precision=2;
+9,Orifice Size,$EGM01.ORIF_DIAM_CFG;Precision=2,,19,Dynamic Viscosity,$EGM01.VISC_ABS_CFG;Precision=2;
+10,Temp Orifice Bore Meas.,$EGM01.ORIF_RTMP_CFG;Precision=2,,20,Contract Hour,$EGM01.CONTRCT_HR_CFG;

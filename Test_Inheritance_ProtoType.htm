@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<script type="text/javascript" language="javaScript" src="Scripts/SignalGen.js"></script>             <!-- Reference Signal Grid  Library -->
+	<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css" />      <!-- Reference BPStyles -->
+	
+		
+	<script type = "text/javascript">
+
+		/*******************************************************************************************
+		 *     Author: John Herring
+		 *
+		 *    JavaScript Class, using protoytype
+
+		 *    Implementation: For R&D
+		 *
+		 *    History: Created 4/4/2012
+		 *
+		 *********************************************************************************************/
+
+		 "use strict";                                      // Upcoming Convention will Attempt to in force
+
+		 function SetCheckTimer()
+		 {
+		     var a = window.setInterval("ShowValue()", 5000);  // Calls Value from Signal View to be applied to Radio Button
+		     
+		 }
+
+             function Rectangle(w,h)
+            {
+                this.width = w;
+                this.height = h;
+            }
+
+
+
+            Rectangle.prototype.area = function() 
+            { 
+                return this.width * this.height;
+            };
+
+            function PositionedRectangle(w,h,x,y) 
+            {
+                Rectangle.call(this, w, h);
+                     this.x = x;
+                     this.y = y;
+            }
+
+      // PositionedRectangle.prototype= heir(Rectangle.prototype);
+      // PositionedRectangle.prototype.constructor = Rectangle;
+
+    
+        var MyRectangle = new Rectangle(5,10);
+
+        
+        function ShowValue()
+        {
+        alert("My Rectangle is: " + MyRectangle.width +" Wide " + MyRectangle.height + " High  and the Area is: " + MyRectangle.area());
+        }
+</script>
+
+</head>
+<body onload="ShowValue()">
+
+</body>
+</html>

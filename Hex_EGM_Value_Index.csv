@@ -1,0 +1,9 @@
+*Configuration Flags;width=200,State;width=50,Set/Reset;width=100;
+Change Configuration Flag,$EGM01.Change_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Change_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+Lost Configuration Flag,$EGM01.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+
+*Param;width=50,Description;width=300,Value;width=100;
+1,Static Pressure Index,$EGM01.SP_INDX;
+2,Temperature Index,$EGM01.FTEMP_INDX;
+3,DP Index,$EGM01.DP_INDX;
+4,Flow Rate Index,$EGM01.FLOW_INDX;

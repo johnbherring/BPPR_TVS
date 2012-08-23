@@ -1,0 +1,17 @@
+*ST;width=50,Description;width=300,Value;width=50, ;width=100,ST;width=50,Description;width=300,Value;width=50;
+33,MVT #1 - LOST CONFIG FLAG,$MVT01.LOST_CONFIG_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,49,WC #1 - LOST CONFIG FLAG,$WC01.LOST_CONFIG_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+34,MVT #1 - CHANGE CONFIG FLAG,$MVT01.CHANGE_CONFIG_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,50,WC #1 - CHANGE CONFIG FLAG,$WC01.CHANGE_CONFIG_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+35,MVT #1 - DISABLED,$MVT01.DISABLED_MODE_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,51,WC #1 - DISABLED,$WC01.DISABLED_MODE_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+36,MVT #1 - DP Q FLAG,$MVT01.DP_LIVE_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,52,WC #1 - CONTROL S/D - RESET REQUIRED,$WC01.RESET_REQD_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+37,MVT #1 - SP Q FLAG,$MVT01.SP_LIVE_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,53,WC #1 - PROBLEM FLAG,$WC01.PROBLEM_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+38,MVT #1 - TEMP Q FLAG,$MVT01.FTemp_LIVE_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,54,WC #1 - WELL FLOWING INDICATION,$WC01.FLOW_ACTIVE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+39,MVT01 - UNDEFINED,0,,55,WC #1 - UNDEFINED,0,
+40,MVT01 - UNDEFINED,0,,56,WC #1 - UNDEFINED,0,
+41,EGM #1 - LOST CONFIG FLAG,$EGM01.LOST_CONFIG_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,57,WC #1 - PRODUCTION CYCLE LOG FLAG,$HR.Log31_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+42,EGM #1 - CHANGE CONFIG FLAG,$EGM01.CHANGE_CONFIG_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,58,WC #1 - DAILY PRODUCTION LOG FLAG,$HR.Log41_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+43,EGM #1 - DISABLED,$EGM01.DISABLED_MODE_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,59,WC #1 - CONTROL LOG FLAG,$HR.Log51_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+44,EGM #1 - PROBLEM FLAG,$EGM01.PROBLEM_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,60,WC #1 - LONG INTERVAL LOG,$HR.Log56_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+45,EGM #1 - CALIBRATION FLAG,$EGM01.CALIB_MODE_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,61,SYSTEM/APPL EDIT LOG FLAG,$HR.Log61_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+46,EGM #1 - AUDIT LOG FLAG,$HR.Log11_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,62,SYSTEM/APPL EVENT LOG FLAG,$HR.Log63_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+47,EGM #1 - EDIT LOG FLAG,$HR.Log1_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,63,WC #1 - UNDEFINED,0,
+48,EGM #1 - EVENT LOG FLAG,$HR.Log21_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,64,WC #1 - UNDEFINED,0,

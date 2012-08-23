@@ -1,0 +1,17 @@
+*ST;width=50,Description;width=200,Value;width=50, ;width=100,ST;width=50,Description;width=200,Value;width=50;
+ 1,WARM START FLAG,$SYS.Start_1_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,17,DIO #1 - Slot 04 P01,$DIO.S04_P01_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 2,COLD START FLAG,$SYS.Start_2_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,18,DIO #2 - Slot 04 P02,$DIO.S04_P02_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 3,STATIC RAM BAT LOW ALARM FLAG,$SYS.RAM_BATT_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,19,DIO #3 - Slot 04 P03,$DIO.S04_P03_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 4,REAL TIME CLOCK BAT ALARM FLAG,$SYS.RTC_BATT_FLAG;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,20,DIO #4 - Slot 04 P04,$DIO.S04_P04_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 5,AI LOST CONFIG FLAG,$AI.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,21,DIO #5 - Slot 04 P05,$DIO.S04_P05_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 6,AI SLOT 04 - CHANGE CONFIG FLAG,$AI.S04_Change_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,22,DIO #6 - Slot 04 P06,$DIO.S04_P06_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 7,AI SLOT 05 - CHANGE CONFIG FLAG,$AI.S05_Change_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,23,DIO #7 - Undefined,$DIO.S04_P07_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 8,Undefined,0,,24,DIO #8 - Undefined,$DIO.S04_P08_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+ 9,AI #1 (Slot 04 P01) Q-bit,$AI.S04_P01_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,25,DIO #9 - Slot 05 P01,$DIO.S05_P01_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+10,AI #2 (Slot 04 P02) Q-bit,$AI.S04_P02_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,26,DIO #10 - Slot 05 P02,$DIO.S05_P02_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+11,AI #3 (Slot 04 P03) Q-bit,$AI.S04_P03_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,27,DIO #11 - Slot 05 P03,$DIO.S05_P03_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+12,AI #4 (Slot 04 P04) Q-bit,$AI.S04_P04_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,28,DIO #12 - Slot 05 P04,$DIO.S05_P04_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+13,AI #5 (Slot 05 P01) Q-bit,$AI.S05_P01_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,29,DIO #13 - Slot 05 P05,$DIO.S05_P05_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+14,AI #6 (Slot 05 P02) Q-bit,$AI.S05_P02_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,30,DIO #14 - Slot 05 P06,$DIO.S05_P06_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+15,AI #7 (Slot 05 P03) Q-bit,$AI.S05_P03_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,31,DIO #15 - Undefined,$DIO.S05_P07_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;
+16,AI #8 (Slot 05 P04) Q-bit,$AI.S05_P04_Qbit;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,,32,DIO #16 - Undefined,$DIO.S05_P08_VALUE;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini;

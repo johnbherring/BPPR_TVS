@@ -1,0 +1,16 @@
+*Configuration Flags;width=200,State;width=50,Set/Reset;width=100;
+Change Configuration Flag,$AI.S04_Change_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$AI.S04_Change_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+Lost Configuration Flag,$AI.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$AI.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+
+*ID;width=50;
+04
+
+*Param;width=50,Description;width=200,Value;width=100, ;width=100,Param;width=50,Description;width=200,Value;width=100;
+1,P01 - Zero,$AI.S04_P01_Zero;Precision=2,, 9,P05 - Zero,$AI.S04_P05_Zero;Precision=2;
+2,P01 - Span,$AI.S04_P01_Span;Precision=2,,10,P05 - Span,$AI.S04_P05_Span;Precision=2;
+3,P02 - Zero,$AI.S04_P02_Zero;Precision=2,,11,P06 - Zero,$AI.S04_P06_Zero;Precision=2;
+4,P02 - Span,$AI.S04_P02_Span;Precision=2,,12,P06 - Span,$AI.S04_P06_Span;Precision=2;
+5,P03 - Zero,$AI.S04_P03_Zero;Precision=2,,13,P07 - Zero,$AI.S04_P07_Zero;Precision=2;
+6,P03 - Span,$AI.S04_P03_Span;Precision=2,,14,P07 - Span,$AI.S04_P07_Span;Precision=2;
+7,P04 - Zero,$AI.S04_P04_Zero;Precision=2,,15,P08 - Zero,$AI.S04_P08_Zero;Precision=2;
+8,P04 - Span,$AI.S04_P04_Span;Precision=2,,16,P08 - Span,$AI.S04_P08_Span;Precision=2;

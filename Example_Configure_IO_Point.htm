@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<script type="text/javascript" language="javaScript" src="Scripts/RadioButton.js"></script>           <!-- Reference RadioButton Library -->
+	<script type="text/javascript" language="javaScript" src="Scripts/Status.js"></script>                <!-- Reference RadioButton Library --> 
+	<script type="text/javascript" language="javaScript" src="Scripts/SignalGen.js"></script>             <!-- Reference Signal Grid  Library -->
+	<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css" />                             <!-- Reference BPStyles -->
+	
+		
+  <script type = "text/javascript">
+
+	  var SignalName="@GV.TestSignal";
+	  var SignalType = "1";
+	  var Link = "Example_AI_Drop_Down.htm";
+	  var LinkData = "?SignalName=" + SignalName + "&Type=" + SignalType;
+	  var LinkURL = Link + LinkData;
+
+		  function OpenPage(Link)
+	  {
+		  alert(LinkURL);
+		  var newWindow = window.open(LinkURL, '_self', 'name="ConfigIO",height="300",width="300"');
+	  }
+
+	  
+	  function PageInit()
+	  {
+	  
+		// Insert Page Start Stuff Here.....Just before body execute ..      
+	  
+	  }
+
+	  function ActivateControls()
+	  {
+
+		  GV_TestSignal_Obj.Execute();
+		  
+	  }
+	
+</script>  
+   
+
+ <style type="text/css">
+		#SigView2
+		{
+			width: 20%;
+		}
+		#GV_TestSignal_Obj
+		{
+			width: 244px;
+		}
+		.link_wrapper
+		{ 
+			  somestyles: values; 
+			  height: 20px; /*or whatever*/ 
+			  width:auto; 
+			  padding:0px; 
+		} 
+		.link_wrapper a
+		{ 
+			  line_height:20px; /*same as .link_wapper*/ 
+			  margin:0px; 
+		} 
+	
+	 #Button1
+	 {
+		 width: 31px;
+		 height: 27px;
+	 }
+	
+	 .style3
+	 {
+		 height: 36px;
+	 }
+	
+	</style>
+   
+
+
+</head>
+<body onload="PageInit()">
+
+<script type = "text/javascript">
+  //  WriteTableWithObjs("Example_Configure_IO_Point.csv"); //Create Signal Grid from csv file
+</script>
+
+<p align="left" class="title">Configure IO Point</p>
+	<table>
+		<tr>
+			<td class="main" 
+                style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold" 
+                valign="top" >
+				@GV.TestSignal</td>
+			<td class="style3"> 
+				<input class="CfgButton" id="Button1" type="button" value="cfg" onclick="OpenPage(Link);"/>      
+				<object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="GV_TestSignal_Obj" height="25" align="middle">
+		  <param name="_cx" value="370"/>
+		  <param name="_cy" value="370"/>
+		  <param name="BackColor" value="0"/>
+		  <param name="BorderColor" value="0"/>
+		  <param name="BorderVisible" value="0"/>
+		  <param name="BorderWidth" value="0"/>
+		  <param name="FillColor" value="0"/>
+		  <param name="ForeColor" value="16777215"/>
+		  <param name="RTUName" value/>
+		  <param name="SignalName" value="@GV.TestSignal"/>
+		  <param name="Format" value="6">
+		  <param name="Direction" value="0">
+		  <param name="OnBitmap" value>
+		  <param name="OffBitmap" value>
+		  <param name="Zero" value="0">
+		  <param name="Span" value="0">
+		  <param name="LoAlarm" value="1.175494E-38">
+		  <param name="HiAlarm" value="1.175494E+38">
+		  <param name="LoLoAlarm" value="1.175494E-38">
+		  <param name="HiHiAlarm" value="1.175494E+38">
+		  <param name="Horizontal" value="1">
+		  <param name="Vertical" value="1">
+		  <param name="CollectAlarms" value="0">
+		  <param name="RefreshRate" value="1">
+		  <param name="Precision" value="0">
+		  <param name="Width" value="1">
+		  <param name="Units" value="0">
+		  <param name="AlarmsFromRtu" value="0">
+		  <param name="Rights" value="8">
+		  <param name="AlarmEnableText" value>
+		  <param name="AlarmInhibitText" value>
+		  <param name="ControlEnableText" value>
+		  <param name="ControlInhibitText" value>
+		  <param name="ManualEnableText" value>
+		  <param name="ManualInhibitText" value>
+		  <param name="AlarmColor" value="16777215">
+		  <param name="CriticalColor" value="16777215">
+		  <param name="ArrayNumber" value="0">
+		  <param name="ArrayRow" value="0">
+		  <param name="ArrayColumn" value="0">
+		  <param name="ArrayIsLogical" value="0">
+		  <param name="ExpIndex" value="0">
+		  <param name="ValueText" value>
+		  <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/AI.ini">
+		  <param name="BtnMode" value="0">
+		  <param name="BtnFunction" value="2">
+		  <param name="BtnSteadyText" value>
+		  <param name="BtnToggleOFFtoONText" value>
+		  <param name="BtnToggleONtoOFFText" value>
+		  <param name="BtnForceValue" value>
+		  <param name="JogCtrlVisible" value="0">
+		  <param name="JogMode" value="0">
+		  <param name="JogValue" value="0">
+		  <param name="JogLoLimit" value="0">
+		  <param name="JogHiLimit" value="0">
+		  <param name="DocURL" value>
+	  </object></div>
+	  <br />
+			 </td>
+		</tr>
+	</table>
+	
+  <!--  <FORM METHOD="LINK" ACTION="Example_AI_Drop_Down.htm">
+	Signal Name: <INPUT TYPE="text" NAME="SignalName"> 
+	Input Type: <INPUT TYPE="text" NAME="SignalType"> 
+	<INPUT TYPE="submit" VALUE="Click and See">
+	</FORM> -->
+
+<script type = "text/javascript">    // Post html Javascript on html page
+  ActivateControls();
+</script>
+
+</body>
+</html>

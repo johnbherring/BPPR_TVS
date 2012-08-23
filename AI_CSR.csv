@@ -1,0 +1,23 @@
+*<strong>AI</strong>;width=50,Configuration in Use;width=200,AI CSR Command (2);width=200,Return Code;width=300,CSR State;Width=175
+2,$AI.Config_Used;rights=8;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Config_Used.ini;BackColor=000000;ForeColor=16777215,$AI.CSR_Command;format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/CSRCommand.ini;BackColor=000000;ForeColor=16777215,$AI.CSR_ReturnCode;format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/CSRReturnStatus.ini;BackColor=000000;ForeColor=16777215,$CSR.State;format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/CSRState.ini;BackColor=000000;ForeColor=16777215
+
+*File Type,File Name;width=100,State,Last Update;width=200,Time Til Update,SCADA Flags, State;width=50, Set/Reset;width=50;
+Default,$AI.DCF_FileName,$AI.DCF_Exist;Format=2;x=20;y=20;OnBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Black.BMP;OffBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Off.BMP,$AI.DCF_TimeStamp,<div align="Center"><strong>NA</strong></div>,Lost Configuration,$AI.Lost_Config_Flag;Format=2;x=20;y=20;OnBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Alarm.BMP;OffBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Off.BMP,$AI.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+User,$AI.UCF_FileName,$AI.UCF_Exist;Format=2;x=20;y=20;OnBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Black.BMP;OffBitmap=C:/OPENBSI/BPPR_IO/IMAGES/Off.BMP,$AI.UCF_TimeStamp,$AI.UCF_UpdateDelay;Precision=1;
+,,,,$AI.UCF_UpdateNow;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Update Now;BtnToggleONtoOFFText=  ;
+
+*Load Commands, Control ;width=100,Save Commands,Command;width=100,File Commands;width=125,Command;width=100
+Cold Start Restore,$AI.CSR_ColdStart;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Restore;BtnToggleONtoOFFText=  ;
+Load User Configuration File (UCF),$AI.UCF_Load;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Load;BtnToggleONtoOFFText=Loading,Save Current to UCF,$AI.UCF_UpdateNow;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Save;BtnToggleONtoOFFText=  ,Copy UCF to DCF,$AI.Copy_UCFtoDCF;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Copy;BtnToggleONtoOFFText=  ; 
+Load Default Configuration File(DCF),$AI.DCF_Load;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Load;BtnToggleONtoOFFText=Loading,Save Current to DCF,$AI.DCF_Update;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Save;BtnToggleONtoOFFText=  ,Copy DCF to UCF,$AI.Copy_DCFtoUCF;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Copy;BtnToggleONtoOFFText=  ;
+Load Internal Default,$AI.Load_Default;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Load;BtnToggleONtoOFFText=Loading,Save Current to UCF & DCF,$AI.UCF_DCF_Update;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Save;BtnToggleONtoOFFText=  ;
+
+
+*Change Configuration;width=100,Change Flag;width=100
+S03 Change Flag,$AI.S03_Change_Flag;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Change_Flag.ini;
+S04 Change Flag,$AI.S04_Change_Flag;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Change_Flag.ini;
+S05 Change Flag,$AI.S05_Change_Flag;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Change_Flag.ini;
+S06 Change Flag,$AI.S06_Change_Flag;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Change_Flag.ini;
+S07 Change Flag,$AI.S07_Change_Flag;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Change_Flag.ini;
+S08 Change Flag,$AI.S08_Change_Flag;BackColor=000000;ForeColor=16777215;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/Change_Flag.ini;
+

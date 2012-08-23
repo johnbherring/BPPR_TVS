@@ -1,0 +1,1382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" TYPE="text/css" HREF="KW_Styles.css">
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>CHANGE_DETECT</TITLE>
+	</HEAD>
+
+<BODY BGCOLOR="#ffffff" TEXT="#000000">
+
+
+<H1><A NAME="storage"></A>CHANGE_DETECT</H1>
+
+<H2>Description</H2>
+
+<P> This User Defined function block reads a value from a variable included in a LIST of variables and compares it to
+	the previous value of that variable.  If there is a change to the value, the following function are performed:
+</P>
+   <P style="margin-left: 80px"> Maps the value from the variable on the LIST to a user defined data structure</P>
+   
+   <P style="margin-left: 80px"> Writes to an array of structures that may be used to generate a flash recipe file (see
+   the Configuration Save/Restore Program POU help documentation for additional information) </P>
+
+   <P style="margin-left: 80px"> Reads from an array of structures that will be populated from a flash recipe file
+   upon a cold start or other configuration restore event (see the Configuration Save/Restore Program POU help 
+   documentation for additional information) </P>
+   
+   <P style="margin-left: 80px"> Updates an array of structures that may be used to generate the Hex Repeater Edit/Change Log Entry (see
+   the Hex Repeater Program POU help documentation for additional information) </P>
+
+<H2>Input Parameters</H2>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>istrProgram_POU_Name</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, entry required</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">STRING</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This is the instance name of the program POU where this function block will be 
+		used.&nbsp; This must reflect the actual instance name of the program, so if 
+		this function block is included in&nbsp; program POU that will be instantiated 
+		more than once, this variable should be either be marked VAR_EXTERNAL_PG, so 
+		that it can be properly initialized, or it should be concatenated such that it 
+		reflects the actual instance name of the program POU.</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>istrApp_ID</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">STRING</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This variable is used when Hex Repeater Edit logging is used.
+		This should be tied to the Meter_ID of the meter that the change
+		log entries will be associted with.</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiHexRprt_Log_Num </b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This variable is used when Hex Repeater Edit logging is used.
+		This should be set to the appropriate Hex Repeater Edit log number:</P>
+	<PRE style="margin-left: 80px"><code> 
+EGM01 Edit Log			=	1
+EGM02 Edit Log			=	2
+EGM03 Edit Log			=	3
+EGM04 Edit Log			=	4
+EGM05 Edit Log			=	5
+EGM06 Edit Log			=	6
+EGM07 Edit Log			=	7
+EGM08 Edit Log			=	8
+EGM09 Edit Log			=	9
+EGM10 Edit Log			=	10
+EGM01 Audit Log			=	11
+EGM02 Audit Log			=	12
+EGM03 Audit Log			=	13
+EGM04 Audit Log			=	14
+EGM05 Audit Log			=	15
+EGM06 Audit Log			=	16
+EGM07 Audit Log			=	17
+EGM08 Audit Log			=	18
+EGM09 Audit Log			=	19
+EGM10 Audit Log			=	20
+EGM01 Event Log			=	21
+EGM02 Event Log			=	22
+EGM03 Event Log			=	23
+EGM04 Event Log			=	24
+EGM05 Event Log			=	25
+EGM06 Event Log			=	26
+EGM07 Event Log			=	27
+EGM08 Event Log			=	28
+EGM09 Event Log			=	29
+EGM10 Event Log			=	30
+EGM01 TBD Log 			=	31
+EGM02 TBD Log 			=	32
+EGM03 TBD Log 			=	33
+EGM04 TBD Log 			=	34
+EGM05 TBD Log 			=	35
+EGM06 TBD Log 			=	36
+EGM07 TBD Log 			=	37
+EGM08 TBD Log 			=	38
+EGM09 TBD Log 			=	39
+EGM10 TBD Log 			=	40
+WC01 Production Cycle Log	=	41
+WC02 Production Cycle Log	=	42
+WC03 Production Cycle Log	=	43
+WC04 Production Cycle Log	=	44
+WC05 Production Cycle Log	=	45
+WC06 Production Cycle Log	=	46
+WC07 Production Cycle Log	=	47
+WC08 Production Cycle Log	=	48
+WC09 Production Cycle Log	=	49
+WC10 Production Cycle Log	=	50
+WC01 Daily Production Log	=	51
+WC02 Daily Production Log	=	52
+WC03 Daily Production Log	=	53
+WC04 Daily Production Log	=	54
+WC05 Daily Production Log	=	55
+WC06 Daily Production Log	=	56
+WC07 Daily Production Log	=	57
+WC08 Daily Production Log	=	58
+WC09 Daily Production Log	=	59
+WC10 Daily Production Log	=	60
+WC01 Edit Log           	=	61
+WC02 Edit Log           	=	62
+WC03 Edit Log           	=	63
+WC04 Edit Log           	=	64
+WC05 Edit Log           	=	65
+WC06 Edit Log           	=	66
+WC07 Edit Log           	=	67
+WC08 Edit Log           	=	68
+WC09 Edit Log           	=	69
+WC10 Edit Log           	=	70
+WC01 Event Log           	=	71
+WC02 Event Log           	=	72
+WC03 Event Log           	=	73
+WC04 Event Log           	=	74
+WC05 Event Log           	=	75
+WC06 Event Log           	=	76
+WC07 Event Log           	=	77
+WC08 Event Log           	=	78
+WC09 Event Log           	=	79
+WC10 Event Log           	=	80
+WC01 Interval Log          	=	81
+WC02 Interval Log          	=	82
+WC03 Interval Log          	=	83
+WC04 Interval Log          	=	84
+WC05 Interval Log          	=	85
+WC06 Interval Log          	=	86
+WC07 Interval Log          	=	87
+WC08 Interval Log          	=	88
+WC09 Interval Log          	=	89
+WC10 Interval Log          	=	90
+WC01 Exception Log         	=	91
+WC02 Exception Log         	=	92
+WC03 Exception Log         	=	93
+WC04 Exception Log         	=	94
+WC05 Exception Log         	=	95
+WC06 Exception Log         	=	96
+WC07 Exception Log         	=	97
+WC08 Exception Log         	=	98
+WC09 Exception Log         	=	99
+WC10 Exception Log         	=	100
+TBD				=	101..130
+System Edit Log 		=	131
+CIO Edit Log			=	132
+MVT Edit Log    		=	133
+Unassigned			=	134
+Unassigned			=	135
+Unassigned			=	136
+Unassigned			=	137
+Unassigned			=	138
+Unassigned			=	139
+Unassigned			=	140
+System Event Log		=	141
+CIO Event			=	142
+MVT Event Log			=	143
+Unassigned			=	144
+Unassigned			=	145
+Unassigned			=	146
+Unassigned			=	147
+Unassigned			=	148
+Unassigned			=	149
+Unassigned			=	150
+</code></PRE>
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiHexRprt_Record_Num </b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>This variable is used when Hex Repeater Edit logging is used.
+		This should be set to the appropriate Hex Repeater Edit log record number:
+		1 through 12 for the EGM01 through EGM12 Edit logs 
+		and 13 for the Generic edit log.&nbsp; This value will be entered in the 
+        HexRptr_Edit_Log.RecordNumber element of the Hex Change Array</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiCSR_Array_Indx</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, entry required</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+	<P>This is the index into the array of Configuration Save/Restore and Flash Recipe structures.  If the index is less than
+		one or greater than the maximum number of rows (currently set at 65) in the array, an error will be generated 
+		and the program will return without executing.  This value should be set as follows: </P>
+
+	<PRE style="margin-left: 80px"><code> 
+RACK     =	1
+AI       =	2
+DIO	=	3
+HSC	=	4
+AO	=	5
+Future_IO = 	6
+Future_IO = 	7
+Future_IO = 	8
+Future_IO = 	9
+Future_IO = 	10
+MVT01	=	11
+MVT02	=	12
+MVT03	=	13
+MVT04	=	14
+MVT05	=   	15
+MVT06	=   	16
+MVT07	=   	17
+MVT08	=   	18
+MVT09	=   	19
+MVT10	=   	20
+EGM01	=	21
+EGM02	=	22
+EGM03	=	23
+EGM04	=	24
+EGM05	=	25
+EGM06	=	26
+EGM07	=	27
+EGM08	=	28
+EGM09	=	29
+EGM10	=	30
+WC01	=	31
+WC02	=	32
+WC03	=	33
+WC04	=	34
+WC05	=	35
+WC06	=	36
+WC07	=	37
+WC08	=	38
+WC09	=	39
+WC10	=	40
+Future 	=	41
+.           	.
+.           	.
+.           	.
+SYS	=	62 (* SYS = System *)
+VNC	=	63 (* VNC = Verification and Calibration *)
+CSR	=	64 (* CSR = Configuration Save Restore *)
+HR	=	65 (* HR = Hex Repeater *)
+</code></PRE>
+
+<TAB.           	.
+SYS	=	62		
+VNC	=	63 (* VNC = Verification and Calibration *)</TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">TRUE</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+	<P>When this variable is TRUE, then upon a lost configuration flag, the program is expecting that a configuration
+		will be downloaded from a Host (SAMS, OE, or TechView).&nbsp; While waiting
+		for the configuration to be downloaded, the configuration save/restore 
+		function block is not monitoring values for change, and will not update the configuration structure or the flash recipe array.&nbsp; 
+		Setting this variable to TRUE prevents the lost configuration flag from being set.&nbsp; </P>
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiData_Value_List</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, entry required</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+	<P>This is the number of the ACCOL III LIST that contains the Source/Destination 
+		variables.&nbsp; The values of these variables will be written to the structure 
+		defined by the istrData_Struct parameter.&nbsp; The values will also be written 
+		to the array of structures referenced by istrFlash_Recipe_Struct.</P>
+	<P>The number of elements of this list should match the number of elements in the 
+		structure referened in istrData_Struct, and cannot exceed the maximum number of rows in the array of 
+		structures referenced by istrFlash_Recipe_Array (currently set to 500).</P>
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>istrData_Struct_Variable</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None, entry required</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">STRING</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+	<P>This is the name (as a STRING) of the variable that defines the Data Structure that the values are being mapped to and from.&nbsp; 
+		See the two examples below:</P>
+	<P>Example 1 - Structure</P>
+	<P>The varialble Config_Data_Struct is declared, and is of datatype 
+		User_Defined_Config.&nbsp; In this case, the parameter istrData_Struct_Variable 
+		should be tied to a STRING variable with a value of &#39;Config_Data_Struct&#39;</P>
+	<P>Example 2 - Array of structures</P>
+	<P>The variable Config_Data_Struct_Array is declared, and is of datatype 
+		User_Defined_Config_Array, which is an array of [1..12] User_Defined_Config.&nbsp; 
+		This function block is writing to and from array element 3.&nbsp; In this case, 
+		the parameter of istrData_Struct_Variable should be tied to a STRING variable 
+		with a value of &#39;Config_Data_Struct_Array[3]&#39;</P>
+
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiData_Element_List</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+<P>This is the number of the ACCOL III LIST that contains the structure element 
+	names of the structure defined at the istrData_Struct_Variable parameter, as STRING variables.</P>
+	<P>The number of elements of this list should match the number of elements in the 
+		iiData_Value_List.&nbsp; </P>
+	<P style="margin-left: 80px">Example:  The variable Config_Data_Struct is defined at istrData_Struct_Variable.
+	It is a data type of User_Defined_Config.  The elements of this data structure are defined as
+	follows:</P>
+	<PRE style="margin-left: 80px"><code> 
+	TYPE
+	User_Defined_Config	:
+		STRUCT
+			Config_Item_01	:		INT;
+			Config_Item_02	:		REAL;
+			Config_Item_03	:		BOOL;
+			Config_Item_04	:		BYTE;
+			Config_Item_05	:		WORD;
+			Config_Item_06	:		DWORD;
+			Config_Item_07	:		SINT;
+			Config_Item_08	:		DINT;
+			Config_Item_09	:		UINT;
+			Config_Item_10	:		UDINT;
+			Config_Item_11	:		USINT;
+			Config_Item_12	:		STRING;
+
+		END_STRUCT;
+	END_TYPE
+</code></PRE>
+	<P style="margin-left: 80px">The LIST would have the following entries: </P>
+<PRE style="margin-left: 80px"><code>    LIST_DATA_ELEMENTS(iiListNumber:=iiData_Element_List,
+	ianyElement1:=Cfg_Item_01,
+	ianyElement2:=Cfg_Item_02,
+	ianyElement3:=Cfg_Item_03,
+	ianyElement4:=Cfg_Item_04,
+	ianyElement5:=Cfg_Item_05,
+	ianyElement6:=Cfg_Item_06,
+	ianyElement7:=Cfg_Item_07,
+	ianyElement8:=Cfg_Item_08,
+	ianyElement9:=Cfg_Item_09,
+	ianyElement10:=Cfg_Item_10,
+	ianyElement11:=Cfg_Item_11,
+	ianyElement12:=Cfg_Item_12;
+</code></PRE>
+	<P style="margin-left: 80px">The variables in the LIST would have the following values: </P>
+
+<PRE style="margin-left: 80px"><code>
+	Name              Type           Init
+	Cfg_Item_01	    STRING	'Config_Item_01'
+	Cfg_Item_02	    STRING	'Config_Item_02'
+	Cfg_Item_03	    STRING	'Config_Item_03'
+	Cfg_Item_04	    STRING	'Config_Item_04'
+	Cfg_Item_05	    STRING	'Config_Item_05'
+	Cfg_Item_06	    STRING	'Config_Item_06'
+	Cfg_Item_07	    STRING	'Config_Item_07'
+	Cfg_Item_08	    STRING	'Config_Item_08'
+	Cfg_Item_09	    STRING	'Config_Item_09'
+	Cfg_Item_10	    STRING	'Config_Item_10'
+	Cfg_Item_11	    STRING	'Config_Item_11'
+	Cfg_Item_12	    STRING	'Config_Item_12'
+
+</code></PRE>
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiHexRptr_Desc_List</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+<P>This is the number of the ACCOL III LIST that contains a comma separated string 
+    that includes:</P>
+    <P style="margin-left: 80px">The Description to be used in the Hex Repeater Change log, 
+    <P style="margin-left: 80px">The associated Hex Repeater Download command code
+    <P style="margin-left: 80px">The variable name of the change flag used by the Hex Repeater host.
+    &nbsp;
+    <P style="margin-left: 80px"> For example - 
+    'Low-DP-Cutoff, 51, EGM01.Config_Change_Flag' includes the Description of 'Low-DP-CutoffThe associated Hex Repeater Download command code
+    <P style="margin-left: 80px">The variable name of the change flag used by the Hex 
+        Repeater host.&nbsp;
+    <P style="margin-left: 120px">By convention, this variable name should be 
+        INST.Config_Change_Flag.&nbsp; INST is defined by the value at 
+        istrProgram_POU_Name.<P style="margin-left: 120px">&nbsp;It is possible to enter the symbol '*', and the 
+        function block will automatically insert the variable name meeting this 
+        convention.
+    <P style="margin-left: 120px">Also, if some variable name other than 
+        Config_Change_Flag is used, it is possible to use this format - #.variable_name, 
+        and the value at istrProgram_POU_Name will be substitued for the #.<P style="margin-left: 80px"> For example - 
+    'Low-DP-Cutoff, 51, EGM01.Config_Change_Flag' includes the Description of 
+    'Low-DP-Cutoff', the Hex Repeater Command code 51, and the variable name 
+    EGM01.Config_Change_Flag.</P>
+    <P style="margin-left: 80px"> 'Low-DP-Cutoff,51,$' includes the description of 
+        'Low-DP-Cutoff', the Hex Repeater Command code 51, and the function block will 
+        insert EGM01.Config_Change_Flag for the $.</P>
+    <P style="margin-left: 80px"> 'Low-DP-Cutoff,51,#.Change_Detect' includes the 
+        description of 'Low-DP-Cutoff', the Hex Repeater Command code 51, and the 
+        function block will insert the value of istrProgram_POU_Name (in our example, 
+        this has been EGM01) in front of the .Change_Detect, to produce 
+        EGM01.Change_Detect.</P>
+    <P style="margin-left: 80px"> &nbsp;</P>
+    <P>If the value is calculated by the RTU, then no command code is included.&nbsp; 
+        The string should be constructed with no space between the 1st and 2nd commas.&nbsp; 
+        For example 'SG-Calc,,EGM01.Config_Change_Flag'g will 
+		be disabled.</P>
+	<P>The number of elements of this list should match the number of elements in the 
+		iiData_Value_List. The maximum lenght of the Descriptor string should be 20 
+		characters.&nbsp; </P>
+	<P style="margin-left: 80px">Note: If a variable from the iiData_Value_List is not 
+		to be in included in the Hex Repeater Change log, create a Null string for the 
+		corresponding element of the iiHex_Change_Desc_List.&nbsp;&nbsp; When the Change 
+		Detect Function Block detects a Null string, it will not make an entry to the 
+		Hex Repeater Change Array for this element in the list.  Note: If a variable from the iiData_Value_List is not 
+        to be in included in the Hex Repeater Change log, create an empty string for the 
+        corresponding element of the iiHex_Change_Desc_List.&nbsp;&nbsp; When the Change 
+        Detect Function Block detects an empty string, it will not make an entry to the 
+        Hex Repeater Change Array for this element in the list.  </P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiNumber_of_Elements  
+	structure defined by istrData_Struct_Variable.  Continuing the example, this should be set
+	to 12</P>
+
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iiUpdate_Delay</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">60 (seconds)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+	<P>This is the amount of time the function block will wait after a change is 
+		detected before it sets the oiRequest_Command to 2 (Write current values to User 
+        Configuration file).&nbsp; When the 
+		ChangeDetect_FB is used with the&nbsp;Configuration Save/Restore Program POU, this 
+		delay prevents multiple writes to flash memory if a series of changes are being made 
+		manually, either via the SCADA system or locally, using TechView.&nbsp; It is 
+		possible to update the flash manually using the input iobWriteToFlash</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>istrUser_File_Name</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">N/A</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">STRING</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE><BR>
+
+<P>&nbsp;</P>
+	<p>
+		This is the file name that will be used by the Configuration Save Restore program
+		for storing the User configuration.  Recommended format is:</p>
+	<P style="margin-left: 80px">
+		apvnn_uc.ini</p>
+	<p>
+		Where:</p>
+
+	<P style="margin-left: 80px">
+		ap = Application name (up to two characters) (i.e., EG, MV, WC, etc.)
+		</p>
+
+	<P style="margin-left: 80px">
+		v = Version (one character - 0 through 9, A through Z)  
+		[For future use if upgrades are to be allowed]
+		</p>
+
+	<P style="margin-left: 80px">
+		nn = Application instance (up to two digits) (i.e., 01 - 99) </p>
+
+	<P style="margin-left: 80px">
+		uc represents the User Configuration file</p>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>istrDefault_File_Name</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">N/A</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">STRING</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE><BR>
+
+<P>&nbsp;</P>
+	<p>
+		This is the file name that will be used by the Configuration Save Restore program
+		for storing the Default configuration.  Recommended format is:</p>
+	<P style="margin-left: 80px">
+		appnn_dc.ini</p>
+	<p>
+		Where:</p>
+
+	<P style="margin-left: 80px">
+		app = Application name (up to three characters) (i.e., EGM, MVT, WC, etc.)
+		</p>
+
+	<P style="margin-left: 80px">
+		nn = Application instance (up to two digits) (i.e., 01 - 99) </p>
+
+	<P style="margin-left: 80px">
+		dc represents the Default Configuration file</p>
+
+<H2>Input/Output Parameters</H2>
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioarrCSR_Cmd_Arrayrray</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">N/A</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">CSR_Struct_Array</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE><BR>
+
+<P>&nbsp;</P>
+	<p>
+		This is an array of the Configuration Save/Restore structure.&nbsp; The 
+		Configuration Save/Restore structure is defined as follows:</p>
+	<pre style="margin-left: 80px"><code> 
+TYPE
+	Config_SaveRestore_Struct	:
+	STRUCT
+		    Request_Command         :   INT;			(* See ioiReq_Cmd Below *)
+		    strFlash_Recipe_Array   :   STRING;		(* See ioarrFlash_Recipe_Array Below *)
+		    Number_of_Rows          :   INT;			(* Number of Rows in ((Flash_Recipe_Array ?? *)
+		    strUser_File_Name       :   STRING;		(* Name of User Config File See <b>istrUser_File_Name</b> Above *)
+		    strDefault_File_Name    :   STRING;		(* Name of Default Config File See <b>istrDefault_File_Name</b> Above *)
+		    Return_Status           :   INT;			(* Return Code from File Save Restore See <b>oiReq_Rtn_Status</b> Above *)
+		    CSR_FB_Enab             :   BOOL;		(* Enable Set by the File Save Restore Indicating that it is ready to receive commands *)
+		    Proc_Order              :   INT;			(* Order to be Processed Returned by File Save Restore FB *)         
+	    END_STRUCT;
+END_TYPE
+
+TYPE
+	CSR_Cmd_Array : ARRAY [1..65] OF Config_SaveRestore_Struct;
+END_TYPE
+
+(*  The size of the CSR_Cmd_Array is determined by the total number of program POUs that 
+	may be making requests to the Config Save/Restore Program POU.  Currently, this is
+	set to 65.  This size may be adjusted, depending on the actual number of Program POUs 
+	instantiated. *)
+</code></pre>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioarrFlash_Recipe_Array</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">Array_Flash_Recipe_Array</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input</TD></TR></TABLE>
+
+<P>This is the Flash Recipe Array variable, which is an array of structures defined as follows (continuing our example 
+		from above):</P>
+
+<PRE style="margin-left: 80px"><code>
+TYPE
+	Flash_Recipe_Struct	:
+	STRUCT
+		SignalName  :   STRING;
+		DataType	:	INT;
+		REALValue	:	REAL;
+		UDINTValue 	:	UDINT;
+		STRINGValue :	STRING;
+	END_STRUCT;
+END_TYPE
+
+TYPE
+	Flash_Recipe_Array : ARRAY [1..500] OF Flash_Recipe_Struct; 
+	(* The array is dimensioned 1 to 500, which should accommodate most applications *)
+END_TYPE
+
+TYPE
+	Array_Flash_Recipe_Array : ARRAY [1..65] OF Flash_Recipe_Array; 
+
+END_TYPE
+</code></pre>
+
+
+		<table cols="7" width="576">
+			<tr valign="top">
+				<td width="8%">
+				</td>
+				<td width="5%">
+					1</td>
+				<td width="17%">
+					BOOL</td>
+				<td width="5%">
+					6</td>
+				<td width="17%">
+					USINT</td>
+				<td width="5%">
+					16</td>
+				<td width="17%">
+					STRING</td>
+			</tr>
+			<tr valign="top">
+				<td width="8%">
+					&nbsp;</td>
+				<td width="5%">
+					2</td>
+				<td width="17%">
+					SINT</td>
+				<td width="5%">
+					7</td>
+				<td width="17%">
+					UINT</td>
+				<td width="5%">
+					17</td>
+				<td width="17%">
+					BYTE</td>
+			</tr>
+			<tr valign="top">
+				<td width="8%">
+					&nbsp;</td>
+				<td width="5%">
+					3</td>
+				<td width="17%">
+					INT</td>
+				<td width="5%">
+					8</td>
+				<td width="17%">
+					UDINT</td>
+				<td width="5%">
+					18</td>
+				<td width="17%">
+					WORD</td>
+			</tr>
+			<tr valign="top">
+				<td width="8%">
+					&nbsp;</td>
+				<td width="5%">
+					4</td>
+				<td width="17%">
+					DINT</td>
+				<td width="5%">
+					10</td>
+				<td width="17%">
+					REAL</td>
+				<td width="5%">
+					19</td>
+				<td width="17%">
+					DWORD</td>
+			</tr>
+		</table>
+
+	<P> This variable should be declared as a VAR_EXTERNAL_PG in the Configuration Save/Restore Program POU, 
+		and all of the calling Program POUs should reference this variable.
+		
+		The row of the Array_Flash_Recipe_Array to be written to and from by an individual Program POU will be 
+		selected by iiCSR_Indx</P>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioarrHexRpt_Edit_Array</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">N/A</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">HexRptr_Edit_Array</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE><BR>
+
+<P>&nbsp;</P>
+	<p>
+		This is an array of the Hex Repeater Change Log structure.&nbsp; The 
+		Hex Repeater Change Log structure is defined as follows:</p>
+	<pre style="margin-left: 80px"><code> 
+TYPE
+	HexRptr_Edit_Log	:
+	STRUCT
+		EditCode                :   STRING;     (* This is a number unique to each item that can be entered in the change log *) (* See Details below *)
+		MeterID                 :   STRING;     (* Meter ID - 12 alphanumeric characters *)
+		Desc                    :   STRING;     (* Description - 20 alphanumeric characters *)
+		CurrValue               :   STRING;     (* Current value as a string of 15 characters *)
+		PrevValue               :   STRING;     (* Previous value as a string of 15 characters *)
+	        ChangeFlag              :   STRING;     (* The variable name of the change flag - for instance 'EGM01.Config_Change_Flag' *)
+        	LogNumber               :   INT;        (* The Edit Log number to be written to *)
+		CommandCode             :   USINT;      (* Command Code associated with this change *)
+		RecordNumber            :   USINT;      (* Record number (1 through X) of this change.  For the EGM, this will be the EGM index (1 through 12).  For the AIs, this will be the Slot number. *)
+		LastIndex              	:   INT;        (* This only applies to row 0 of the Hex_Change_Array *)
+	END_STRUCT;
+END_TYPE
+
+TYPE
+	HexRptr_Edit_Array : ARRAY [1..TBD] OF HexRptr_Edit_Log;
+END_TYPE
+
+(*  The size of the HexRptr_Edit_Array is to be determined by the total number of 
+	program POUs multiplied by the total number of potential change log entries 
+	that may be made by any program POU.  *)
+
+(* The Edit code is created by combining the iiCSR_Array_Indx and the List element number from the Data Values List.
+
+    For instance - If the value on List element 5 of EGM01 changes, the Edit code will be 21005, since EGM01 iiCSR_Array_Indx = 21 *)
+	
+</code></pre>
+
+
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>ioiReq_Cmd</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">0 (idle)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE>
+	<P>This parameter is used when the ChangeDetect_FB is used with the&nbsp;Configuration 
+		Save/Restore Program POU.&nbsp; The request command will be set as follows:&nbsp; </P>
+
+<TABLE cols=2 width=646>
+
+<TR VALIGN="top">
+<TD width="80%"><b>Request</b></TD>
+<TD width="20%"><b>Value</b></TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to a Recipe File (SignalName Value)</TD>
+<TD width="20%">9</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to User and Default configuration files - this command 
+	forces the write of the Current values to both the User and Default configuration file 
+	immediately.  This command is automatically executed if neither the User nor Default Configuration 
+	files are found during a cold start recovery, that is when the oiReq_Rtn_Status = -1.</TD>
+<TD width="20%">8</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="80%">Copy Default configuration file to User configuration file</TD>
+<TD width="20%">7</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Copy User configuration to Default configuration file</TD>
+<TD width="20%">6</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read Default configuration file, write to Current Values (note - 
+	executing this command only writes the Default configuration file to the Current 
+	values.&nbsp; The Current Values are not automatically written the User 
+	configuration file until either a ioiReq_Cmd of 2 is made (which forces the write 
+	of Current values) or until a subsequent change is made to one of the current 
+	values, which will set the Change detect flag TRUE, and will then result in the 
+	Current values being written to the User configuration file upon expiration of 
+	the timer.</TD>
+<TD width="20%">5</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read User configuration file, write to Current Values</TD>
+<TD width="20%">4</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to Default configuration file - this command 
+	forces the write of the Current values to the Default configuration file 
+	immediately</TD>
+<TD width="20%">3</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to User configuration file - this command 
+	forces the write of the Current values to the User configuration file 
+	immediately</TD>
+<TD width="20%">2</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Cold Start Recovery - Read User configuration file to Values.&nbsp; 
+	If User configuration is not available, read Default configuration file to 
+	Values.&nbsp; If Default configuration file is not available, return a file not 
+	found status.&nbsp; If the file not found status is TRUE, the ChangeDetect_FB will set the iobLost_DB_Flag.&nbsp; The 
+	iobLost_DB_Flag must be reset by the Host (SAMS, OE, or TechView)</TD>
+<TD width="20%">1</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Idle</TD>
+<TD width="20%">0</TD></TR>
+
+</TABLE>
+
+&nbsp;
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iobLost_Config_Flag</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">FALSE</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE>
+	<P>This flag is set by the Change Detect function block if after a cold start
+	the oiReq_Rtn_Status is -1 (Cold Start Recovery from both User and Default 
+	configuration files unsuccessful) and the ibHost_Restore parameter is set TRUE.</P>
+
+   <P>This is an indication to the SCADA host that the configuration must be downloaded
+   	 to the RTU from the SCADA host.  The SCADA host must reset this flag to FALSE after
+   	 successfully downloading the configuration.</P>
+
+&nbsp;
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iobCold_Start_Flag</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">FALSE</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE>
+	<P>This flag is set by the Change Detect function block if after a cold start.
+	This must be reset by the SCADA Host or locally through TechView.</P>
+
+&nbsp;
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>iobWarm_Start_Flag</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">FALSE</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Input/Output</TD></TR></TABLE>
+	<P>This flag is set by the Change Detect function block if after a warm start.
+	This must be reset by the SCADA Host or locally through TechView.</P>
+
+
+<H2>Output Parameters</H2>
+
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>oiReq_Rtn_Status</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">0 (idle)</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE>
+	<P>This parameter is used when the ChangeDetect_FB is used with the&nbsp;Configuration 
+		Save/Restore Program POU.&nbsp; This parameter displays the status returned by 
+		the Configuration Save/Restore Program POU to a request command, per the table 
+		below.&nbsp; This status will maintain the result of the last Returned Status 
+		code, until a new command is issued at the ioiRequest_Command:&nbsp; </P>
+
+<TABLE cols=2 width=646>
+
+<TR VALIGN="top">
+<TD width="80%"><b>Return Status Code</b></TD>
+<TD width="20%"><b>Value</b></TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to a Recipe file pending</TD>
+<TD width="20%">82</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to a Recipe file successful</TD>
+<TD width="20%">81</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to both User and Default configuration files pending</TD>
+<TD width="20%">82</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to both User and Default configuration files successful</TD>
+<TD width="20%">81</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="800%">Copy Default configuration file to User configuration file pending</TD>
+<TD width="20%">72</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Copy Default configuration file to User configuration file successful</TD>
+<TD width="20%">71</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Copy User configuration file to Default configuration file pending</TD>
+<TD width="20%">62</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Copy User configuration file to Default configuration file successful</TD>
+<TD width="20%">61</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read Default configuration file and write to Current Values pending</TD>
+<TD width="20%">52</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read Default configuration file and write to Current Values successful</TD>
+<TD width="20%">51</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read User configuration file and write to Current Values pending</TD>
+<TD width="20%">42</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Read User configuration file and write to Current Values successful</TD>
+<TD width="20%">41</TD></TR>
+
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to Default configuration file requested and pending</TD>
+<TD width="20%">32</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to Default configuration file requested and successful</TD>
+<TD width="20%">31</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to User configuration file requested and pending</TD>
+<TD width="20%">22</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Write Current Values to User configuration file requested and successful</TD>
+<TD width="20%">21</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Cold Start Recovery from User configuration unsuccessful, Cold 
+	Start Recovery from Default configuration successful</TD>
+<TD width="20%">13</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Cold Start Recovery from User configuration file pending</TD>
+<TD width="20%">12</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Cold Start Recovery from User configuration file successful</TD>
+<TD width="20%">11</TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">No Outstanding Requests</TD>
+<TD width="20%">0</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Cold Start Recovery from both User and Default 
+	configuration files unsuccessful</TD>
+<TD width="20%">-1</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to User configuration file requested and unsuccessful</TD>
+<TD width="20%">-2</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to Default configuration file requested and unsuccessful</TD>
+<TD width="20%">-3</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read User configuration file and write to Current Values unsuccessful</TD>
+<TD width="20%">-4</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Read User configuration file and write to Current Values unsuccessful</TD>
+<TD width="20%">-5</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Copy User configuration file to Default configuration file unsuccessful</TD>
+<TD width="20%">-6</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Copy Default configuration file to User configuration file unsuccessful</TD>
+<TD width="20%">-7</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to both User and Default configuration files requested and unsuccessful</TD>
+<TD width="20%">-8</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Write Current Values to Recipe file requested and unsuccessful</TD>
+<TD width="20%">-9</TD></TR>
+
+</TABLE>
+&nbsp;
+
+<TABLE cols=2 width=646>
+
+<TR VALIGN="top">
+<TD width="80%"><b>Status Codes</b></TD>
+<TD width="20%"><b>Value</b></TD></TR>
+
+<TR VALIGN="top">
+<TD width="800%">Function Block Executed Successfully</TD>
+<TD width="20%">0</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid List</TD>
+<TD width="20%">-1</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid data type</TD>
+<TD width="20%">-4</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Boundary Error.&nbsp; Specified Row or Column number exceeds 
+	configured data array dimensions</TD>
+<TD width="20%">-5</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Element in List not configured</TD>
+<TD width="20%">-7</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Problem with element</TD>
+<TD width="20%">-9</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Bad elements in List</TD>
+<TD width="20%">-10</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid element count</TD>
+<TD width="20%">-11</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid element in List</TD>
+<TD width="20%">-12</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Maximum element in List exceeded</TD>
+<TD width="20%">-15</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid column in array</TD>
+<TD width="20%">-21</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid row in array</TD>
+<TD width="20%">-22</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Invalid User structure</TD>
+<TD width="20%">-24</TD></TR>
+
+<TR VALIGN="top">
+<TD width="80%">Variable not defined in PDD</TD>
+<TD width="20%">-25</TD></TR>
+</TABLE>
+
+
+&nbsp;
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>obCold_Start_SS</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+	<P>This output is set TRUE for one task execution after a Cold Start.</P>
+
+&nbsp;
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>obWarm_Start_SS</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+	<P>This output is set TRUE for one task execution after a Warm Start.</P>
+
+&nbsp;
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>oiUpdate_Delay_ET</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">INT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+	<P>This output shows the seconds remaining until the Change Detect Function block will issue a request command of 2, after a change is detected.</P>
+
+
+&nbsp;
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>odiLast_Edit_TS</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">DINT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+	<P>This output is the UNIX Time Stamp of the last change detected.</P>
+
+&nbsp;
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>obCD_Ready_Flag</b></TD>
+<TD width="23%">Default:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">BOOL</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+		<pre><code> 
+When this output is TRUE, it means that the Change Detect function block is now executing and detecting changes.
+-- The Ready_Flag will be set TRUE
+--- When the Warm Start or Cold Start initialization steps are complete
+--- When either
+---- The CSR_Enab flag is TRUE
+---- The CSR_Enab flag is FALSE, but some number of task executions have occured (This needs to be kept to a minimum)
+--- If the CSR_Enab flag is TRUE, we have a valid Return_Status code:
+---- Return_Status = 11 - Successful Cold Start Recovery
+---- Return_Status = 13 - Cold Start Recovery from *_DC.INI (could transition to 21 if ibHost_Restore = FALSE)
+---- Return_Status = -1 - No files available during Cold Start Recovery (could transiiton to 81 of ibHost_Restore = FALSE)
+--- If the CSR_Enab flag is FALSE, the Return_Status code is ignored
+
+Note, the FB will set the Ready_Flag TRUE, even when the CSR_Enab flag never gets set to TRUE.  In this case, the Function Block will
+still update the structures and the Hex Repeater Edit log.  However, since the CSR program is not available, the *_UC.ini
+and *_DC.INI files will not be wrtten to or read from.
+		</code></pre>
+&nbsp;
+<TABLE cols=3 width=626>
+
+<TR VALIGN="top">
+<TD width="30%"><b>odiStatus</b></TD>
+<TD width="23%">Default:ult:</TD>
+<TD width="47%">None</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Format:</TD>
+<TD width="47%">UDINT</TD></TR>
+
+<TR VALIGN="top">
+<TD width="30%">&nbsp;</TD>
+<TD width="23%">Input/Output:</TD>
+<TD width="47%">Output</TD></TR></TABLE><BR>
+
+	<P>indicates the execution Status of the function block.</P>
+
+	<P>The following are the status codes that can occur.</P>
+
+
+	<H3>See also:</H3>
+
+</BODY>
+</HTML>

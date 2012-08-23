@@ -1,0 +1,4 @@
+*Signal 1;width=150,SignalValue;width=50,Radio Buttons,Holder
+<p align="left"><strong>@GV.TestSignal</strong></p>,@GV.TestSignal;BackColor=000000;ForeColor=16777215,<div id ="RB1_ID"</div>,<div id ="RB1_WrtBck_ID"</div>
+<p align="left"><strong>@GV.TestSignal2</strong></p>,@GV.TestSignal2;BackColor=000000;ForeColor=16777215,<div id ="RB2_ID"</div>,<div id ="RB2_WrtBck_ID"</div>
+<p align="left"><strong>$AI.TestSignal</strong></p>,$AI.Config_Used;BackColor=000000;ForeColor=16777215,<div id ="RB3_ID"</div>,<div id ="RB3_WrtBck_ID"</div>

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.01 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	
+	<script src="Scripts/Sigview_Class.js" type="text/javascript"></script>                               <!-- Reference Signal_View Class  Library -->
+	<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css" />                             <!-- Reference BPStyles -->
+	
+		
+	<script type = "text/javascript">
+
+		/*******************************************************************************************
+		 *     Author: John Herring
+		 *
+		 *    Signal View Handling Class 
+		 *
+		 *    Implementation: For R&D
+		 *
+		 *    History: Created 4/4/2012
+		 *
+		 *      Version 2 4/11/12 - Modify to start page with Active-X Control Hidden (Display:None)
+		 *      "check" Button sets refresh rate and executes control. The hide button sets refresh to
+		 *      0 and sets visibility to display:none
+		 *
+		 *       Version 1 4/11/12 - Convert to Example_SigViewClass_Layer - Provide Layer to hide 
+		 *       show interface
+		 *
+		 ********************************************************************************************/
+
+		 "use strict";                                      // Upcoming Convention will Attempt to in force
+
+
+		 onerror = handleErr;
+		 var txt = "";
+
+		 function handleErr(msg, url, l)
+		 {
+			 txt = "There was an error on this page.\n\n";
+			 txt += "Error: " + msg + "\n";
+			 txt += "URL: " + url + "\n";
+			 txt += "Line: " + l + "\n\n";
+			 txt += "Click OK to continue.\n\n";
+			 alert(txt);
+			 return true;
+		 }
+
+
+
+
+ function ActivateControls()
+	  {
+		  // GV_TestSignal_Obj.Execute();
+	  }
+
+ function PageInit()
+	  {
+	   
+		// Insert Page Start Stuff Here.....Just before body execute ..      
+	  
+	  }
+
+</script>
+
+
+	<style type="text/css">
+		#GV_TestSignal_Obj
+		{
+			width: 287px;
+		}
+	
+	div {
+			
+			
+			position:absolute;
+			left: 175px;
+			top: 90px;
+			background-color: #f1f1f1;
+			width: 300px;
+			height: 200px;
+			padding: 10px;
+			color: black;
+			border: #0000cc 2px dashed;
+			display: none;
+		 }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</style>
+
+
+</head>
+
+
+<body onload="PageInit()">
+
+<p class="title left">SigView Class Configure Dialog in Layer</p>       
+
+  <table>
+		<tr>
+			<td class="main" 
+				
+				style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold" 
+				valign="baseline">
+				&nbsp;</td>
+			<td class="style3"> 
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="main" 
+				
+				style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold" 
+				valign="baseline">
+				&nbsp;@GV.TestSignal </td>
+			<td class="style3"> 
+			<div id=GV_TestSignal_Obj_Div style="display:none"><input type="button" value="Hide" style="vertical-align:top"   onclick="Hide_Check();"/> Configure IO Point
+				<object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="GV_TestSignal_Obj" height="175" z-index="1" align="middle">
+		  <param name="_cx" value="370"/>
+		  <param name="_cy" value="370"/>
+		  <param name="ValueText" value="0"/>
+		  <param name="BackColor" value="0"/>
+		  <param name="BorderColor" value="0"/>
+		  <param name="BorderVisible" value="0"/>
+		  <param name="BorderWidth" value="0"/>
+		  <param name="FillColor" value="#f1f1f1"/>
+		  <param name="ForeColor" value="16777215"/>
+		  <param name="RTUName" value="RTU"/>
+		  <param name="SignalName" value="@GV.TestSignal"/>
+		  <param name="Format" value="6"/>
+		  <param name="Direction" value="0"/>
+		  <param name="Horizontal" value="1"/>
+		  <param name="Vertical" value="1"/>
+		  <param name="CollectAlarms" value="0"/>
+		  <param name="RefreshRate" value="1"/>
+		  <param name="Precision" value="0"/>
+		  <param name="Width" value="1"/>
+		  <param name="Units" value="0"/>
+		  <param name="AlarmsFromRtu" value="0"/>
+		  <param name="Rights" value="13"/>
+		  <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/AI.ini"/>
+		   
+		 </object></div>
+	  <br />
+			 </td>
+		</tr>
+	</table>
+<br />
+
+<input type="button" value="Check / Configure" onclick="Check();"/>
+
+<script type = "text/javascript">    // Post html Javascript on html page
+
+
+ActivateControls();  // Trigger the creation of the Signal View Controls
+
+/*******************************************************************************************
+*    Below is the Object Creation of the Sigview Class using the "new" keyword.
+*
+*    in this simplified version the only parameter is the object name (GV_TestSignal_Obj)
+*    as created above. 
+*
+*********************************************************************************************/
+
+
+var SigViewObj = new SigViewClass(GV_TestSignal_Obj,1000);
+
+function setVisibility(id, visibility)
+{
+	document.getElementById(id).style.display = visibility;
+}
+
+
+
+
+
+
+function Check()
+{
+
+
+	setVisibility("GV_TestSignal_Obj_Div", "inline");
+	//document.getElementById("GV_TestSignal_Obj_Div").style.display = "inline";
+	GV_TestSignal_Obj.RefreshRate = "1";
+	GV_TestSignal_Obj.Execute();
+
+	if (SigViewObj.getChanged())
+	{
+		alert("Value has Changed to " + SigViewObj.getLastValue() + " The Flag Equals " + SigViewObj.getChanged());
+		SigViewObj.ResetChanged();
+	}
+
+}
+
+function Hide_Check()
+{
+	GV_TestSignal_Obj.RefreshRate = "0";
+	setVisibility("GV_TestSignal_Obj_Div", "none");
+	//document.getElementById("GV_TestSignal_Obj_Div").style.display = "none";
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>

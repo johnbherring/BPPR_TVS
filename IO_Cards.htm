@@ -1,0 +1,2051 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BPPR_IO: IO Configuration:IO CARDS</title>
+<script language="javaScript" src="scripts/MicroEFMMenus.js"></script>
+
+
+<script language="javascript" >
+        
+          
+        function PageInit ()
+		{
+
+            if (!DetectIE5())
+                window.alert ("The browser must support Active-X Controls. Please use Internet Explorer 5.0 or above");
+            else
+            {
+                CheckCards();
+            }
+        }
+        
+        function ActivateControls()
+        {
+        	SigView1.Execute();
+			SigView2.Execute();
+			SigView3.Execute();
+			SigView4.Execute();
+			SigView5.Execute();
+			SigView6.Execute();
+			SigView7.Execute();
+			SigView8.Execute();
+			SigView9.Execute();
+			SigView10.Execute();
+			SigView11.Execute();
+			SigView12.Execute();
+			SigView13.Execute();
+			SigView14.Execute();
+			SigView15.Execute();
+			SigView16.Execute();
+			SigView17.Execute();
+			SigView18.Execute();
+			SigView19.Execute();
+			SigView20.Execute();
+			SigView21.Execute();
+			SigView22.Execute();
+			SigView23.Execute();
+			SigView24.Execute();
+			SigView25.Execute();
+			SigView26.Execute();
+			SigView27.Execute();
+		}
+        
+        function CheckCards()
+        {
+        	
+        	ActivateControls();
+        	var a = window.setInterval("CheckCard3()",2000);
+			var b = window.setInterval("CheckCard4()",2000);
+			var c = window.setInterval("CheckCard5()",2000);
+			var d = window.setInterval("CheckCard6()",2000);
+			var e = window.setInterval("CheckCard7()",2000);
+			var f = window.setInterval("CheckCard8()",2000);
+		          		
+        }
+
+        /* Card IDs:	
+        1=  16 DI
+        2=  12 DI 4 DO
+        3=  DO 16
+        4=  AI 6
+        5=  AI8
+        6=  AIAO 6AI 2AO
+        7=  AO4
+        8=  HSC4
+        9=  MIX
+        10= RTD4
+        11= TC6
+        15= 8 DI 
+
+        */
+		
+		function CheckCard3()
+        {
+        
+			if (SigView1.ValueText != "")
+        		{
+					
+				switch (SigView1.ValueText)
+        			{
+
+
+        		        case "1":
+        			        Card3Href = "S03_DI16.htm";
+        			        document.Slot3.C3.value = "DI16";
+        			        document.Slot3.C3.style.visibility = "visible";
+        			        break;
+                        case "3":
+                           Card3Href = "S03_DO16.htm";
+                           document.Slot3.C3.value = "DO16";
+                           document.Slot3.C3.style.visibility = "visible";
+                           break;
+                        case "5" :
+					        Card3Href = "S03_AI8.htm";
+					        document.Slot3.C3.value="AI8";
+				   	        document.Slot3.C3.style.visibility="visible"; 
+        			        break;
+				        case "7" :
+					        Card3Href = "S03_4AO.htm";
+					        document.Slot3.C3.value="A04";
+				   	        document.Slot3.C3.style.visibility="visible"; 
+					        break;
+				        case "9" :
+        			        Card3Href = "S03_Mixed.htm";
+					        document.Slot3.C3.value="Mix IO";
+					        document.Slot3.C3.style.visibility="visible"; 
+					        break;
+					}
+				}
+		}
+		
+		function CheckCard4()
+        {
+        
+			if (SigView2.ValueText != "")
+        		{
+					
+				switch (SigView2.ValueText)
+        			{
+        	            case "1":
+        		            Card4Href = "S04_DI16.htm";
+        		            document.Slot4.C4.value = "DI16";
+        		            document.Slot4.C4.style.visibility = "visible";
+        		            break;
+        	            case "3":
+        		            Card4Href = "S04_DO16.htm";
+        		            document.Slot4.C4.value = "DO16";
+        		            document.Slot4.C4.style.visibility = "visible";
+        		            break;               
+                        case "5" :
+					        Card4Href = "S04_AI8.htm";
+					        document.Slot4.C4.value="AI8";
+				   	        document.Slot4.C4.style.visibility="visible"; 
+					        break;
+        		        case "7" :
+					        Card4Href = "S04_4AO.htm";
+					        document.Slot4.C4.value="A04";
+				   	        document.Slot5.C4.style.visibility="visible"; 
+					        break;
+				        case "9" :
+        			        Card4Href = "S04_Mixed.htm";
+					        document.Slot4.C4.value="Mix IO";
+					        document.Slot4.C4.style.visibility="visible"; 
+					        break;
+					}
+				}
+		}
+		
+	
+	function CheckCard5()
+        {
+        
+			if (SigView3.ValueText != "")
+        		{
+					
+				switch (SigView3.ValueText)
+        			{
+        	            case "1":
+        		            Card5Href = "S05_DI16.htm";
+        		            document.Slot5.C5.value = "DI16";
+        		            document.Slot5.C5.style.visibility = "visible";
+        		            break;
+        	            case "3":
+        		            Card5Href = "S05_DO16.htm";
+        		            document.Slot5.C5.value = "DO16";
+        		            document.Slot5.C5.style.visibility = "visible";
+        		            break;
+    			        case "5" :
+					        Card5Href = "S05_AI8.htm";
+					        document.Slot5.C5.value="AI8";
+				   	        document.Slot5.C5.style.visibility="visible"; 
+					        break;
+        		        case "7" :
+					        Card5Href = "S05_4AO.htm";
+					        document.Slot5.C5.value="A04";
+				   	        document.Slot5.C5.style.visibility="visible"; 
+					        break;
+				        case "9" :
+        			        Card5Href = "S05_Mixed.htm";
+					        document.Slot5.C5.value="Mix IO";
+					        document.Slot5.C5.style.visibility="visible"; 
+					        break;
+					}
+				}
+		}
+
+		function CheckCard6()
+		{
+
+		    if (SigView4.ValueText != "")
+		    {
+
+		        switch (SigView4.ValueText)
+		        {
+		            case "1":
+		                Card6Href = "S06_DI16.htm";
+		                document.Slot6.C6.value = "DI16";
+		                document.Slot6.C6.style.visibility = "visible";
+		                break;
+		            case "3":
+		                Card6Href = "S06_DO16.htm";
+		                document.Slot6.C6.value = "DO16";
+		                document.Slot6.C6.style.visibility = "visible";
+		                break;
+                     
+                    case "5":
+		                Card6Href = "S06_AI8.htm";
+		                document.Slot6.C6.value = "AI8";
+		                document.Slot6.C6.style.visibility = "visible";
+		                break;
+		            case "7":
+		                Card6Href = "S06_4AO.htm";
+		                document.Slot6.C6.value = "A04";
+		                document.Slot6.C6.style.visibility = "visible";
+		                break;
+		            case "9":
+		                Card6Href = "S06_Mixed.htm";
+		                document.Slot6.C6.value = "Mix IO";
+		                document.Slot6.C6.style.visibility = "visible";
+		                break;
+		        }
+		    }
+		}
+
+		function CheckCard7()
+		{
+
+		    if (SigView5.ValueText != "")
+		    {
+
+		        switch (SigView5.ValueText)
+		        {
+		            case "1":
+		                Card7Href = "S07_DI16.htm";
+		                document.Slot7.C7.value = "DI16";
+		                document.Slot7.C7.style.visibility = "visible";
+		                break;
+		            case "3":
+		                Card7Href = "S07_DO16.htm";
+		                document.Slot7.C7.value = "DO16";
+		                document.Slot7.C7.style.visibility = "visible";
+		                break;
+
+		            case "5":
+		                Card7Href = "S07_AI8.htm";
+		                document.Slot7.C7.value = "AI8";
+		                document.Slot7.C7.style.visibility = "visible";
+		                break;
+		            case "7":
+		                Card7Href = "S07_AO4.htm";
+		                document.Slot7.C7.value = "A04";
+		                document.Slot7.C7.style.visibility = "visible";
+		                break;
+		            case "9":
+		                Card7Href = "S07_Mixed.htm";
+		                document.Slot7.C7.value = "Mix IO";
+		                document.Slot7.C7.style.visibility = "visible";
+		                break;
+		        }
+		    }
+		}
+
+		function CheckCard8()
+		{
+
+		    if (SigView6.ValueText != "")
+		    {
+
+		        switch (SigView6.ValueText)
+		        {
+		            case "1":
+		                Card8Href = "S08_DI16.htm";
+		                document.Slot8.C8.value = "DI16";
+		                document.Slot8.C8.style.visibility = "visible";
+		                break;
+		            case "3":
+		                Card8Href = "S08_DO16.htm";
+		                document.Slot8.C8.value = "DO16";
+		                document.Slot8.C8.style.visibility = "visible";
+		                break;
+
+		            case "5":
+		                Card8Href = "S08_AI8.htm";
+		                document.Slot8.C8.value = "AI8";
+		                document.Slot8.C8.style.visibility = "visible";
+		                break;
+		            case "7":
+		                Card8Href = "S08_AO4.htm";
+		                document.Slot8.C8.value = "A04";
+		                document.Slot8.C8.style.visibility = "visible";
+		                break;
+		            case "9":
+		                Card8Href = "S08_Mixed.htm";
+		                document.Slot8.C8.value = "Mix IO";
+		                document.Slot8.C8.style.visibility = "visible";
+		                break;
+		        }
+		    }
+		}
+	
+	
+	
+	
+	
+	
+	
+		function OpenCard3()
+	{
+	Card_3 = window.open(Card3Href, "_self", "location=1,status=1,scrollbars=0,toolbar=0,menubar=0,height=1000,width=750");
+    
+	}
+		function OpenCard4()
+	{
+    Card_4 = window.open(Card4Href, "_self", "location=1,status=1,scrollbars=0,toolbar=0,menubar=0,height=1000,width=750");
+    
+	}
+	
+		function OpenCard5()
+	{
+    Card_5 = window.open(Card5Href, "_self", "location=1,status=1,scrollbars=0,toolbar=0,menubar=0,height=1000,width=750");
+   
+	}
+	
+		function OpenCard6()
+	{
+    Card_6 = window.open(Card6Href, "_self", "location=1,status=1,scrollbars=0,toolbar=0,menubar=0,height=1000,width=750");
+    
+	}	
+	
+		function OpenCard7()
+	{
+    Card_7 = window.open(Card7Href, "_self", "location=1,status=1,scrollbars=0,toolbar=0,menubar=0,height=1000,width=750");
+    
+	}
+	
+		function OpenCard8()
+	{
+    Card_8 = window.open(Card8Href, "_self", "location=1,status=1,scrollbars=0,toolbar=0,menubar=0,height=1000,width=750");
+   
+	}
+			          
+        function NoData()
+        {
+        	alert("Configuration not accessible");
+        	window.location.href = "Common_Logon.htm";
+        }
+		
+	
+</script>
+
+
+    <style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:13px;
+	top:12px;
+	width:298px;
+	height:138px;
+	z-index:1;
+}
+-->
+    </style>
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css"></head>
+<body class="main" onLoad="PageInit();" >
+
+<p align="left" class="title">IO Cards</p>
+
+<div align="left">
+  <table width="707" height="22" border="1" cellpadding="2" cellspacing="0" bordercolor="#999999" bgcolor="#FAF0DD">
+    <tr bgcolor="#CCCCCC">
+      <th class="tablehead2">Slot</th>
+                <th class="tablehead2">Status</th>
+                <th class="tablehead2">Card Found</th>
+                <th class="tablehead2">Card Configured </th>
+                <th class="tablehead2">Card Mismatch </th>
+    <th width="131" valign="bottom" nowrap class="tablehead2">Select to Display            </tr>
+    <tr>
+      <td width="37"><div align="center"><strong>3</strong></div></td>
+      <td width="72" bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView13" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S03_Card_Status">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td width="175" bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView1" width="100%" height="20">
+            <param name="_cx" value="370">
+            <param name="_cy" value="370">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="0">
+            <param name="BorderVisible" value="0">
+            <param name="BorderWidth" value="0">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Rack.S03_Type">
+            <param name="Format" value="6">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="LoAlarm" value="1.175494E-38">
+            <param name="HiAlarm" value="1.175494E-38">
+            <param name="LoLoAlarm" value="1.175494E-38">
+            <param name="HiHiAlarm" value="1.175494E-38">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="0">
+            <param name="Width" value="1">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="8">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="16777215">
+            <param name="CriticalColor" value="16777215">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+            <param name="BtnMode" value="0">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value>
+            <param name="BtnToggleOFFtoONText" value>
+            <param name="BtnToggleONtoOFFText" value>
+            <param name="BtnForceValue" value>
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+      </object></td>
+      <td width="171" bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView7" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.S03_CFG_Type">
+        <param name="Format" value="6">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="1">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="13">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+      <td width="83" bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView19" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S03_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td ><form name="Slot3" style=" margin: 0; padding: 0;" >
+            <div align="left">
+              <BUTTON type="Button" id="C3" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard3();">Standby</BUTTON>
+            </div>
+      </form>            </tr>
+    <tr>
+      <td><div align="center"><strong>4</strong></div></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView14" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S04_Card_Status">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView2" width="100%" height="20">
+            <param name="_cx" value="370">
+            <param name="_cy" value="370">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="0">
+            <param name="BorderVisible" value="0">
+            <param name="BorderWidth" value="0">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Rack.S04_Type">
+            <param name="Format" value="6">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="LoAlarm" value="1.175494E-38">
+            <param name="HiAlarm" value="1.175494E+38">
+            <param name="LoLoAlarm" value="1.175494E-38">
+            <param name="HiHiAlarm" value="1.175494E+38">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="1">
+            <param name="Precision" value="0">
+            <param name="Width" value="1">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="16777215">
+            <param name="CriticalColor" value="16777215">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+            <param name="BtnMode" value="0">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value>
+            <param name="BtnToggleOFFtoONText" value>
+            <param name="BtnToggleONtoOFFText" value>
+            <param name="BtnForceValue" value>
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView8" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.S04_CFG_Type">
+        <param name="Format" value="6">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="1">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="13">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView20" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S04_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td ><form name="Slot4" style=" margin: 0; padding: 0;">
+          <div align="left">
+              <BUTTON type="Button" id="C4" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard4();">Standby</BUTTON>
+            </div>
+      </form></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>5</strong></div></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView15" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S05_Card_Status">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView3" width="100%" height="20">
+            <param name="_cx" value="370">
+            <param name="_cy" value="370">
+            <param name="BackColor" value="0">
+            <param name="BorderColor" value="0">
+            <param name="BorderVisible" value="0">
+            <param name="BorderWidth" value="0">
+            <param name="FillColor" value="0">
+            <param name="ForeColor" value="16777215">
+            <param name="RTUName" value>
+            <param name="SignalName" value="Rack.S05_Type">
+            <param name="Format" value="6">
+            <param name="Direction" value="0">
+            <param name="OnBitmap" value>
+            <param name="OffBitmap" value>
+            <param name="Zero" value="0">
+            <param name="Span" value="0">
+            <param name="LoAlarm" value="1.175494E-38">
+            <param name="HiAlarm" value="1.175494E+38">
+            <param name="LoLoAlarm" value="1.175494E-38">
+            <param name="HiHiAlarm" value="1.175494E+38">
+            <param name="Horizontal" value="1">
+            <param name="Vertical" value="1">
+            <param name="CollectAlarms" value="0">
+            <param name="RefreshRate" value="2">
+            <param name="Precision" value="0">
+            <param name="Width" value="1">
+            <param name="Units" value="0">
+            <param name="AlarmsFromRtu" value="0">
+            <param name="Rights" value="15">
+            <param name="AlarmEnableText" value>
+            <param name="AlarmInhibitText" value>
+            <param name="ControlEnableText" value>
+            <param name="ControlInhibitText" value>
+            <param name="ManualEnableText" value>
+            <param name="ManualInhibitText" value>
+            <param name="AlarmColor" value="16777215">
+            <param name="CriticalColor" value="16777215">
+            <param name="ArrayNumber" value="0">
+            <param name="ArrayRow" value="0">
+            <param name="ArrayColumn" value="0">
+            <param name="ArrayIsLogical" value="0">
+            <param name="ExpIndex" value="0">
+            <param name="ValueText" value>
+            <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+            <param name="BtnMode" value="0">
+            <param name="BtnFunction" value="2">
+            <param name="BtnSteadyText" value>
+            <param name="BtnToggleOFFtoONText" value>
+            <param name="BtnToggleONtoOFFText" value>
+            <param name="BtnForceValue" value>
+            <param name="JogCtrlVisible" value="0">
+            <param name="JogMode" value="0">
+            <param name="JogValue" value="0">
+            <param name="JogLoLimit" value="0">
+            <param name="JogHiLimit" value="0">
+            <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView9" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.S05_CFG_Type">
+        <param name="Format" value="6">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="13">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView21" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S05_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td><form name="Slot5" style=" margin: 0; padding: 0;" >
+            <div align="left">
+              <BUTTON type="Button" id="C5" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard5();">Standby</BUTTON>
+            </div>
+      </form> </td>
+              </tr>
+    <tr>
+      <td><div align="center"><strong>6</strong></div></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView16" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S06_Card_Status">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView4" width="100%" height="20">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S06_Type">
+          <param name="Format" value="6">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="13">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView10" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.S06_CFG_Type">
+        <param name="Format" value="6">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="13">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView22" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S06_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="13">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td><form name="Slot6" style=" margin: 0; padding: 0;" >
+            <div align="left">
+              <BUTTON type="Button" id="C6" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard6();">Standby</BUTTON>
+            </div>
+      </form></td>
+              </tr>
+    <tr>
+      <td><div align="center"><strong>7</strong></div></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView17" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S07_Card_Status">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView5" width="100%" height="20">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S07_Type">
+          <param name="Format" value="6">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="15">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView11" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.S07_CFG_Type">
+        <param name="Format" value="6">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="13">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView23" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S07_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td><form name="Slot7" style=" margin: 0; padding: 0;" >
+            <div align="left">
+              <BUTTON type="Button" id="C7" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard7();">Standby</BUTTON>
+            </div>
+      </form></td>
+              </tr>
+    <tr>
+      <td><div align="center"><strong>8</strong></div></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView18" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S08_Card_Status">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView6" width="100%" height="20">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S08_Type">
+          <param name="Format" value="6">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView12" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.S08_CFG_Type">
+        <param name="Format" value="6">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="13">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView24" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.S08_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Clear.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+      <td bgcolor="#FAF0DD"><form name="Slot8" style=" margin: 0; padding: 0;" >
+            <div align="left">
+              <BUTTON type="Button" id="C8" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard8();">Standby</BUTTON>
+            </div>
+      </form></td>
+              </tr>
+  </table>
+</div>
+<br>
+<br>
+<div align="left"><br>
+  <table width="400" border="1" cellpadding="2" cellspacing="0" bordercolor="#999999">
+    <tr>
+      <th width="239" bgcolor="#CCCCCC">Configuration Info </th>
+      <th width="147" bgcolor="#CCCCCC">Point</th>
+    </tr>
+    <tr>
+      <td>Rack Mismatch </td>
+      <td bgcolor="#FFFFFF"><div align="center">
+        <object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView25" width="25" height="25">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="16777215">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="0">
+          <param name="RTUName" value>
+          <param name="SignalName" value="Rack.Rack_Card_Mismatch">
+          <param name="Format" value="2">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/Alarm.BMP">
+          <param name="OffBitmap" value="C:/Users/Public/openbsi/BPPR_TVS/IMAGES/off.BMP">
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="2">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/CardTypeConfig.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+        </object>
+      </div></td>
+    </tr>
+    <tr>
+      <td height="28">Cards Detected </td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView26" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.CardCount">
+        <param name="Format" value="0">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="8">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+    </tr>
+    <tr>
+      <td height="28">Cards Configuration</td>
+      <td bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView27" width="100%" height="20">
+        <param name="_cx" value="370">
+        <param name="_cy" value="370">
+        <param name="BackColor" value="0">
+        <param name="BorderColor" value="0">
+        <param name="BorderVisible" value="0">
+        <param name="BorderWidth" value="0">
+        <param name="FillColor" value="0">
+        <param name="ForeColor" value="16777215">
+        <param name="RTUName" value>
+        <param name="SignalName" value="Rack.ConfigCardCount">
+        <param name="Format" value="0">
+        <param name="Direction" value="0">
+        <param name="OnBitmap" value>
+        <param name="OffBitmap" value>
+        <param name="Zero" value="0">
+        <param name="Span" value="0">
+        <param name="LoAlarm" value="1.175494E-38">
+        <param name="HiAlarm" value="1.175494E+38">
+        <param name="LoLoAlarm" value="1.175494E-38">
+        <param name="HiHiAlarm" value="1.175494E+38">
+        <param name="Horizontal" value="1">
+        <param name="Vertical" value="1">
+        <param name="CollectAlarms" value="0">
+        <param name="RefreshRate" value="2">
+        <param name="Precision" value="0">
+        <param name="Width" value="1">
+        <param name="Units" value="0">
+        <param name="AlarmsFromRtu" value="0">
+        <param name="Rights" value="8">
+        <param name="AlarmEnableText" value>
+        <param name="AlarmInhibitText" value>
+        <param name="ControlEnableText" value>
+        <param name="ControlInhibitText" value>
+        <param name="ManualEnableText" value>
+        <param name="ManualInhibitText" value>
+        <param name="AlarmColor" value="16777215">
+        <param name="CriticalColor" value="16777215">
+        <param name="ArrayNumber" value="0">
+        <param name="ArrayRow" value="0">
+        <param name="ArrayColumn" value="0">
+        <param name="ArrayIsLogical" value="0">
+        <param name="ExpIndex" value="0">
+        <param name="ValueText" value>
+        <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+        <param name="BtnMode" value="0">
+        <param name="BtnFunction" value="2">
+        <param name="BtnSteadyText" value>
+        <param name="BtnToggleOFFtoONText" value>
+        <param name="BtnToggleONtoOFFText" value>
+        <param name="BtnForceValue" value>
+        <param name="JogCtrlVisible" value="0">
+        <param name="JogMode" value="0">
+        <param name="JogValue" value="0">
+        <param name="JogLoLimit" value="0">
+        <param name="JogHiLimit" value="0">
+        <param name="DocURL" value>
+      </object></td>
+    </tr>
+  </table>
+</div>
+<p align="left">&nbsp;</p>
+          <p>&nbsp;</p>
+</body>
+
+</html>

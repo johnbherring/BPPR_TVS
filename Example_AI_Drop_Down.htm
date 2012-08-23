@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css" />                             <!-- Reference BPStyles -->
+<script type="text/javascript" language="javaScript" src="Scripts/RadioButton.js"></script>           <!-- Reference RadioButton Library -->
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+
+</head>
+<script language="javascript" >
+		
+		var Last_Version = -1;
+		var Current_Version =0;
+		var Signal;
+		var SigType;
+		var RTU = "RTU";
+			   
+		var locate = window.location            // This is where the URL is grabbed see Page Init for parsing
+
+
+		function PageInit ()
+			{
+			   var LastVersion = 0;
+			   document.SignalName.SignalType.value = locate;      // Parse locate (See Global Var Declaration
+			   var text = SignalName.SignalType.value;
+							  
+			   Signal=delineate(text);
+			   SigType=delineate2(text);
+			   
+			   alert(Signal + " " + SigType);
+			   SetCheckedRadioButton(RB1DivID, SigType-1)
+			  
+			   CheckVersion();  //Start Timer Activate SigView Controls
+			  }
+		 
+		 
+		 function CheckVersion()
+			{
+
+				ActivateControls();
+				var a = window.setInterval("CheckAIFile()", 5000);
+				var b = window.setInterval("UpdateFileReadStatus()", 1000);
+			}
+
+		function delineate(str)
+		   {
+			   theleft = str.indexOf("=") + 1;
+			   theright = str.lastIndexOf("&");
+			   return (str.substring(theleft, theright));
+		   }
+
+		function delineate2(str)
+		   {
+				point = str.lastIndexOf("=");
+				return (str.substring(point + 1, str.length));
+		   }
+
+		function ActivateControls()
+		  {
+			   SigView2.SignalName = Signal;
+			   SigView2.inifile = "C:/Users/Public/openbsi/BPPR_TVS/ini/"+FileNameArray[SigType];
+			   SigView1.Execute();
+			   SigView2.Execute();
+
+			
+
+			// FileCollectStart(SigType);
+		  
+		  }
+
+		/*********************************IO Files Detail************************************    
+		(Excerted from FB IO.ini i Sheet)
+		
+		IO Files Detail
+		
+		Per	Function      Array Point
+
+		AIMVT.INI			14  MVT and AI List to be used by EGM IO Screen
+	
+		AIALL.INI			15  Type AI, MVT, Soft, Calc, Modbus, HART, WiHART, FB, Used for 
+		XY, Well, Other Applications needing access to most 
+		Analog Values.
+
+		DIALL.INI			Types DI, Soft Used for XY, Well, and other Applications needing
+		access to most Logical Values
+
+		Per IO Type       Array Point
+
+		AI.INI 	 			1    Analog Inputs Only
+		AO.INI				2    Analog Outputs Only
+		DI.INI		 		3    Discrete Inputs Only 
+		DO.INI		 		4    Discrete Outputs Only
+		HSC.INI			 	5    High Speed Counters Only
+		MVT.INI				6    Multi Variable Transmitter Only 
+	
+		MODBUS.INI		  	7    Modbus Protocol Supplied Values Only
+		CALC.INI			8    Calculated Only
+		SOFTB.INI			9    Soft Logical Only
+		SOFTF.INI			10   Soft Values Only
+		HART.INI			11   Hart Supplied Values Only
+		WIHART.INI			12   Wi HART Supplied Values Only
+		FB.INI				13   Foundation Field Bus Supplied Values Only
+	  
+		Insert above Files Names into Array position in array same as IO Type #
+		*********************************************************************************************/
+
+
+		var FileNameArray = new Array("None","AI.INI", "AO.INI", "DI.INI", "DO.INI", "HSC.INI",
+		"MVT.INI", "MODBUS.INI", "CALC.INI", "SOFTB.INI", "SOFTF.INI", "HART.INI", "WIHART.INI",
+		"FB.INI", "AI_MVT.INI", "AIALL.INI", "DIALL.INI");
+
+		function FileCollectStart(Select)
+		{
+			if (FileCollect1)
+			{
+
+				FileCollect1.BackColor = 0xDCF0FA;
+				FileCollect1.FillColor = 0x000000;
+				FileCollect1.Mode = 4;
+				FileCollect1.PCPath = "C:\\OpenBSI\\BPPR_IO\\INI ";
+				FileCollect1.DeviceFileName = FileNameArray[Select];
+				FileCollect1.PCFileName = FileNameArray[Select];
+				FileCollect1.Execute();
+			}
+
+		}
+
+		
+		function UpdateFileReadStatus()
+		{
+			  if(typeof FileCollect1 != 'undefined' ) 
+				
+				{
+					document.getElementById("TextArea1").value = FileCollect1.XFERStatus;
+				}
+		
+		}
+
+		function ShowText1()
+		{
+
+			if (document.getElementById("Checkbox1").checked)
+			{
+				document.EnaTextArea1.TextArea1.style.visibility = "visible";
+			}
+			else
+			{
+				document.EnaTextArea1.TextArea1.style.visibility = "hidden";
+			}
+
+		}
+		
+		function CheckAIFile()
+		{
+		
+			if (SigView1.ValueText != "")
+			{
+			
+				var Text_Current_Version = SigView1.ValueText;
+				Current_Version = Text_Current_Version-0;
+				document.Ver.Ver.value=Current_Version;
+					
+				if (Last_Version != Current_Version)
+				{
+					Last_Version = Current_Version;
+					FileCollectStart(SigType);	
+					
+				}	
+									
+			}
+		
+		}
+	
+	
+	
+		function NoData()
+		{
+		alert("Configuration not accessible");
+		window.location.href = "Common_Logon.htm";
+		}
+		
+		// -->	
+
+
+		/*******************************************************************************************                               
+																															
+		*    RB#RadioText     Setting    Array Containing the Text to be applied to Radio Buttons                                  
+		*    RB#RadioValue    Setting    Array Containing values to be applied upon selection of radio buttons                     
+			 RB1RadioValDef   Setting    This is the default file to load in this application After Creation
+		*    RB#Start         Setting    Starting Point in Array to Build from (Default 0)                                                         
+		*    RB#End           Setting    Ending Point in Array to Build, Logic sets this to equal the number in array                                                                  
+		*    RB#SignalName    Setting    Signal to be read from and written to by radio buttons                                    
+		*    RB#DivID         Setting    Div Id where Radio Buttons are to be written to (See FileName.csv)                        
+		*                                RadioButton ID are genrated from this Value (MUST be unique to each                       
+		*                                RadioButton Set.                                                                          
+		*    RB#WrtBckDivID   Setting    Div Id to hold Signal Write Control (See See FileName.csv)                                
+		*    RB#CorrectError  Setting       Selects response to incorrect value (not in RadioValue Array)                          
+		*                                                                                                                          
+		*                                 True =    Force Value to Value represented by selected button (if Selected)              
+		*                                           set to if No Radio Button is selected (Not Supported).                             
+		*                                 False =   Do Not Force Value but indicate on Radio Button that value is not                
+		*                                           represented (Goes to Array item 1 Default.                                         
+		*                                                                                                                          
+		*    RB#Write         Status     Write to Signal Name is pending (BOOLEAN)                                                    
+		*    RB#Pending       Status     Value being written to Signal             
+		*    RB#Value         Status     Current Value read from RadioButton by reading selected button and matching               
+		*                                to Value in RadioArray.                                                                   
+		*    RB#Checked       Status     Current which radio button is selected                                                      
+		*********************************************************************************************/
+
+		var RB1RadioText = new Array("AI","AI_MVT","AI_All");
+		var RB1RadioValue = new Array(1, 13, 14);               // See Name / Number Ref @ Function FileCollectStart
+		var RB1RadioValDef =SigType;                                 // Sets Default File Type (Zero Based Array)
+		var RB1Start = 0;
+		var RB1End = RB1RadioText.length;
+		//var RB1SignalName = "@GV.TestSignal";
+		var RB1DivID = "RB1_ID";
+		var RB1WrtBckDivID = "RB1_WrtBck_ID";
+		var RB1CorrectError = false;
+		var RB1Write = false;
+		var RB1Pending = 0;
+		var RB1Value = 0;
+		var RB1Checked = 0;
+
+		CompareArrays(RB1RadioText.length, RB1RadioValue.length, RB1DivID);  // Validate Configuration, Programmer Help
+
+		var RBDebug = false;  // Control -  Enable Debug messages to be generated to message boxes
+
+	
+		
+		function RB1_ID_Click()
+		{
+			RB1Checked = GetCheckedRadioButton(RB1Start, RB1End, RB1DivID);                 // Retrieve which Radio Button is Selected
+			SigType = GetValueRadioButton(RB1Start, RB1End, RB1DivID, RB1RadioValue);    // Retrieve the Value of the Selected Radio Button
+		//	RB1Write = true;
+
+			if (RBDebug) { alert("The User has Selected Button # " + RB1Checked + " Which has a Value of " + RB1Pending); }
+
+			Last_Version = -1;
+			ActivateControls();
+			
+		}
+
+</script>
+
+<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:13px;
+	top:12px;
+	width:298px;
+	height:138px;
+	z-index:1;
+}
+		#FileCollect1
+		{
+			height: 0px;
+			width: 1px;
+		}
+		.style1
+		{
+			height: 42px;
+		}
+		#Text1
+		{
+			width: 254px;
+		}
+		#FileStatusTxt
+		{
+			width: 258px;
+		}
+		#TextArea1
+		{
+			width: 353px;
+		}
+		.style2
+		{
+			height: 38px;
+		}
+		.style3
+		{
+			height: 16px;
+		}
+		
+		.ShowFileCheckBox
+		{
+		    
+		    float:left;
+		    vertical-align:middle;
+		}
+		   
+		
+-->
+</style>
+
+
+
+
+
+<body class="main" onLoad="PageInit();" >
+<p class="title left">Configure IO</p>
+<br />
+<br />
+<br />
+<div align="left">
+  <table width="584" height="22" border="1" cellpadding="2" cellspacing="0" bordercolor="#999999" bgcolor="#FAF0DD">
+	<tr bgcolor="#CCCCCC">
+	  <th class="tablehead2"><p>Current Version </p>
+	  </th>
+	  <th class="tablehead2">File Version</th>
+	  <th class="tablehead2">AI Drop Down </th>
+	  <th width="131" valign="bottom" nowrap class="tablehead2">Demand Collect     </tr>
+	<tr>
+	  <td width="98" bgcolor="#000000"><form name="Ver" style=" margin: 0; padding: 0;" ><input name="Ver" id="Ver" type="text" value="Version" size="15"></form>
+	 </td>
+	  <td width="104" bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView1" width="100%" height="20">
+		  <param name="_cx" value="370">
+		  <param name="_cy" value="370">
+		  <param name="BackColor" value="0">
+		  <param name="BorderColor" value="0">
+		  <param name="BorderVisible" value="0">
+		  <param name="BorderWidth" value="0">
+		  <param name="FillColor" value="0">
+		  <param name="ForeColor" value="16777215">
+		  <param name="RTUName" value="RTU">
+		  <param name="SignalName" value="AI.AI_ListVer">
+		  <param name="Format" value="0">
+		  <param name="Direction" value="0">
+		  <param name="OnBitmap" value>
+		  <param name="OffBitmap" value>
+		  <param name="Zero" value="0">
+		  <param name="Span" value="0">
+		  <param name="LoAlarm" value="1.175494E-38">
+		  <param name="HiAlarm" value="1.175494E-38">
+		  <param name="LoLoAlarm" value="1.175494E-38">
+		  <param name="HiHiAlarm" value="1.175494E-38">
+		  <param name="Horizontal" value="1">
+		  <param name="Vertical" value="1">
+		  <param name="CollectAlarms" value="0">
+		  <param name="RefreshRate" value="1">
+		  <param name="Precision" value="0">
+		  <param name="Width" value="1">
+		  <param name="Units" value="0">
+		  <param name="AlarmsFromRtu" value="0">
+		  <param name="Rights" value="8">
+		  <param name="AlarmEnableText" value>
+		  <param name="AlarmInhibitText" value>
+		  <param name="ControlEnableText" value>
+		  <param name="ControlInhibitText" value>
+		  <param name="ManualEnableText" value>
+		  <param name="ManualInhibitText" value>
+		  <param name="AlarmColor" value="16777215">
+		  <param name="CriticalColor" value="16777215">
+		  <param name="ArrayNumber" value="0">
+		  <param name="ArrayRow" value="0">
+		  <param name="ArrayColumn" value="0">
+		  <param name="ArrayIsLogical" value="0">
+		  <param name="ExpIndex" value="0">
+		  <param name="ValueText" value>
+		  <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+		  <param name="BtnMode" value="0">
+		  <param name="BtnFunction" value="2">
+		  <param name="BtnSteadyText" value>
+		  <param name="BtnToggleOFFtoONText" value>
+		  <param name="BtnToggleONtoOFFText" value>
+		  <param name="BtnForceValue" value>
+		  <param name="JogCtrlVisible" value="0">
+		  <param name="JogMode" value="0">
+		  <param name="JogValue" value="0">
+		  <param name="JogLoLimit" value="0">
+		  <param name="JogHiLimit" value="0">
+		  <param name="DocURL" value>
+	  </object></td>
+	  <td width="225" bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView2" width="100%" height="20">
+		  <param name="_cx" value="370">
+		  <param name="_cy" value="370">
+		  <param name="BackColor" value="0">
+		  <param name="BorderColor" value="0">
+		  <param name="BorderVisible" value="0">
+		  <param name="BorderWidth" value="0">
+		  <param name="FillColor" value="0">
+		  <param name="ForeColor" value="16777215">
+		  <param name="RTUName" value="RTU">
+		  <param name="SignalName" />
+		  <param name="Format" value="6">
+		  <param name="IniFile"/>
+		  <param name="Direction" value="0">
+		  <param name="Horizontal" value="1">
+		  <param name="Vertical" value="1">
+		  <param name="CollectAlarms" value="0">
+		  <param name="RefreshRate" value="1">
+		  <param name="Precision" value="0">
+		  <param name="Width" value="1">
+		  <param name="Units" value="0">
+		  <param name="Rights" value="13">
+		  <param name="AlarmEnableText" value>
+		  <param name="AlarmInhibitText" value>
+		  <param name="ControlEnableText" value>
+		  <param name="ControlInhibitText" value>
+		  <param name="ManualEnableText" value>
+		  <param name="ManualInhibitText" value>
+		  <param name="AlarmColor" value="16777215">
+		  <param name="CriticalColor" value="16777215">
+		  <param name="ExpIndex" value="0">
+		  <param name="ValueText" value>
+		  <param name="DocURL" value>
+	  </object></td>
+	  <td >&nbsp;</tr>
+	<tr>
+	  <td bgcolor="Transparent" class="style1" colspan="4">
+	   <div id="RB1_ID"></div></td>
+	  <tr>
+	  <td bgcolor="Transparent" class="style2" colspan="4">
+	
+	  <form name=EnaTextArea1><textarea id="TextArea1" name="FileStatus" rows="2" 
+          cols="20"" style="height: 25; width: 25; visibility:hidden"></textarea></form></td>
+	  <tr>
+	  <td bgcolor="Transparent" class="style3" colspan="4" align="left">
+	
+	 <input id="Checkbox1" type="checkbox" class="ShowFileCheckBox"  
+              onclick ="ShowText1()" value="unchecked" /></td>
+	  </table>
+</div>
+	<br />
+	<br />
+	<br />
+	</td>
+		
+	&nbsp;<br />
+	<br />
+<object ID="FileCollect1" classid="clsid:FC8163E8-6D23-4AB4-846D-8926D4D87347" 
+		align="left"></object>
+</td>
+
+
+
+<!-- Important ... Hidden Form receives values from URL to set Signal and Type DONOT Delete -->
+
+<FORM NAME="SignalName">
+<INPUT TYPE="hidden" NAME="SignalType">
+</FORM>
+
+<!-- Important ... Hidden Form receives values from URL to set Signal and Type DONOT Delete -->        
+
+
+
+
+</body>
+<script type = "text/javascript"> // Post html Javascript on html page
+   
+	CreateRadioButtonHtml(RB1Start,RB1End,RB1RadioText,RB1DivID,"RB1_ID_Click");
+
+	
+
+
+</script>
+
+</html>

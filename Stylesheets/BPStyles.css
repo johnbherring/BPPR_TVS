@@ -1,0 +1,377 @@
+/* Main Scrollbar Colors */
+body
+{
+	SCROLLBAR-FACE-COLOR: green;
+	SCROLLBAR-HIGHLIGHT-COLOR: white;
+	SCROLLBAR-SHADOW-COLOR: darkgreen;
+	SCROLLBAR-3DLIGHT-COLOR: silver;
+	SCROLLBAR-ARROW-COLOR: white;
+	SCROLLBAR-TRACK-COLOR: silver;
+	SCROLLBAR-DARKSHADOW-COLOR: black
+}
+
+.checkbox, .radio {
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(/images/checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
+.radio {
+	background: url(images/radio.png) no-repeat;
+}
+.select {
+	position: absolute;
+	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 8px;
+	color: #fff;
+	font: 12px/21px arial,sans-serif;
+	background: url(/images/select.png) no-repeat;
+	overflow: hidden;
+}
+
+
+/* JogKey Style*/
+.JogKey {
+	color: #663300;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+
+/* Main Background */
+body
+{
+	background: #FAF0DD;
+}
+
+
+
+
+/* Main Font */
+.main
+{
+	color: black;
+	font-family: arial, verdana, sans-serif;
+	line-height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+
+
+
+/* Main Links */
+a:visited
+{ 	
+	color: black;
+	text-decoration: none;
+}
+
+a:link
+{ 	
+	color: black;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: black;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+
+
+
+/* Main Title */
+.title
+{
+	color: darkgreen;
+	font-family: arial, verdana, sans-serif;
+	font-size: 20pt;
+	font-weight: bold;
+	line-height: 100%;
+	margin-top: 10;
+	margin-bottom: 10;
+	width:100%;
+}
+
+
+
+
+/* Main Title 2 Top*/
+.title2top
+{
+	color: darkgreen;
+	font-family: arial, verdana, sans-serif;
+	font-size: 20pt;
+	font-weight: bold;
+	line-height: 100%;
+	margin-top: 10;
+	margin-bottom: 0;
+}
+
+
+
+
+/* Main Title 2 Bottom*/
+.title2bottom
+{
+	color: darkgreen;
+	font-family: arial, verdana, sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	line-height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+
+
+/* Control Table Level 1 Header */
+.tablehead
+{
+	font-style: italic;
+}
+.datatable {
+	background-color: #CCCCCC;
+	border: thin solid #000000;
+}
+
+
+
+
+
+/* Control Table Level 2 Header */
+.tablehead2
+{
+	font-weight: bold;
+}
+
+
+
+
+/* Page _of _ */
+.pagenumber
+{
+	font-size:10pt;
+	line-height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+
+/* Help Page Title */
+.helptitle
+{
+	font-size:16pt;
+	font-weight: bold;
+	line-height: 100%;
+	margin-top: 10;
+	margin-bottom: 0;
+}
+
+
+
+
+/* Menu Background */
+.menubody
+{
+	  color: black;
+	background-image: url(./../images/background.jpg);
+}
+
+
+
+/* Menu Logo Styles */
+.logoTitle
+{
+	color: white;
+	font-family: arialbold, verdana, sans-serif;
+	font-size: 24pt;
+	font-weight: bold;
+	line-height: 100%;
+	margin-top: 5;
+	margin-bottom: 0;
+	margin-left: 5;
+}
+
+.logoSubtitle
+{
+	color: white;
+	font-family: arialbold, verdana, sans-serif;
+	font-size: 10pt;
+	line-height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 40;
+}
+
+
+/* Menu List */
+.menuList
+{
+	color: white;
+	font-family: arial, verdana, sans serif;
+	line-height: 100%;
+	margin-top: 30px;
+	margin-bottom: 7px;
+	margin-left: 5px;
+}
+
+
+
+/* Menu Item Links */
+a.menuItem:visited
+{ 	
+	color: white;
+	text-decoration: none;
+}
+
+a.menuitem:link
+{ 	
+	color: white;
+	text-decoration: none;
+}
+
+a.menuItem:hover
+{
+	color: white;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+/* Menu Items */
+.menuItem
+{
+	color: white;
+	font-family: arial, verdana, sans serif;
+	font-size: 13pt;
+	line-height: 100%;
+	margin-top: 3px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+/* 'THE' Help Item */
+.helpItem
+{
+	color: white;
+	font-family: arialbold, verdana, sans serif;
+	font-weight: bold;
+	line-height: 100%;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+
+/* Menu Drop Down Item Links */
+a.menuDropItem:visited
+{ 	
+	color: white;
+	text-decoration: none;
+}
+
+a.menuDropItem:link
+{ 	
+	color: white;
+	text-decoration: none;
+}
+
+a.menuDropItem:hover
+{
+	color: white;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+
+/* Menu Dropdowns */
+.menuDrop
+{
+	display: none;
+	line-height: 100%;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 15px;
+}
+
+
+
+
+/* Node Name Form */
+.nodeform
+{
+	font-size: 100%;
+	text-align: left;
+	margin-left: 6px;
+	margin-bottom: 30px;
+}
+
+
+
+
+/* Node Name Title */
+.nodetitle
+{
+	color: white;
+	cursor: default;
+	font-family: arialbold, verdana, sans-serif;
+	font-size: 90%;
+	font-weight: bold;
+	margin-top: 40px;
+	border-width: 0px;
+	text-align: left;
+}
+
+/* Table Cell - Black */
+.BlackCell
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color:#000000;
+
+}
+
+
+/* Image ..Text Left to replace align="left" */
+
+.left 
+{
+	border-style: inherit;
+	border-color: inherit;
+	border-width: 0px;
+	float:left;
+	margin:0 -2px;
+	padding:1px;
+	width:100%;
+}
+
+/* Config Button */
+
+.CfgButton 
+{
+	vertical-align:top;
+}
+
+.HtmlRowHeader
+{
+	background-color:darkgray;
+	width:20;
+	font-weight:bold;
+	border:1px;
+	padding:0;
+	margin:0;
+}
+

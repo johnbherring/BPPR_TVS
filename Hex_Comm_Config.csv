@@ -1,0 +1,19 @@
+*Site Name;width=370;
+$HR.Site_Name;
+
+
+* &nbsp;width=250,Decimal;width=75,Hex;width=75;
+RTU Address (1-255),$HR.Address,$HR.Address;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/RTUAddressHex.ini;backcolor=000000;forecolor=16777215;rights=8;
+Location Multiplier (0-15),$HR.LocMult,$HR.LocMult;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/LMHex.ini;backcolor=000000;forecolor=16777215;rights=8;
+
+*Port No.;width=100,Ena/Dis able;width=100,XMT Delay (mS);width=125,Status;width=700;
+COM2,$HR.COM2_ENA;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Disabled;BtnToggleONtoOFFText=Enabled,$HR.COM2_WRITE_DEL,$HR.CUSTOM1_STAT;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/HexCustomStatus.ini;
+COM5,$HR.COM5_ENA;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Disabled;BtnToggleONtoOFFText=Enabled,$HR.COM5_WRITE_DEL,$HR.CUSTOM2_STAT;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/HexCustomStatus.ini;
+
+*Data Map File;width=175,Status;width=100;
+Error on Line #,$HR.DataMap_File_Error;
+
+*Data Line Monitor;width=175,&nbsp;width=50,Message;width=800;
+Port No.,$HR.DLM_PORT,&nbsp;
+Receive Data,&nbsp,$HR.DLM_READ;
+Transmit Data,&nbsp,$HR.DLM_WRITE;

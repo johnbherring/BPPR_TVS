@@ -1,0 +1,81 @@
+BODY 	{ color: black;
+          font-family: Verdana, Arial, Helvetica, sans-serif;
+          font-size: 8pt; margin-left: 1em; 
+          text-align: left;
+          background-attachment: scroll; background-image: url(OpenBSI_115x46.gif); background-repeat: no-repeat; 
+	  background-position: right top;
+  	  background-color: #FFFCF1
+     	}
+
+H2 	{ font-family: Verdana, Arial, Helvetica, sans-serif; color: #0099CC; font-size: 13px;  text-align: left; margin-bottom: 10px; padding-top: 10px; padding-bottom: 3px; padding-left: 0px;  padding-right: 5px;; border: #FFCC00 solid; border-width: 0px 0px 2px}
+
+H3 	{ font-family: Verdana, Arial, Helvetica, sans-serif; color: #0099CC; font-size: 13px;  text-align: left; margin-bottom: 10px; padding-top: 10px; padding-bottom: 3px; padding-left: 0px;  padding-right: 5px;; border: #FFCC00 solid; border-width: 0px 0px 2px}
+
+H4 	{ font-family: Verdana, Arial, Helvetica, sans-serif; color: #0099CC; font-size: 13px;  text-align: left; margin-bottom: 10px; padding-top: 10px; padding-bottom: 3px; padding-left: 0px;  padding-right: 5px;; border: #FFCC00 solid; border-width: 0px 0px 2px}
+
+P 	{line-height: 122%; margin-top: 6pt; margin-bottom: 0pt }
+
+UL 	{ list-style-type: square; }
+
+UL UL	{ list-style-type: circle; }
+
+OL OL 	{ list-style-type: lower-alpha; }
+
+table 	{ 
+	  text-align: left;
+	  margin-top: 1.0em;
+        }
+
+tr	{ margin: .25em;
+	  vertical-align: top;
+	}
+			
+th 	{ font-family: Verdana, Arial, sans-serif;
+          font-size: 70%; 
+          text-align: left;
+	  margin: .25em;
+	  vertical-align: top;
+	  background: white;
+	}
+						
+td	{ font-family: Verdana, Arial, sans-serif;
+      	  font-size: 8pt;
+	  margin: .25em;
+	  vertical-align: top;
+	  padding-top: 5px; 
+	  padding-bottom: 3px; 
+	  padding-left: 5px;  
+	  padding-right: 3px; 
+          	  
+	}
+
+.Note { padding-top: 8px; padding-bottom: 8px; padding-left: 5px;  padding-right: 3px;  border-color: #FFCC00; border-style: double; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 5px; margin-top: 6pt;  background-color: #FFEA97; clip:rect( 5px ); }
+
+.RelatedHead { padding-top: 8px; padding-bottom: 8px; border-color: #FFCC00; border-style: solid; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; margin-top: 15pt; font-size: 9pt; color: #0099CC; text-align: left }
+
+.Keyword-Link { padding-top: 8px; padding-bottom: 8px; border-color: #FFCC00; border-style: solid; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; margin-top: 15pt; text-align: right; font-size: 8pt; font-weight: bold}
+
+.Keyword-Link:first-line { margin-right: 100px; }
+
+A:link { text-decoration: underline; color: #0099CC }
+A:visited { text-decoration: underline; color: #0099CC }
+a:hover { text-decoration: none; color:#FFFCF1; background-color: #0099CC; font-family: Verdana, Arial, Helvetica, sans-serif}
+.underConstr {  text-align: center; clip:   rect(   )}
+.Subhead { padding-top: 8pt; border-color: #FFCC00; border-style: solid; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; margin-top: 15pt; font-size: 8pt; color: #0099CC; text-align: left ; font-weight: bold}
+.Code1stLine {  font-family: "Courier New", Courier, mono; margin-top: 6pt}
+.CodeLastLine {  margin-top: 0pt; margin-bottom: 6pt; font-family: "Courier New", Courier, mono}
+.Code {  font-family: "Courier New", Courier, mono; margin-top: 0px; margin-bottom: 0px}
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\3340\FW_LIB\BBISFB\Help\ACCOL3_Fbfun001.chm
+
+
+Compile time: 0 minutes, 10 seconds
+311	Topics
+1,166	Local links
+0	Internet links
+104	Graphics
+
+
+Created c:\3340\FW_LIB\BBISFB\Help\ACCOL3_Fbfun001.chm, 1,315,346 bytes
+Compression decreased file by 1,606,444 bytes.

@@ -1,0 +1,8 @@
+*EI;width=50,Description;width=200,Value;width=100, ;width=100,EI;width=50,Description;width=200,Value;width=100;
+
+1,EGM #3 - DP,$EGM03.DP_VALUE_USED;Precision=2,, 7,EGM #4 - DP,$EGM04.DP_VALUE_USED;Precision=2;
+2,EGM #3 - SP,$EGM03.SP_VALUE_USED;Precision=2,, 8,EGM #4 - SP,$EGM04.SP_VALUE_USED;Precision=2;
+3,EGM #3 - Temp,$EGM03.FTEMP_VALUE_USED;Precision=2,, 9,EGM #4 - Temp,$EGM04.FTEMP_VALUE_USED;Precision=2;
+4,EGM #3 - Flow Rate,$EGM03.FLOW_RATE_USED;Precision=2,,10,EGM #4 - Flow Rate,$EGM04.FLOW_RATE_USED;Precision=2;
+5,EGM #3 - Volume,$EGM03.VOL_ACCUM_TOT;Precision=2,,11,EGM #4 - Volume,$EGM04.VOL_ACCUM_TOT;Precision=2;
+6,Well Control #3 - Status,$WC03.CONTROL_STATUS;Precision=2,,12,Well Control #4 - Status,$WC04.CONTROL_STATUS;Precision=2;

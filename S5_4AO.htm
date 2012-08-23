@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//WC3//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BPPR_IO: IO Configuration:S5 AO4</title>
+<script language="javascript" src="scripts/WebBSI.js"></script>
+<script language="javascript" src="scripts/Initialize.js"></script>
+<script language="JavaScript">
+<!--
+ function PageInit ()
+        {
+            
+            if (!DetectIE5())
+                window.alert ("The browser must support Active-X Controls. Please use Internet Explorer 5.0 or above");
+            
+           }
+
+function popup(url)
+{
+  popuphelp = window.open(url, "help", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=300,height=350"); 
+}
+//-->
+
+</SCRIPT>
+    <script language="javaScript" src="Scripts/SignalGen.js"></script>
+    <script language="javaScript" src="scripts/TfLoadMenus.js"></script>
+    <link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body  onload="PageInit(); setInterval('DetectNode()', 500);" class="main">
+</style>
+</head>
+
+<p align="left" class="title">S5 AO4 </p>
+<br>
+<div id="filetext" style="font-size:smaller"></div>
+        <div visible="true" id="DivID"></div>
+        <div id="TestingStuff" align="left">
+            <table bordercolor="green" id="signals" >
+               
+               <tr>
+                    <td  bordercolor="green" >
+                        <script type="text/javascript">
+                           WriteTableWithObjs("S4_8AI.csv",false,false);
+                        </script>
+
+                    </td>
+                    <td nowrap="nowrap"  bordercolor="green">
+                        <p>&nbsp;</p>
+                        <p align="left">&nbsp;</p> 
+                    </td>
+              </tr>
+            </table>
+
+
+
+            <p align="left">
+        </div>
+</p>
+<p>&nbsp;</p>
+</body>
+
+</html>

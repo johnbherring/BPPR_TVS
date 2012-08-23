@@ -1,0 +1,10 @@
+*Param;width=50,Description;width=400,Value;width=100, ;width=50,Param;width=50,Description;width=400,Value;width=100;
+ 1,Coefficent of Discharge Cd,$EGM01.CD_VALUE_CALC;Precision=2,,10,Z at Base Conditions,$EGM01.ZB_FACTOR_CALC;Precision=2;
+ 2,Velocity of Approach Factor Ev,$EGM01.EV_FACTOR_CALC;Precision=2,,11,Z at Std Conditions 14.73 psi & 60F,$EGM01.ZS_FACTOR_CALC;Precision=2;
+ 3,Expansion Factor Upstream Tap Y1,$EGM01.Y_FACTOR_CALC;Precision=2,,12,C' at Base Conditions,$EGM01.CPRIME_FACTOR_CALC;Precision=2;
+ 4,Orifice Diameter at Flowing Temp,$EGM01.Orif_Diam_Calc;Precision=2,,13,Differential Pressure (AVG),$EGM01.DP_AVG_CHR;Precision=2;
+ 5,Line Diameter at Flowing Temp,$EGM01.Pipe_Diam_Calc;Precision=2,,14,Pressure (AVG - Flow weight),$EGM01.SP_AVG_CHR;Precision=2;
+ 6,Reynolds Factor Re,$EGM01.REYN_VALUE_CALC;Precision=2,,15,Temp (AVG - Flow weighted),$EGM01.FTEMP_AVG_CHR;Precision=2;
+ 7,Flow at Std Conditions (FT3/Hr),$EGM01.QV_VALUE_CALC;Precision=2,,16,Dry Ideal BTUs,$EGM01.BTUDRYI_VALUE_USED;Precision=2;
+ 8,C' at Std Conditions (14.73 and 60F),$EGM01.Cprime_STD_CALC;Precision=2,,17,Sat Ideal BTUs,$EGM01.BTUSATI_VALUE_USED;Precision=2;
+ 9,Z at Flowing Conditions,$EGM01.ZF_FACTOR_CALC;Precision=2;

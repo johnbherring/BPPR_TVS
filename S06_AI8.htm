@@ -1,0 +1,177 @@
+<html>
+<head>
+<script src="Scripts/SignalGen.js" type="text/javascript"></script>
+<script src="Scripts/Status_V1_0b1.js" type="text/javascript"></script>
+<script src="Scripts/Sigview_Class.js" type="text/javascript"></script>
+
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+<script type = "text/javascript">
+
+var x=0;
+var bin="0";
+var Found=0;
+var d;
+AIOCheckBoxArray = new Array(15);  // Array Bit 0-15
+DIOCheckBoxArray = new Array(15);  // Array Bit 0-15
+
+BitNumbTxtShrt[0] = "2";
+BitNumbTxtShrt[1] = "2";
+BitNumbTxtShrt[2] = "IO";
+BitNumbTxtShrt[3] = "Ca";
+BitNumbTxtShrt[4] = "6";
+BitNumbTxtShrt[5] = "CI";
+BitNumbTxtShrt[6] = "Mn";
+BitNumbTxtShrt[7] = "8";
+BitNumbTxtShrt[8] = "9";
+BitNumbTxtShrt[9] = "10";
+BitNumbTxtShrt[10] = "11";
+BitNumbTxtShrt[11] = "12";
+BitNumbTxtShrt[12] = "13";
+BitNumbTxtShrt[13] = "14";
+BitNumbTxtShrt[14] = "15";
+BitNumbTxtShrt[15] = "16";
+//Delete me
+
+AIOCheckBoxArray[0] = false;
+AIOCheckBoxArray[1] = false;
+AIOCheckBoxArray[2] = true;
+AIOCheckBoxArray[3] = true;
+AIOCheckBoxArray[4] = false;
+AIOCheckBoxArray[5] = true;
+AIOCheckBoxArray[6] = true;
+AIOCheckBoxArray[7] = false;
+AIOCheckBoxArray[8] = false;
+AIOCheckBoxArray[9] = false;
+AIOCheckBoxArray[10] = false;
+AIOCheckBoxArray[11] = false;
+AIOCheckBoxArray[12] = false;
+AIOCheckBoxArray[13] = false;
+AIOCheckBoxArray[14] = false;
+AIOCheckBoxArray[15] = false;
+
+DIOCheckBoxArray[0] = false;
+DIOCheckBoxArray[1] = false;
+DIOCheckBoxArray[2] = true;
+DIOCheckBoxArray[3] = false;
+DIOCheckBoxArray[4] = false;
+DIOCheckBoxArray[5] = true;
+DIOCheckBoxArray[6] = true;
+DIOCheckBoxArray[7] = false;
+DIOCheckBoxArray[8] = false;
+DIOCheckBoxArray[9] = false;
+DIOCheckBoxArray[10] = false;
+DIOCheckBoxArray[11] = false;
+DIOCheckBoxArray[12] = false;
+DIOCheckBoxArray[13] = false;
+DIOCheckBoxArray[14] = false;
+DIOCheckBoxArray[15] = false;
+
+
+onerror=handleErr;
+var txt="";
+
+function handleErr(msg,url,l)
+{
+txt="There was an error on this page.\n\n";
+txt+="Error: " + msg + "\n";
+txt+="URL: " + url + "\n";
+txt+="Line: " + l + "\n\n";
+txt+="Click OK to continue.\n\n";
+alert(txt);
+return true;
+}
+
+
+
+function PageInit()
+{
+
+
+}
+
+function SetCheckTimer()
+		{
+			
+			var a = window.setInterval("CheckStatus()",3000)
+					
+		}
+
+		function CheckStatus()
+		{
+		    StatusBits(AI_P01_Status_Obj_Class.getValue(), "AI_P01_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P02_Status_Obj_Class.getValue(), "AI_P02_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P03_Status_Obj_Class.getValue(), "AI_P03_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P04_Status_Obj_Class.getValue(), "AI_P04_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P05_Status_Obj_Class.getValue(), "AI_P05_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P06_Status_Obj_Class.getValue(), "AI_P06_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P07_Status_Obj_Class.getValue(), "AI_P07_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+		    StatusBits(AI_P08_Status_Obj_Class.getValue(), "AI_P08_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+
+
+		}
+				
+</script>
+</head>
+
+<body onLoad="PageInit()" >
+<span class="title2top">Slot 6</span><INPUT TYPE="button" VALUE="Back" 
+        onClick="history.go(-1);return true;" 
+        style="position:absolute; left:247px; top: 12px;"><FORM></FORM>	
+<script type="text/javascript">
+	WriteTableWithObjs("S06_AI8.csv");
+</script>
+<!--
+<br>
+<span class="title2top">Analog Input</span>
+<script type="text/javascript">
+	WriteTableWithObjs("S06_AI8.csv");
+</script> -->
+
+
+<script type = "text/javascript">
+
+	
+	CreateStatusLightsRowHeader("AI_Status_Column_ID",BitNumbTxtShrt, AIOCheckBoxArray);
+	CreateStatusLightsHtmlItems("AI_P01_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P02_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P03_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P04_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P05_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P06_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P07_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("AI_P08_Status_ID", AIOCheckBoxArray, Image_Select_IO);
+
+
+	
+
+	AI_P01_Status_Obj_Class = new SigViewClass(AI_S06_P01_Status_Obj, 0);
+	AI_P02_Status_Obj_Class = new SigViewClass(AI_S06_P02_Status_Obj, 0);
+	AI_P03_Status_Obj_Class = new SigViewClass(AI_S06_P03_Status_Obj, 0);
+	AI_P04_Status_Obj_Class = new SigViewClass(AI_S06_P04_Status_Obj, 0);
+	AI_P05_Status_Obj_Class = new SigViewClass(AI_S06_P05_Status_Obj, 0);
+	AI_P06_Status_Obj_Class = new SigViewClass(AI_S06_P06_Status_Obj, 0);
+	AI_P07_Status_Obj_Class = new SigViewClass(AI_S06_P07_Status_Obj, 0);
+	AI_P08_Status_Obj_Class = new SigViewClass(AI_S06_P08_Status_Obj, 0);
+
+	
+	
+	SetCheckTimer();
+</script>
+<br><br>
+
+
+<div id = "result"></div>
+
+<div id = "ICONS"></div>
+
+<div id = "DebugField"></div>
+
+
+</body>
+</html>
+
+
+
+
+

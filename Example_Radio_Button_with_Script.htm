@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <script type="text/javascript" language="javaScript" src="Scripts/RadioButton.js"></script>           <!-- Reference RadioButton Library -->
+    <script type="text/javascript" language="javaScript" src="Scripts/SignalGen.js"></script>             <!-- Reference Signal Grid  Library -->
+    <link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css" />      <!-- Reference BPStyles -->
+    
+    <link href="Stylesheets/AddedRadioStyles.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/custom-form-elements.js" type="text/javascript"></script>
+    
+    
+    <script type = "text/javascript">
+
+        /*******************************************************************************************
+         *     Author: John Herring
+         *
+         *    Declare Variables for RadioButton1 by Convention RB1,RB2 etc...
+
+         *    Implementation: Create an entry for each Radio Button Set
+         *
+         *    History: Created 3/28/2012
+         *
+         *********************************************************************************************/
+
+        // "use strict";                                        // Upcoming Convention will Attempt to in force programming practices in JavaScript
+
+         /*******************************************************************************************                               
+                                                                                                                            
+        *    RB#RadioText     Setting    Array Containing the Text to be applied to Radio Buttons                                  
+        *    RB#RadioValue    Setting    Array Containing values to be applied upon selection of radio buttons                     
+        *    RB#Start         Setting    Starting Point in Array to Build from (Default 0)                                                         
+        *    RB#End           Setting    Ending Point in Array to Build, Logic sets this to equal the number in array                                                                  
+        *    RB#SignalName    Setting    Signal to be read from and written to by radio buttons                                    
+        *    RB#DivID         Setting    Div Id where Radio Buttons are to be written to (See FileName.csv)                        
+        *                                RadioButton ID are genrated from this Value (MUST be unique to each                       
+        *                                RadioButton Set.                                                                          
+        *    RB#WrtBckDivID   Setting    Div Id to hold Signal Write Control (See See FileName.csv)                                
+        *    RB#CorrectError  Setting       Selects response to incorrect value (not in RadioValue Array)                          
+        *                                                                                                                          
+        *                                 True =    Force Value to Value represented by selected button (if Selected)              
+        *                                           set to if No Radio Button is selected (Not Supported).                             
+        *                                 False =   Do Not Force Value but indicate on Radio Button that value is not                
+        *                                           represented (Goes to Array item 1 Default.                                         
+        *                                                                                                                          
+        *    RB#Write         Status     Write to Signal Name is pending (BOOLEAN)                                                    
+        *    RB#Pending       Status     Value being written to Signal             
+        *    RB#Value         Status     Current Value read from RadioButton by reading selected button and matching               
+        *                                to Value in RadioArray.                                                                   
+        *    RB#Checked       Status     Current which radio button is selected                                                      
+        *********************************************************************************************/                           
+
+        var RB1RadioText = new Array("None","10","15","20","25");   
+        var RB1RadioValue= new Array(0,10,15,20,25);            
+        var RB1Start=0;                                         
+        var RB1End=RB1RadioText.length;                                           
+        var RB1SignalName = "@GV.TestSignal";                   
+        var RB1DivID = "RB1_ID";                               
+        var RB1WrtBckDivID = "RB1_WrtBck_ID";                   
+        var RB1CorrectError = false;                            
+        var RB1Write=false;
+        var RB1Pending = 0;                                     
+        var RB1Value = 0;                                       
+        var RB1Checked = 0;                                    
+                
+        CompareArrays(RB1RadioText.length,RB1RadioValue.length,RB1DivID);  // Validate Configuration, Programmer Help
+
+        var RB2RadioText = new Array("AGA8","GM1","GM2");      
+        var RB2RadioValue = new Array(0, 1, 2);                 
+        var RB2Start=0;                                         
+        var RB2End = RB2RadioText.length;                       
+        var RB2SignalName = "@GV.TestSignal2";                  
+        var RB2DivID = "RB2_ID";                                
+        var RB2WrtBckDivID = "RB2_WrtBck_ID";                  
+        var RB2CorrectError = false;                            
+        var RB2Write=false;
+        var RB2Pending = 0;                                     
+        var RB2Value = 0;                                       
+        var RB2Checked = 0;                                     
+
+        CompareArrays(RB2RadioText.length, RB2RadioValue.length, RB2DivID);  // Validate Configuration, Programmer Help
+
+        var RB3RadioText = new Array("Full_Open","Plunger","CRP"); 
+        var RB3RadioValue= new Array(0,1,2);                    
+        var RB3Start=0;                                         
+        var RB3End=3;                                           
+        var RB3SignalName = "AI.Config_Used";                   
+        var RB3DivID = "RB3_ID";                                
+        var RB3WrtBckDivID = "RB3_WrtBck_ID";                   
+        var RB3CorrectError = false;                            
+        var RB3Write=false;
+        var RB3Pending = 0;                                     
+        var RB3Value = 0;                                       
+        var RB3Checked = 0;                                     
+
+        CompareArrays(RB3RadioText.length, RB3RadioValue.length, RB3DivID); // Validate Configuration, Programmer Help
+
+        var RBDebug = false;  // Control -  Enable Debug messages to be generated to message boxes
+
+        function PageInit()
+        {
+         // Page Start Items Here Runs "On Load" just before Grid build with Write Table with Objects
+        }
+
+        /*******************************************************************************************
+         *    Author: John Herring
+         *
+         *    Declare Delay Timer
+         *
+         *    Summary: Used to trigger check of ValueText and Radio Button Values,
+         *
+         *    Implementation: Create an entry var x = window.setInterval("RB#CheckStatus()",3500);
+         *    for each Radio Button Set
+         *
+         *    History: Created N/A - Used by Convention
+         *
+         *********************************************************************************************/
+
+
+        function SetCheckTimer()
+        {
+            var a = window.setInterval("RB1CheckStatus()",1500);  // Calls Value from Signal View to be applied to Radio Button
+            var b = window.setInterval("RB2CheckStatus()",1500);  // Calls Value from Signal View to be applied to Radio Button
+            var c = window.setInterval("RB3CheckStatus()",1500);  // Calls Value from Signal View to be applied to Radio Button
+            // create entry for each Radio Button / Signal View Pair
+        }
+
+        /*******************************************************************************************
+         *    Author: John Herring
+         *
+         *    Value Text / Radio Button Compare
+         *
+         *    Compare Value Text to Set Radio Button on Init
+         *    Detect Radio Button Value Text Errors
+         *    Enable Radio Button after writing new value to Signal
+         *
+         *    History: 3/28/2012 Initial Example Page (This Document)
+         *
+         *********************************************************************************************/
+
+        function RB1CheckStatus()  // Read Signal Value and Check Write Pending Status
+        {
+            var GV_TestSignal_Obj_Last="";
+            var RB1SignalValue = 0;
+
+            if (GV_TestSignal_Obj.ValueText != "")
+            {
+                if(GV_TestSignal_Obj.ValueText !=GV_TestSignal_Obj_Last | GV_TestSignal_Obj_Last==0 )
+                {
+                    GV_TestSignal_Obj_Last=GV_TestSignal_Obj.ValueText * 1; // Forces Type
+
+                }
+            }
+
+            if(typeof GV_TestSignal_Obj_Wrt != 'undefined' )
+            {
+                RB1Value = GetValueRadioButton(RB1Start,RB1End,RB1DivID,RB1RadioValue);     // Retrieve the Value of the Selected Radio Button
+                RB1Checked = GetCheckedRadioButton(RB1Start,RB1End,RB1DivID);              // Retrieve which Radio Button is Selected
+
+                if(RBDebug){ alert(" html Head Script Compare, Radio Button Value "+ RB1Value +
+                        " Which Radio Button Checked " + RB1Checked + " RB1Pending " + RB1Pending +
+                        " Last Value from Signal " + GV_TestSignal_Obj_Last );}
+
+                if(RB1Pending==0 && !RB1Write)
+                {
+                    UpdateRadioButton(RB1Start,RB1End,RB1DivID,GV_TestSignal_Obj.ValueText,RB1RadioValue,RB1Checked,RB1CorrectError)
+                    EnableRadioButton(RB1Start,RB1End,RB1DivID)
+                }
+
+
+                if(RB1Pending == GV_TestSignal_Obj_Last &&  RB1Write)
+                {
+                    RB1Pending=0;
+                    RB1Write=false;
+                }
+
+
+
+            }
+        }
+
+
+        function RB2CheckStatus()  // Read Signal Value and Check Write Pending Status
+        {
+            var GV_TestSignal2_Obj_Last="";
+            var RB2SignalValue = 0;
+
+            if (GV_TestSignal2_Obj.ValueText != "")
+            {
+                if(GV_TestSignal2_Obj.ValueText !=GV_TestSignal2_Obj_Last | GV_TestSignal2_Obj_Last==0 )
+                {
+                    GV_TestSignal2_Obj_Last=GV_TestSignal2_Obj.ValueText * 1; // Forces Type
+
+                }
+            }
+
+            if(typeof GV_TestSignal2_Obj_Wrt != 'undefined' )
+            {
+                RB2Value = GetValueRadioButton(RB2Start,RB2End,RB2DivID,RB2RadioValue);     // Retrieve the Value of the Selected Radio Button
+                RB2Checked = GetCheckedRadioButton(RB2Start,RB2End,RB2DivID);              // Retrieve which Radio Button is Selected
+
+                if(RBDebug){alert(" html Head Script Compare, Radio Button Value "+ RB2Value +
+                        " Which Radio Button Checked " + RB2Checked + " RB2Pending " + RB2Pending +
+                        " Last Value from Signal " + GV_TestSignal2_Obj_Last );}
+
+                if(RB2Pending==0 && !RB2Write)
+                {
+                    UpdateRadioButton(RB2Start,RB2End,RB2DivID,GV_TestSignal2_Obj.ValueText,RB2RadioValue,RB2Checked,RB2CorrectError)
+                    EnableRadioButton(RB2Start,RB2End,RB2DivID)
+                }
+
+
+                if(RB2Pending == GV_TestSignal2_Obj_Last &&  RB2Write)
+                {
+                    RB2Pending=0;
+                    RB2Write=false;
+                }
+
+
+
+            }
+        }
+
+        function RB3CheckStatus()  // Read Signal Value and Check Write Pending Status
+        {
+            var AI_Config_Used_Obj_Last="";
+            var RB3SignalValue = 0;
+
+            if (AI_Config_Used_Obj.ValueText != "")
+            {
+                if(AI_Config_Used_Obj.ValueText !=AI_Config_Used_Obj_Last | AI_Config_Used_Obj_Last==0 )
+                {
+                    AI_Config_Used_Obj_Last=AI_Config_Used_Obj.ValueText * 1; // Forces Type
+
+                }
+            }
+
+            if(typeof AI_Config_Used_Obj_Wrt != 'undefined' )
+            {
+                RB3Value = GetValueRadioButton(RB3Start,RB3End,RB3DivID,RB3RadioValue);     // Retrieve the Value of the Selected Radio Button
+                RB3Checked = GetCheckedRadioButton(RB3Start,RB3End,RB3DivID);              // Retrieve which Radio Button is Selected
+
+                if(RBDebug){alert(" html Head Script Compare, Radio Button Value "+ RB3Value +
+                        " Which Radio Button Checked " + RB3Checked + " RB3Pending " + RB3Pending +
+                        " Last Value from Signal " + AI_Config_Used_Obj_Last );}
+
+                if(RB3Pending==0 && !RB3Write)
+                {
+                    UpdateRadioButton(RB3Start,RB3End,RB3DivID,AI_Config_Used_Obj.ValueText,RB3RadioValue,RB3Checked,RB3CorrectError)
+                    EnableRadioButton(RB3Start,RB3End,RB3DivID)
+                }
+
+
+                if(RB3Pending == AI_Config_Used_Obj_Last &&  RB3Write)
+                {
+                    RB3Pending=0;
+                    RB3Write=false;
+                }
+
+
+
+            }
+        }
+
+        /*******************************************************************************************
+         *    Author: John Herring
+         *
+         *    Radio Button Click Event Handler
+         *
+         *    Summary:  Retrieve Radio Button Checked
+         *              Retrieve Radio Button Value from Radio Value Array
+         *              "Call" Signal Write Control to Update Value in RTU
+         *              Disable "Grey Out" Radio button until update
+         *
+         *
+         *    Implementation: Create this routine for each RadioButton Set
+         *
+         *    History: 3/28/2012 Initial Example Page (This Document)
+         *
+         *********************************************************************************************/
+
+
+
+        function RB1_ID_Click()
+        {
+            RB1Checked = GetCheckedRadioButton(RB1Start,RB1End,RB1DivID);              // Retrieve which Radio Button is Selected
+            RB1Pending=GetValueRadioButton(RB1Start,RB1End,RB1DivID,RB1RadioValue);    // Retrieve the Value of the Selected Radio Button
+            RB1Write=true;
+            if(RBDebug){alert ("The User has Selected Button # " + RB1Checked);}
+
+            GV_TestSignal_Obj_Wrt.Initialize();
+            GV_TestSignal_Obj_Wrt.RTUName="RTU"
+            GV_TestSignal_Obj_Wrt.SignalName=RB1SignalName;
+            GV_TestSignal_Obj_Wrt.SignalValue=RB1RadioValue[RB1Checked];
+            GV_TestSignal_Obj_Wrt.Execute("Value");
+
+            if(RBDebug){alert("Write Attempt "+ RB1Pending + "To " + GV_TestSignal_Obj_Wrt.SignalName);}
+
+            DisableRadioButton(RB1Start,RB1End,RB1DivID);
+        }
+
+        function RB2_ID_Click()
+        {
+            RB2Checked = GetCheckedRadioButton(RB2Start,RB2End,RB2DivID);              // Retrieve which Radio Button is Selected
+            RB2Pending = GetValueRadioButton(RB2Start,RB2End,RB2DivID,RB2RadioValue);    // Retrieve the Value of the Selected Radio Button
+            RB2Write=true;
+            if(RBDebug){alert ("The User has Selected Button # " + RB2Checked);}
+
+            GV_TestSignal2_Obj_Wrt.Initialize();
+            GV_TestSignal2_Obj_Wrt.RTUName="RTU"
+            GV_TestSignal2_Obj_Wrt.SignalName=RB2SignalName;
+            GV_TestSignal2_Obj_Wrt.SignalValue=RB2RadioValue[RB2Checked];
+            GV_TestSignal2_Obj_Wrt.Execute("Value");
+
+            if(RBDebug){alert("Write Attempt "+ RB2Pending + "To " + GV_TestSignal2_Obj_Wrt.SignalName);}
+
+            DisableRadioButton(RB2Start,RB2End,RB2DivID);
+        }
+
+        function RB3_ID_Click()
+        {
+            RB3Checked = GetCheckedRadioButton(RB3Start,RB3End,RB3DivID);              // Retrieve which Radio Button is Selected
+            RB3Pending = GetValueRadioButton(RB3Start,RB3End,RB3DivID,RB3RadioValue);    // Retrieve the Value of the Selected Radio Button
+            RB3Write=true;
+            if(RBDebug){alert ("The User has Selected Button # " + RB3Checked);}
+
+            AI_Config_Used_Obj_Wrt.Initialize();
+            AI_Config_Used_Obj_Wrt.RTUName="RTU"
+            AI_Config_Used_Obj_Wrt.SignalName=RB3SignalName;
+            AI_Config_Used_Obj_Wrt.SignalValue=RB3RadioValue[RB3Checked];
+            AI_Config_Used_Obj_Wrt.Execute("Value");
+
+            if(RBDebug){alert("Write Attempt "+ RB3Pending + "To " + AI_Config_Used_Obj_Wrt.SignalName);}
+
+            DisableRadioButton(RB3Start,RB3End,RB3DivID);
+        }
+
+
+    </script>
+
+    <!-- This is an Html Comment Tag (Open)
+
+         /*******************************************************************************************
+         *    Author: John Herring
+         *
+         *    Create HTML Page
+         *
+         *    See Comment Numbers #
+
+              Summary:  1 Create Title
+         *              2 Create Signal View "Grid" (using WriteTableWithObjs)
+         *              3 Create Radio Button Html, insert into grid
+         *              4 Create Signal Write Control, Insert into Html
+         *              5 Check for existence of Control and Initialize
+                        6 Disable "Grey Out" Radio Buttons until Signal View update
+                        7 Start Check Timer (See Declare Delay Timer) above
+         *
+         *    Implementation: Create One or More Signal View Grids as required (may than one
+                              may be detailed in csv
+         *
+         *
+         *    History: 3/28/2012 Initial Example Page (This Document)
+         *
+         *********************************************************************************************/
+
+  This is an Html Comment Tag (Close)   -->
+
+
+</head>
+<title>Radio Button Text</title>
+<body onload="PageInit()">
+
+<p align="left" class="title">Radio Button Test</p>  <!-- 1 -->
+
+<script type = "text/javascript"> // 2
+    WriteTableWithObjs("Example_Radio_Button_with_Script.csv"); //Create Signal Grid from csv file
+</script>
+<br>
+
+</body>
+
+<script type = "text/javascript"> // Post html Javascript on html page
+CreateRadioButtonHtml(RB1Start,RB1End,RB1RadioText,RB1DivID,"RB1_ID_Click");
+//3
+// Create Radio Button Html
+// Starting point in Arrays RB# Text and Value
+// Ending Point in Arrays Rb# Text and Value
+// Array Containing Text for Radio Buttons
+// Div id to contain Radio Buttons (See FileName.csv
+// Name Used for "Click Handler" (this file) Convention Use Div_ID Name + _Click
+
+CreateRadioButtonHtml(RB2Start,RB2End,RB2RadioText,RB2DivID,"RB2_ID_Click");
+CreateRadioButtonHtml(RB3Start,RB3End,RB3RadioText,RB3DivID,"RB3_ID_Click");
+
+CreateRadioButtonWriteBackHtml("RB1_WrtBck_ID",RB1SignalName);
+//4
+// Create SignalWrite Control
+// DIV ID of cell to contain Signal Write Control
+// Signal Name for Radio Buttons to write to.
+
+CreateRadioButtonWriteBackHtml("RB2_WrtBck_ID",RB2SignalName);
+CreateRadioButtonWriteBackHtml("RB3_WrtBck_ID",RB3SignalName);
+
+if(typeof GV_TestSignal_Obj_Wrt != 'undefined' )  // 5 if Object (Signal Write) was created initialize
+
+{
+    GV_TestSignal_Obj_Wrt.Initialize(); // 5 Objects (Bristol Controls) are named by removing "@" and replacing "."
+                                        // 5 characters and adding _Obj (Signal View) or _Obj_Wrt (Signal Write)
+}
+
+if(typeof GV_TestSignal2_Obj_Wrt != 'undefined' )  // 5 if Object (Signal Write) was created initialize
+
+{
+    GV_TestSignal2_Obj_Wrt.Initialize(); // 5 Objects (Bristol Controls) are named by removing "@" and replacing "."
+    // 5 characters and adding _Obj (Signal View) or _Obj_Wrt (Signal Write)
+}
+
+if(typeof AI_Config_Used_Obj_Wrt != 'undefined' )  // 5 if Object (Signal Write) was created initialize
+
+{
+    AI_Config_Used_Obj_Wrt.Initialize(); // 5 Objects (Bristol Controls) are named by removing "@" and replacing "."
+    // 5 characters and adding _Obj (Signal View) or _Obj_Wrt (Signal Write)
+}
+
+
+DisableRadioButton(RB1Start,RB1End,"RB1_ID");  // 6 Disable Radio Buttons until updated (Function in Head - RB#CheckStatus)
+DisableRadioButton(RB2Start,RB2End,"RB2_ID");  // 6 Disable Radio Buttons until updated (Function in Head - RB#CheckStatus)
+DisableRadioButton(RB3Start,RB3End,"RB3_ID");  // 6 Disable Radio Buttons until updated (Function in Head - RB#CheckStatus)
+SetCheckTimer(); // 7 Control Creation Done Start Timed Checks of Control Values (Function in Head)
+
+</script>
+

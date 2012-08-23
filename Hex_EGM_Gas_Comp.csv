@@ -1,0 +1,18 @@
+*Configuration Flags;width=200,State;width=50,Set/Reset;width=100;
+Change Configuration Flag,$EGM01.Change_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Change_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+Lost Configuration Flag,$EGM01.Lost_Config_Flag;Format=6;inifile=C:/Users/Public/openbsi/BPPR_TVS/ini/01.ini,$EGM01.Lost_Config_Flag;Rights=13;Format=7;BtnFunction=2;BtnToggleOFFtoONText=Set;BtnToggleONtoOFFText=Reset;
+
+*Param;width=50,Description;width=300,Value;width=100, ;width=100,Param;width=50,Description;width=300,Value;width=100;
+ 1,Nitrogen (N2),$EGM01.N2_PCT_USED;Precision=2,,13,N- NONANE (N-C9),$EGM01.C9_PCT_USED;Precision=2;
+ 2,CARBON DIOXIDE (CO2),$EGM01.CO2_PCT_USED;Precision=2,,14,N- DECANE (N-C10),$EGM01.C10_PCT_USED;Precision=2;
+ 3,METHANE (CH4),$EGM01.CH4_PCT_USED;Precision=2,,15,HYDROGEN SULFIDE (H2S),$EGM01.H2S_PCT_USED;Precision=2;
+ 4,ETHANE (C2),$EGM01.C2_PCT_USED;Precision=2,,16,WATER (H2O),$EGM01.H2O_PCT_USED;Precision=2;
+ 5,PROPANE (C3),$EGM01.C3_PCT_USED;Precision=2,,17,HELIUM (HE),$EGM01.HE_PCT_USED;Precision=2;
+ 6,I- BUTANE (I-C4),$EGM01.IC4_PCT_USED;Precision=2,,18,OXYOGEN (O2),$EGM01.O2_PCT_USED;Precision=2;
+ 7,N- BUTANE (N-C4),$EGM01.NC4_PCT_USED;Precision=2,,19,CARBON MONOXIDE (CO),$EGM01.CO_PCT_USED;Precision=2;
+ 8,I- PENTANE (I-C5),$EGM01.IC5_PCT_USED;Precision=2,,20,HYDROGEN (H2),$EGM01.H2_PCT_USED;Precision=2;
+ 9,N- PENTANE (N-C5),$EGM01.NC5_PCT_USED;Precision=2,,21,Argon,$EGM01.AR_PCT_USED;Precision=2;
+10,N- HEXANE (N-C6),$EGM01.C6_PCT_USED;Precision=2,,22,Ethylene (C2H4),$EGM01.C2H4_PCT_USED;Precision=2;
+11,N- HEPTANE (N-C7),$EGM01.C7_PCT_USED;Precision=2,,23,Propylene (C3H6),$EGM01.C3H6_PCT_USED;Precision=2;
+12,N- OCTANE (N-C8),$EGM01.C8_PCT_USED;Precision=2,,
+

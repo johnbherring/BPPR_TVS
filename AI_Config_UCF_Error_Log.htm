@@ -1,0 +1,245 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BPPR_IO: IO_Config:Test_IO_Drop_Down</title>
+<script language="javaScript" src="scripts/MicroEFMMenus.js"></script>
+<script language="javascript" >
+        
+		var Last_Version = 0;
+		var Current_Version =0;
+		
+  
+        function PageInit ()
+			{
+		 var LastVersion = 0;
+		 CheckUpdate();
+            }
+               
+        
+		function ActivateControls()
+        {
+            SigView1.Execute();
+		    SigView2.Execute();
+		    ArchiveCollectStart();
+		}
+
+
+		function ArchiveCollectStart()
+		{
+		    if (ArchiveCollect)
+		    {
+		        ArchiveCollect.BackColor = 0xDCF0FA;
+		        ArchiveCollect.FillColor = 0xDCF0FA;
+		        ArchiveCollect.AllowFileChange = 0;
+		        ArchiveCollect.Number = 1;
+		        ArchiveCollect.OldFirst = 0;
+		        ArchiveCollect.Save2File = 0;
+		    }
+
+		}
+
+		function CheckUpdate()
+        {
+           	ActivateControls();
+        	var a = window.setInterval("CheckAIFile()",5000);
+		}
+        
+		function CheckAIFile()
+        {
+        
+			if (SigView1.ValueText != "")
+        		{
+			
+					var Text_Current_Version = SigView1.ValueText;
+					Current_Version = Text_Current_Version-0;
+					document.Ver.Ver.value=Current_Version;
+							
+				if (Last_Version != Current_Version)
+					{
+					Last_Version = Current_Version;
+					FileCollect1.Execute();	
+					
+					}	
+									
+				}
+		
+		}
+	
+	
+	
+	     function NoData()
+        {
+        	alert("Configuration not accessible");
+        	window.location.href = "Common_Logon.htm";
+        }
+		
+	   // -->	
+</script>
+
+
+    <style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:13px;
+	top:12px;
+	width:298px;
+	height:138px;
+	z-index:1;
+}
+-->
+    </style>
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css"></head>
+
+
+<body onLoad="PageInit();" >
+<span class="title2top">AI Config File Log</span><INPUT TYPE="button" VALUE="Back" 
+        onClick="history.go(-1);return true;" 
+        style="position:absolute; left:300px; top: 12px;"><FORM></FORM>	
+
+<div align="left">
+  <table width="584" height="22" border="1" cellpadding="2" cellspacing="0" bordercolor="#999999" bgcolor="#FAF0DD">
+    <tr bgcolor="#CCCCCC">
+      <th class="tablehead2"><p>Current Version </p>
+      </th>
+      <th class="tablehead2">File Version</th>
+      <th class="tablehead2">AI Drop Down </th>
+      <th width="131" valign="bottom" nowrap class="tablehead2">Demand Collect     </tr>
+    <tr>
+      <td width="98" bgcolor="#000000"><form name="Ver" style=" margin: 0; padding: 0;" ><input name="Ver" id="Ver" type="text" value="Version" size="15"></form>
+	 </td>
+      <td width="104" bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView1" width="100%" height="20">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="AI.AI_ListVer">
+          <param name="Format" value="0">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E-38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E-38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="1">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="8">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/cardtypefound.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+      </object></td>
+      <td width="225" bgcolor="#000000"><object classid="clsid:2C786147-7FE3-4102-A988-3D78D07ADD2E" id="SigView2" width="100%" height="20">
+          <param name="_cx" value="370">
+          <param name="_cy" value="370">
+          <param name="BackColor" value="0">
+          <param name="BorderColor" value="0">
+          <param name="BorderVisible" value="0">
+          <param name="BorderWidth" value="0">
+          <param name="FillColor" value="0">
+          <param name="ForeColor" value="16777215">
+          <param name="RTUName" value>
+          <param name="SignalName" value="AI.Test_IO_Pointer">
+          <param name="Format" value="6">
+          <param name="Direction" value="0">
+          <param name="OnBitmap" value>
+          <param name="OffBitmap" value>
+          <param name="Zero" value="0">
+          <param name="Span" value="0">
+          <param name="LoAlarm" value="1.175494E-38">
+          <param name="HiAlarm" value="1.175494E+38">
+          <param name="LoLoAlarm" value="1.175494E-38">
+          <param name="HiHiAlarm" value="1.175494E+38">
+          <param name="Horizontal" value="1">
+          <param name="Vertical" value="1">
+          <param name="CollectAlarms" value="0">
+          <param name="RefreshRate" value="1">
+          <param name="Precision" value="0">
+          <param name="Width" value="1">
+          <param name="Units" value="0">
+          <param name="AlarmsFromRtu" value="0">
+          <param name="Rights" value="13">
+          <param name="AlarmEnableText" value>
+          <param name="AlarmInhibitText" value>
+          <param name="ControlEnableText" value>
+          <param name="ControlInhibitText" value>
+          <param name="ManualEnableText" value>
+          <param name="ManualInhibitText" value>
+          <param name="AlarmColor" value="16777215">
+          <param name="CriticalColor" value="16777215">
+          <param name="ArrayNumber" value="0">
+          <param name="ArrayRow" value="0">
+          <param name="ArrayColumn" value="0">
+          <param name="ArrayIsLogical" value="0">
+          <param name="ExpIndex" value="0">
+          <param name="ValueText" value>
+          <param name="IniFile" value="C:/Users/Public/openbsi/BPPR_TVS/ini/AI.ini">
+          <param name="BtnMode" value="0">
+          <param name="BtnFunction" value="2">
+          <param name="BtnSteadyText" value>
+          <param name="BtnToggleOFFtoONText" value>
+          <param name="BtnToggleONtoOFFText" value>
+          <param name="BtnForceValue" value>
+          <param name="JogCtrlVisible" value="0">
+          <param name="JogMode" value="0">
+          <param name="JogValue" value="0">
+          <param name="JogLoLimit" value="0">
+          <param name="JogHiLimit" value="0">
+          <param name="DocURL" value>
+      </object></td>
+      <td ><form name="Slot3" style=" margin: 0; padding: 0;" >
+          <div align="left">
+            <button type="Button" id="C3" style="height: 100%; width: 100%; visibility:hidden" onClick="OpenCard3();">Standby</button>
+          </div>
+    </form>    </tr>
+  </table>
+</div>
+<br>
+<br>
+
+<object classid="clsid:8DEA3D9E-BFDC-11D4-82E8-00E029846704" id="ArchiveCollect" width="100%">
+<param name="Width" value="800">
+</object>
+</td>
+<p align="left">&nbsp;</p>
+          <p>&nbsp;</p>
+</body>
+
+</html>

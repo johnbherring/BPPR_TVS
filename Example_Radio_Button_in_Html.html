@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Radio Button Text</title>
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css" />
+
+<script type = "text/javascript">
+var radiotext = new Array("AGA8","GM1","GM2")
+
+function PageInit(){
+
+//Insert Page Init Script Here...
+
+}
+
+
+    function AGARadioButtonChanged()
+	{
+        for (sLoop=0;sLoop<3;sLoop++)
+        {
+            if (document.AGASelect.radiobutton[sLoop].checked)
+            {
+                alert ("The User has Selected # " + sLoop + " Which is "+radiotext[sLoop]);
+
+            }
+        }
+
+    }
+</script>
+
+
+</head>
+<body onLoad="PageInit()">
+<p>&nbsp;</p>
+<form id="AGASelectID" name="AGASelect" class="">
+  <label>AGA8 Detail</label>
+  <input name="radiobutton" type="radio" value="0" onclick="AGARadioButtonChanged()"/>
+  <label>AGA8 GM1</label>
+   <input name="radiobutton" type="radio" value="1" onclick="AGARadioButtonChanged()" />
+    <label>AGA8 GM2</label>
+	<input name="radiobutton" type="radio" value="2" onclick="AGARadioButtonChanged()" />
+</form>
+
+<input name="enableradiobutton" type="button" value="Enable" id="EnableButton" onclick="EnableRadioButton()"/>
+<p>&nbsp;</p>
+
+
+
+
+
+</body>
+
+<script type = "text/javascript"> // Post html Javascript on html page
+
+for (sLoop=0;sLoop<3;sLoop++){                       // This greys out the radio buttons until the value can be retrieved
+                                                     //  from Signal View AFTER the html is created and presented above...
+    document.AGASelect.radiobutton[sLoop].disabled=1;
+}
+
+
+    function EnableRadioButton()                     // This simulates the SignalView Control recieving its value.
+    {
+        document.AGASelect.radiobutton[0].checked=1; // This sets a value which in turn enables the radio button this
+                                                     //  should noramally be supplied by the SignalView ValueTxt becoming
+                                                     // NOT null.
+        for (sLoop=0;sLoop<3;sLoop++)
+        {
+            document.AGASelect.radiobutton[sLoop].disabled=0;
+        }
+    }   document.getElementById("EnableButton").value="Enabled";
+</script>
+

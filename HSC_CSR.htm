@@ -1,0 +1,63 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BPPR_IO: IO Configuration:IO Cards</title>
+<script language="javascript" src="scripts/WebBSI.js"></script>
+<script language="javascript" src="scripts/Initialize.js"></script>
+<script language="JavaScript">
+<!--
+ function PageInit ()
+        {
+            
+            if (!DetectIE5())
+               window.alert ("The browser must support Active-X Controls. Please use Internet Explorer 5.0 or above");
+            	
+		 }
+
+function popup(url)
+{
+  popuphelp = window.open(url, "help", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=300,height=350"); 
+}
+
+
+</SCRIPT>
+    <script language="javaScript" src="Scripts/SignalGen.js"></script>
+    <link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body  onload="PageInit(); setInterval('DetectNode()', 500);" class="main">
+</style>
+</head>
+<p align="left" class="title">HSC CSR<INPUT TYPE="button" VALUE="Back" 
+        onClick="history.go(-1);return true;" 
+        style="position:absolute; left:247px; top: 12px;"></p>
+ <div id="filetext" style="font-size:smaller"></div>
+        <div visible="true" id="DivID"></div>
+        <div id="TestingStuff" align="left">
+            <table bordercolor="green" id="signals" >
+               
+               <tr>
+                    <td  bordercolor="green" >
+                        <script type="text/javascript">
+                           WriteTableWithObjs("HSC_CSR.csv");
+                        </script>
+
+                    </td>
+                    <td nowrap="nowrap"  bordercolor="green">
+                        <p>&nbsp;</p>
+                        <p align="left">&nbsp;</p> 
+                    </td>
+              </tr>
+            </table>
+
+
+
+<p align="left"><a href="CSR_Log.htm">CSR Log</a>
+<p align="left">
+<p align="left">&nbsp;</div>
+</p>
+
+<p>&nbsp;</p>
+</body>
+
+</html>

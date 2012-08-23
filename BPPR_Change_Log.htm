@@ -1,0 +1,98 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BPPR_IO: PR_Testing:BPPR_Change_Log</title>
+
+<script src="Scripts/SignalGen.js" type="text/javascript"></script>
+<script language="javascript" >
+  
+		function PageInit ()
+			{
+			 CheckUpdate();
+			}
+			   
+		
+		function ActivateControls()
+		{
+		   ArchiveCollectStart();
+
+		   		
+		}
+
+
+		function ArchiveCollectStart()
+		{
+
+		   
+
+			if (ArchiveCollect)
+			{
+				ArchiveCollect.BackColor = 0xDCF0FA;
+				ArchiveCollect.FillColor = 0xDCF0FA;
+				ArchiveCollect.AllowFileChange = 0;
+				ArchiveCollect.Number = 2;
+				ArchiveCollect.OldFirst = 0;
+				ArchiveCollect.Save2File = 0;
+				ArchiveCollect.Width = 10;
+
+				ArchiveCollect.SaveFilename = "";
+			}
+		}
+		
+	
+		function CheckUpdate()
+		{
+			
+			ActivateControls();
+									
+		}
+		
+		
+</script>
+
+
+	<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:13px;
+	top:12px;
+	width:298px;
+	height:138px;
+	z-index:1;
+}
+		.style1
+		{
+			font-weight: bold;
+			height: 22px;
+		}
+-->
+	</style>
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css"></head>
+
+
+<body class="main" onLoad="PageInit();" >
+
+<p align="left" class="title">BPPR Change Log </p>
+
+<div align="left">
+<script type="text/javascript">
+	WriteTableWithObjs("BPPR_Change_Log.csv");
+</script>
+</div>
+
+
+<br>
+<br>
+<div align="left"><object classid="clsid:8DEA3D9E-BFDC-11D4-82E8-00E029846704" id="ArchiveCollect"width="850" height="500" style="></object></div>
+</td>
+<p align="left">&nbsp;</p>
+		  <p>&nbsp;</p>
+
+
+
+	
+
+</body>
+
+</html>

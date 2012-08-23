@@ -1,0 +1,203 @@
+<html>
+<head>
+<script src="Scripts/SignalGen.js" type="text/javascript"></script>
+<script src="Scripts/Status_V1_0b1.js" type="text/javascript"></script>
+<script src="Scripts/Sigview_Class.js" type="text/javascript"></script>
+
+
+<link href="Stylesheets/BPStyles.css" rel="stylesheet" type="text/css">
+<script type = "text/javascript">
+
+var x=0;
+var bin="0";
+var Found=0;
+var d;
+AIOCheckBoxArray = new Array(15);  // Array Bit 0-15
+DIOCheckBoxArray = new Array(15);  // Array Bit 0-15
+
+BitNumbTxtShrt[0] = "2";
+BitNumbTxtShrt[1] = "2";
+BitNumbTxtShrt[2] = "IO";
+BitNumbTxtShrt[3] = "Ca";
+BitNumbTxtShrt[4] = "6";
+BitNumbTxtShrt[5] = "CI";
+BitNumbTxtShrt[6] = "Mn";
+BitNumbTxtShrt[7] = "8";
+BitNumbTxtShrt[8] = "9";
+BitNumbTxtShrt[9] = "10";
+BitNumbTxtShrt[10] = "11";
+BitNumbTxtShrt[11] = "12";
+BitNumbTxtShrt[12] = "13";
+BitNumbTxtShrt[13] = "14";
+BitNumbTxtShrt[14] = "15";
+BitNumbTxtShrt[15] = "16";
+//Delete me
+
+AIOCheckBoxArray[0] = false;
+AIOCheckBoxArray[1] = false;
+AIOCheckBoxArray[2] = true;
+AIOCheckBoxArray[3] = true;
+AIOCheckBoxArray[4] = false;
+AIOCheckBoxArray[5] = true;
+AIOCheckBoxArray[6] = true;
+AIOCheckBoxArray[7] = false;
+AIOCheckBoxArray[8] = false;
+AIOCheckBoxArray[9] = false;
+AIOCheckBoxArray[10] = false;
+AIOCheckBoxArray[11] = false;
+AIOCheckBoxArray[12] = false;
+AIOCheckBoxArray[13] = false;
+AIOCheckBoxArray[14] = false;
+AIOCheckBoxArray[15] = false;
+
+DIOCheckBoxArray[0] = false;
+DIOCheckBoxArray[1] = false;
+DIOCheckBoxArray[2] = true;
+DIOCheckBoxArray[3] = false;
+DIOCheckBoxArray[4] = false;
+DIOCheckBoxArray[5] = true;
+DIOCheckBoxArray[6] = true;
+DIOCheckBoxArray[7] = false;
+DIOCheckBoxArray[8] = false;
+DIOCheckBoxArray[9] = false;
+DIOCheckBoxArray[10] = false;
+DIOCheckBoxArray[11] = false;
+DIOCheckBoxArray[12] = false;
+DIOCheckBoxArray[13] = false;
+DIOCheckBoxArray[14] = false;
+DIOCheckBoxArray[15] = false;
+
+
+onerror=handleErr;
+var txt="";
+
+function handleErr(msg,url,l)
+{
+txt="There was an error on this page.\n\n";
+txt+="Error: " + msg + "\n";
+txt+="URL: " + url + "\n";
+txt+="Line: " + l + "\n\n";
+txt+="Click OK to continue.\n\n";
+alert(txt);
+return true;
+}
+
+
+
+function PageInit()
+{
+
+
+}
+
+function SetCheckTimer()
+		{
+			
+			var a = window.setInterval("CheckStatus()",3000)
+					
+		}
+
+		function CheckStatus()
+		{
+		   
+			StatusBits(DIO_P01_Status_Obj_Class.getValue(), "DIO_P01_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P02_Status_Obj_Class.getValue(), "DIO_P02_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P03_Status_Obj_Class.getValue(), "DIO_P03_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P04_Status_Obj_Class.getValue(), "DIO_P04_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P05_Status_Obj_Class.getValue(), "DIO_P05_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P06_Status_Obj_Class.getValue(), "DIO_P06_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P07_Status_Obj_Class.getValue(), "DIO_P07_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P08_Status_Obj_Class.getValue(), "DIO_P08_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P09_Status_Obj_Class.getValue(), "DIO_P09_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P10_Status_Obj_Class.getValue(), "DIO_P10_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P11_Status_Obj_Class.getValue(), "DIO_P11_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P12_Status_Obj_Class.getValue(), "DIO_P12_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P13_Status_Obj_Class.getValue(), "DIO_P13_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P14_Status_Obj_Class.getValue(), "DIO_P14_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P15_Status_Obj_Class.getValue(), "DIO_P15_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+			StatusBits(DIO_P16_Status_Obj_Class.getValue(), "DIO_P16_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+
+		}
+				
+</script>
+</head>
+
+<body onLoad="PageInit()" >
+<span class="title2top">Slot 4</span><INPUT TYPE="button" VALUE="Back" 
+        onClick="history.go(-1);return true;" 
+        style="position:absolute; left:247px; top: 12px;"><FORM></FORM>	
+<script type="text/javascript">
+    WriteTableWithObjs("S04_DI16.csv");
+</script>
+
+<!--
+<br>
+	<span class="title2top">Discrete Input
+</span>
+<br>
+<script type="text/javascript">
+	WriteTableWithObjs("S04_DI16.csv");
+</script> -->
+
+
+<script type = "text/javascript">
+
+	CreateStatusLightsRowHeader("DIO_Status_Column_ID", BitNumbTxtShrt, DIOCheckBoxArray);
+	CreateStatusLightsHtmlItems("DIO_P01_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P02_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P03_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P04_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P05_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P06_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P07_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P08_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P09_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P10_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P11_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P12_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P13_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P14_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P15_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+	CreateStatusLightsHtmlItems("DIO_P16_Status_ID", DIOCheckBoxArray, Image_Select_IO);
+
+	
+
+	DIO_P01_Status_Obj_Class = new SigViewClass(DIO_S04_P01_Status_Obj, 0);
+	DIO_P02_Status_Obj_Class = new SigViewClass(DIO_S04_P02_Status_Obj, 0);
+	DIO_P03_Status_Obj_Class = new SigViewClass(DIO_S04_P03_Status_Obj, 0);
+	DIO_P04_Status_Obj_Class = new SigViewClass(DIO_S04_P04_Status_Obj, 0);
+	DIO_P05_Status_Obj_Class = new SigViewClass(DIO_S04_P05_Status_Obj, 0);
+	DIO_P06_Status_Obj_Class = new SigViewClass(DIO_S04_P06_Status_Obj, 0);
+	DIO_P07_Status_Obj_Class = new SigViewClass(DIO_S04_P07_Status_Obj, 0);
+	DIO_P08_Status_Obj_Class = new SigViewClass(DIO_S04_P08_Status_Obj, 0);
+	DIO_P09_Status_Obj_Class = new SigViewClass(DIO_S04_P09_Status_Obj, 0);
+	DIO_P10_Status_Obj_Class = new SigViewClass(DIO_S04_P10_Status_Obj, 0);
+	DIO_P11_Status_Obj_Class = new SigViewClass(DIO_S04_P11_Status_Obj, 0);
+	DIO_P12_Status_Obj_Class = new SigViewClass(DIO_S04_P12_Status_Obj, 0);
+	DIO_P13_Status_Obj_Class = new SigViewClass(DIO_S04_P13_Status_Obj, 0);
+	DIO_P14_Status_Obj_Class = new SigViewClass(DIO_S04_P14_Status_Obj, 0);
+	DIO_P15_Status_Obj_Class = new SigViewClass(DIO_S04_P15_Status_Obj, 0);
+	DIO_P16_Status_Obj_Class = new SigViewClass(DIO_S04_P16_Status_Obj, 0);
+
+
+	
+	
+	SetCheckTimer();
+</script>
+<br><br>
+
+
+<div id = "result"></div>
+
+<div id = "ICONS"></div>
+
+<div id = "DebugField"></div>
+
+
+</body>
+</html>
+
+
+
+
+
