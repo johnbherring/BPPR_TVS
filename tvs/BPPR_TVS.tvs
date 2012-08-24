@@ -2,8 +2,8 @@
 LoadType=-1
 INTERNAL_XMTR=0
 PTXMTR=0
-CUSTOM_CFGINI=C:\Users\Public\openbsi\BPPR_TVS\tvs\BPPR_CIO.ini
-CUSTOM_XLTINI=C:\Users\Public\openbsi\BPPR_TVS\tvs\BPPR_CIOXLT.ini
+CUSTOM_CFGINI=C:\Users\Public\openbsi\BPPR_TVS\tvs\BPPR_TVS.ini
+CUSTOM_XLTINI=C:\Users\Public\openbsi\BPPR_TVS\tvs\BPPR_TVSXLT.ini
 MFPRuns=8
 [PARAMETERS]
 MODE=4
